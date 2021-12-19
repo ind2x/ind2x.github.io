@@ -10,7 +10,7 @@ baseurl: ''
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
 # otherwise, the layout language will use the default value of 'en'.
-lang: ko-KR
+lang: en-US
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone: Asia/Seoul
@@ -43,7 +43,7 @@ social:
   email: nsxz1359@naver.com           # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username      # change to your twitter homepage
+    # - https://twitter.com/username      # change to your twitter homepage
     - https://github.com/ind2x      # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
@@ -79,10 +79,10 @@ theme_mode:   # [light|dark]
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn:
+img_cdn: #
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: #
 
 # boolean type, the global switch for ToC in posts.
 toc: true
@@ -119,7 +119,7 @@ defaults:
       type: posts
     values:
       layout: post
-      comments: true    # Enable comments in posts.
+      comments: false    # Enable comments in posts.
       toc: true         # Display TOC column in posts.
       # DO NOT modify the following parameter unless you are confident enough
       # to update the code of all other post links in this project.
