@@ -1,7 +1,7 @@
 ---
 title: 환경변수 설정 및 주소 구하기
 author : IND2X
-date : 2019-07-08
+date : 2019-07-08 +0900
 categories: [Hacking, System]
 tags: [Linux, BOF, 환경변수]
 ---

@@ -1,7 +1,7 @@
 ---
 title : Linux Stack Memory Protection and bypass
 author : IND2X
-date : 2019-07-16
+date : 2019-07-16 +0900
 categories : [Hacking, System]
 tags : [스택 메모리 보호기법]
 ---

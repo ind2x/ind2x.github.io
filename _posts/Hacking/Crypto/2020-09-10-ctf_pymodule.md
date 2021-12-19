@@ -1,7 +1,7 @@
 ---
 title : CTF python modules
 author : IND2X
-date : 2020-09-10
+date : 2020-09-10 +0900
 categories : [Hacking, Python]
 tags : [module 정리]
 ---

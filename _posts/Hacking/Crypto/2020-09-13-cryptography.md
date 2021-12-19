@@ -1,7 +1,7 @@
 ---
 title : 암호 정리
 author : IND2X
-date : 2020-09-13
+date : 2020-09-13 +0900
 categories : [Hacking, Crypto]
 tags : [Crypto]
 ---

@@ -1,7 +1,7 @@
 ---
 title : HTTP Response Splitting and CRLF
 author : IND2X
-date : 2020-06-13
+date : 2020-06-13 +0900
 categories : [Hacking, Web]
 tags : [HTTP Response Splitting]
 ---

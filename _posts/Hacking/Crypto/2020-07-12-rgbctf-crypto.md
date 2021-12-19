@@ -1,7 +1,7 @@
 ---
 title : rgbCTF Crypto writeup 보고 공부
 author : IND2X
-date : 2020-07-12
+date : 2020-07-12 +0900
 categories : [Hacking, Crypto]
 tags : [rgbCTF]
 ---

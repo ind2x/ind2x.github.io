@@ -1,7 +1,7 @@
 ---
 title : rgbCTF Reversing Writeup
 author : IND2X
-date : 2020-07-12
+date : 2020-07-12 +0900
 categories : [Hacking, Reversing]
 tags : [rgbCTF]
 ---

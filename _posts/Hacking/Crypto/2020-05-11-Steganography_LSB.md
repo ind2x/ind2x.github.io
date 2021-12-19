@@ -1,7 +1,7 @@
 ---
 title : Steganography
 author : IND2X
-date : 2020-05-11
+date : 2020-05-11 +0900
 categories : [Hacking, Crypto]
 tags : [Steganography]
 ---

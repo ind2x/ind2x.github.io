@@ -1,8 +1,8 @@
 ---
 title : SQL injection 공격 기법
 author : IND2X
-date : 2020-01-08
-categories : [Hacking, Web]
+date : 2020-01-08 +0900
+categories : [Hacking, Web] 
 tags : [SQL injection]
 ---
 

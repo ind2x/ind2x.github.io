@@ -1,7 +1,7 @@
 ---
 title : 쉘코드 만들기
 author : IND2X
-date : 2019-07-16
+date : 2019-07-16 +0900
 categories : [Hacking, System]
 tags : [BOF, shellcode 만들기]
 ---

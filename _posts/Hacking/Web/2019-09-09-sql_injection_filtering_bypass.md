@@ -1,7 +1,7 @@
 ---
 title : SQL injection 필터링 우회
 author : IND2X
-date : 2019-09-09
+date : 2019-09-09 +0900
 categories : [Hacking, Web]
 tags : [SQL injection]
 ---
