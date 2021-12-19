@@ -1,12 +1,7 @@
 ---
 title : "Wechall - Regex 1~4"
-excerpt : "Training, Regex"
-toc: true
-toc_sticky: true
-categories :
-  - Wechall
-tags :
-  - Regexp
+categories : [Wargame, Wechall]
+tags: [regexp]
 ---
 
 ## 참고

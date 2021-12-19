@@ -1,10 +1,6 @@
 ---
 title : "Wechall - Prime Factory"
-excerpt : "Training, Math"
-toc: true
-toc_sticky: true
-categories :
-  - Wechall
+categories : [Wargame, Wechall]
 ---
 
 ## Prime Factory

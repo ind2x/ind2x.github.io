@@ -1,12 +1,7 @@
 ---
 title : "Websec - Level 28"
-excerpt : "Websec Level 28 - Babysteps"
-toc : true
-toc_sticky: true
-categories:
-  - Websec
-tags:
-  - race condition
+categories : [Wargame, Websec]
+tags: [race condition]
 ---
 
 ## Level 28

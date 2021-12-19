@@ -1,10 +1,6 @@
 ---
 title : "LOS Lv.28 frankenstein"
-excerpt : "LOS Lv.28 frankenstein"
-toc: true
-toc_sticky: true
-categories :
-  - rubiya
+categories : [Wargame, rubiya]
 ---
 
 

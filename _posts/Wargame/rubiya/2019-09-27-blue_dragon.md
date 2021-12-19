@@ -1,10 +1,7 @@
 ---
 title : "LOS Lv.27 blue_dragon"
-excerpt : "Time based sql injection"
-toc: true
-toc_sticky: true
-categories :
-  - rubiya
+categories : [Wargame, rubiya]
+tags: [Time Based SQLi]
 ---
 
 

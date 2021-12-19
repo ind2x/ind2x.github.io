@@ -1,10 +1,6 @@
 ---
 title : "LOS Lv.40 poltergeist"
-excerpt : "sqlite information_schema : sqlite_master"
-toc: true
-toc_sticky: true
-categories :
-  - rubiya
+categories : [Wargame, rubiya]
 ---
 
 ## poltergeist

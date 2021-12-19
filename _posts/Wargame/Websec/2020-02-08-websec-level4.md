@@ -1,12 +1,7 @@
 ---
 title : "Websec - Level 4"
-excerpt : "Websec - Level 4 Babysteps"
-toc : true
-toc_sticky : true
-categories :
-  - Websec
-tags :
-  - PHP object injection
+categories : [Wargame, Websec]
+tags : [PHP object injection]
 ---
 
 ## Level 4

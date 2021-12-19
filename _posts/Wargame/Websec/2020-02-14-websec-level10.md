@@ -1,13 +1,7 @@
 ---
 title : "Websec - Level 10 (풀이봄)"
-excerpt : "Websec - Easy Level 10"
-toc: true
-toc_sticky: true
-categories:
-  - Websec
-tags:
-  - type juggling
-  - magic hash
+categories : [Wargame, Websec]
+tags: [type juggling, magic hash]
 ---
 
 ## Level 10

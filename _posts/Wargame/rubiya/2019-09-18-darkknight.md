@@ -1,10 +1,6 @@
 ---
 title : "LOS Lv.12 darkknight"
-excerpt : "LOS Lv.12 "
-toc: true
-toc_sticky: true
-categories :
-  - rubiya
+categories : [Wargame, rubiya]
 ---
 
 

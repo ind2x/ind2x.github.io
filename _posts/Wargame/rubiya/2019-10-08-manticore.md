@@ -1,10 +1,6 @@
 ---
 title : "LOS Lv.38 manticore (풀이 봄)"
-excerpt : "LOS Lv.38 manticore (풀이 봄)"
-toc: true
-toc_sticky: true
-categories :
-  - rubiya
+categories : [Wargame, rubiya]
 ---
 
 ## manticore

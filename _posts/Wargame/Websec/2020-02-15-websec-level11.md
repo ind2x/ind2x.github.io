@@ -1,12 +1,7 @@
 ---
 title : "Websec - Level 11"
-excerpt : "Websec - Easy Level 11"
-toc: true
-toc_sticky: true
-categories:
-  - Websec
-tags:
-  - SQLi
+categories : [Wargame, Websec]
+tags: [SQLi]
 ---
 
 ## Level 11

@@ -1,10 +1,6 @@
 ---
 title : "Wechall - Caesar I"
-excerpt : "Crypto, Training"
-toc: true
-toc_sticky: true
-categories :
-  - Wechall
+categories : [Wargame, Wechall]
 ---
 
 ## Crypto - Caesar I

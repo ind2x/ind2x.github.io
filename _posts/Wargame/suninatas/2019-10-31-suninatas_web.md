@@ -1,10 +1,6 @@
 ---
 title : "Suninatas Web"
-excerpt : "Suninatas Web 1~8, 22, 23"
-toc: true
-toc_sticky: true
-categories :
-  - Suninatas
+categories : [Wargame, Suninatas]
 ---
 
 ## level 1 

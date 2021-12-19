@@ -1,12 +1,7 @@
 ---
 title : "Wechall - Register Globals"
-excerpt : "Exploit, PHP, Training"
-toc: true
-toc_sticky: true
-categories :
-  - Wechall
-tags :
-  - PHP register_globals
+categories : [Wargame, Wechall]
+tags : [PHP register_globals]
 ---
 
 ## Register Globals

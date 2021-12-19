@@ -1,10 +1,7 @@
 ---
 title : "LOS Lv.21 iron_golem"
-excerpt : "Error Based Blind SQL Injection"
-toc: true
-toc_sticky: true
-categories :
-  - rubiya
+categories : [Wargame, rubiya]
+tags : [Error Based Blind SQL Injection]
 ---
 
 

@@ -1,14 +1,7 @@
 ---
 title : "Wechall - Limited Access"
-excerpt : "Exploit, HTTP"
-toc: true
-toc_sticky: true
-categories :
-  - Wechall
-tags :
-  - .htaccess
-  - Apache Authentication
-  - Javascript XMLHttpRequest
+categories : [Wargame, Wechall]
+tags : [.htaccess, Apache Authentication, Javascript XMLHttpRequest]
 ---
 
 ## Limited Access

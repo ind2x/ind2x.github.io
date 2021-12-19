@@ -1,10 +1,6 @@
 ---
 title : "LOS Lv.17 zombie_assassin"
-excerpt : "LOS Lv.17 zombie_assassin"
-toc: true
-toc_sticky: true
-categories :
-  - rubiya
+categories : [Wargame, rubiya]
 ---
 
 

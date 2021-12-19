@@ -1,12 +1,7 @@
 ---
 title : "Websec - Level 2"
-excerpt : "Websec Level 2 - Easy"
-toc : true
-toc_sticky: true
-categories:
-  - Websec
-tags:
-  - sql injection
+categories : [Wargame, Websec]
+tags: [SQLi]
 ---
 
 ## Level 2

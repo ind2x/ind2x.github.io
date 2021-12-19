@@ -1,12 +1,7 @@
 ---
 title : "Wechall - PHP LFI"
-excerpt : "Exploit, PHP, Training"
-toc: true
-toc_sticky: true
-categories :
-  - Wechall
-tags :
-  - LFI
+categories : [Wargame, Wechall]
+tags: [LFI]
 ---
 
 ## LFI

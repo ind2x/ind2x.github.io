@@ -1,10 +1,6 @@
 ---
 title : "LOS Lv.25 green_dragon"
-excerpt : "union select 사용"
-toc: true
-toc_sticky: true
-categories :
-  - rubiya
+categories : [Wargame, rubiya]
 ---
 
 

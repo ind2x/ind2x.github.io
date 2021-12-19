@@ -1,10 +1,6 @@
 ---
 title : "LOS Lv.37 chupacabra"
-excerpt : "sqlite"
-toc: true
-toc_sticky: true
-categories :
-  - rubiya
+categories : [Wargame, rubiya]
 ---
 
 ## chupacabra

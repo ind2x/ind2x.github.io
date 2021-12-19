@@ -1,12 +1,7 @@
 ---
 title : "Websec - Level 17"
-excerpt : "Websec Level 17 - Babysteps"
-toc : true
-toc_sticky: true
-categories:
-  - Websec
-tags:
-  - PHP loose comparison vulnerability
+categories : [Wargame, Websec]
+tags: [PHP loose comparison vuln]
 ---
 
 ## Level 17

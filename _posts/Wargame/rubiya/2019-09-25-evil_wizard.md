@@ -1,10 +1,6 @@
 ---
 title : "LOS Lv.24 evil_wizard"
-excerpt : "LOS Lv.24 evil_wizard"
-toc: true
-toc_sticky: true
-categories :
-  - rubiya
+categories : [Wargame, rubiya]
 ---
 
 

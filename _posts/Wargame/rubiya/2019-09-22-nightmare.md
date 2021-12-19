@@ -1,12 +1,7 @@
 ---
 title : "LOS Lv.18 nightmare (답지 봄)"
-excerpt : "type juggling"
-toc: true
-toc_sticky: true
-categories :
-  - rubiya
-tags :
-  - type juggling
+categories : [Wargame, rubiya]
+tags : [type juggling]
 ---
 
 

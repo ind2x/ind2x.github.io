@@ -1,12 +1,7 @@
 ---
 title : "LOS Lv.30 ouroboros (풀이 봄)"
-excerpt : "quine sql injection"
-toc: true
-toc_sticky: true
-categories :
-  - rubiya
-tags :
-  - quine sql injection
+categories : [Wargame, rubiya]
+tags : [quine sql injection]
 ---
 
 

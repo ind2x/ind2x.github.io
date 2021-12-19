@@ -1,12 +1,7 @@
 ---
 title : "Websec - Level 25"
-excerpt : "Websec Level 25 - Babysteps"
-toc : true
-toc_sticky: true
-categories:
-  - Websec
-tags:
-  - parse_url() vulnerability
+categories : [Wargame, Websec]
+tags: [parse_url() vuln]
 ---
 
 ## Level 25

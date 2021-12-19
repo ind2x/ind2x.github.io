@@ -1,12 +1,7 @@
 ---
 title : "Websec - Level 1"
-excerpt : "Websec - Level 1 Babysteps"
-toc : true
-toc_sticky : true
-categories :
-  - Websec
-tags :
-  - sql injection
+categories : [Wargame, Websec]
+tags : [SQLi]
 ---
 ## Level 1
 ```php

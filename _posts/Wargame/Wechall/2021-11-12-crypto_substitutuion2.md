@@ -1,10 +1,6 @@
 ---
 title : "Wechall - Substitution II"
-excerpt : "Crypto, Training"
-toc: true
-toc_sticky: true
-categories :
-  - Wechall
+categories : [Wargame, Wechall]
 ---
 
 ## Crypto - Substitution II

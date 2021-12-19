@@ -1,10 +1,6 @@
 ---
 title : "LOS Lv.26 red_dragon (풀이 봄)"
-excerpt : "LOS Lv.26 red_dragon"
-toc: true
-toc_sticky: true
-categories :
-  - rubiya
+categories : [Wargame, rubiya]
 ---
 
 

@@ -1,10 +1,6 @@
 ---
 title : "Wechall - Programming 1"
-excerpt : "Training, Coding"
-toc: true
-toc_sticky: true
-categories :
-  - Wechall
+categories : [Wargame, Wechall]
 ---
 
 ## Programming 1

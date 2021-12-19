@@ -1,12 +1,7 @@
 ---
 title : "Websec - Level 8"
-excerpt : "Websec Level 8 - Easy"
-toc : true
-toc_sticky: true
-categories:
-  - Websec
-tags:
-  - LFI using PHP injected GIF
+categories : [Wargame, Websec]
+tags: [LFI using PHP injected GIF]
 ---
 
 ## Level 8
