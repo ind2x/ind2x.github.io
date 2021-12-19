@@ -1,7 +1,7 @@
 ---
-title : Houseplant CTF Beginner Solution
-categories : [Hacking, Crypto]
-tags : [Houseplant CTF]
+title: Houseplant CTF Beginner Solution
+categories: [Hacking,CTF]
+tags: [Houseplant CTF,Crypto]
 ---
 
 ## 1. Tool
