@@ -585,7 +585,7 @@ public class tough
                 thefinalflag = thefinalflag.substring(0,p) + (char)((int)(thefinalflag.charAt(p)+10)) + thefinalflag.substring(p+1);
             }
         }
-        return thefinalflag.equals("ì¨ ¢«¢¥Ç©© ÂëÏãÒËãhÔÊ");
+        return thefinalflag.equals("ì¨ ¢«¢¥Ç©© ÂëÏãÒËãhÔÊ");
     }
     public static void createMap(HashMap owo, String input, boolean uwu){
         if(uwu){
