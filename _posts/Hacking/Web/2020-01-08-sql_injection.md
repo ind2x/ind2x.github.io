@@ -1,12 +1,9 @@
 ---
-title : "SQL injection 공격 기법"
-excerpt : "SQL injection attacks"
-toc : true
-toc_sticky : true
-categories :
-  - Web
-tags :
-  - SQL injection
+title : SQL injection 공격 기법
+author : IND2X
+date : 2020-01-08
+categories : [Hacking, Web]
+tags : [SQL injection]
 ---
 
 ## 공격기법 종류

@@ -1,13 +1,9 @@
 ---
-title : "쉘코드 만들기"
-excerpt : "쉘코드 만들기"
-toc : true
-toc_sticky : true
-categories :
-  - System
-  - BOF
-tags :
-  - shellcode 만들기
+title : 쉘코드 만들기
+author : IND2X
+date : 2019-07-16
+categories : [Hacking, System]
+tags : [BOF, shellcode 만들기]
 ---
 
 ## system call

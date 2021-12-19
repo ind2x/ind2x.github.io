@@ -1,14 +1,9 @@
 ---
-title: "환경변수 설정 및 주소 구하기"
-excerpt: "환경변수 설정 및 주소 구하기"
-toc: true
-toc_sticky: true
-categories:
-  - System
-  - Linux
-  - BOF
-tags:
-  - 환경변수
+title: 환경변수 설정 및 주소 구하기
+author : IND2X
+date : 2019-07-08
+categories: [Hacking, System]
+tags: [Linux, BOF, 환경변수]
 ---
 
 ## 1. 환경변수 설정 및 해제

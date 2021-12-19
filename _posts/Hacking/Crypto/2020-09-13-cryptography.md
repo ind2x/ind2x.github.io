@@ -1,5 +1,5 @@
 ---
-title : "암호 정리"
+title : 암호 정리
 author : IND2X
 date : 2020-09-13
 categories : [Hacking, Crypto]

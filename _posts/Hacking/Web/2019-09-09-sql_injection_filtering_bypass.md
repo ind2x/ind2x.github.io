@@ -1,12 +1,9 @@
 ---
-title : "SQL injection 필터링 우회"
-excerpt : "SQL injection 필터링 우회"
-toc : true
-toc_sticky : true
-categories :
-  - Web
-tags :
-  - SQL injection
+title : SQL injection 필터링 우회
+author : IND2X
+date : 2019-09-09
+categories : [Hacking, Web]
+tags : [SQL injection]
 ---
 
 ## 공백 문자 우회

@@ -1,5 +1,5 @@
 ---
-title : "Houseplant CTF Reversing Solution"
+title : Houseplant CTF Reversing Solution
 author : IND2X
 date : 2020-04-30
 categories : [Hacking, Reversing]

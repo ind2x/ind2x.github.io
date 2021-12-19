@@ -1,12 +1,9 @@
 ---
-title : "Linux Stack Memory Protection and bypass"
-excerpt : "Linux Stack Memory Protection and bypass"
-toc : true
-toc_sticky : true
-categories :
-  - System
-tags :
-  - 스택 메모리 보호기법
+title : Linux Stack Memory Protection and bypass
+author : IND2X
+date : 2019-07-16
+categories : [Hacking, System]
+tags : [스택 메모리 보호기법]
 ---
 
 ## 1. ASLR

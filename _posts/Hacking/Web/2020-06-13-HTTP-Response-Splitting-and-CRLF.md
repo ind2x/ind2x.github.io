@@ -1,12 +1,9 @@
 ---
-title : "HTTP Response Splitting and CRLF"
-excerpt : "HTTP Response Splitting and CRLF"
-toc: true
-toc_sticky: true
-categories :
-  - Web
-tags :
-  - HTTP Response Splitting
+title : HTTP Response Splitting and CRLF
+author : IND2X
+date : 2020-06-13
+categories : [Hacking, Web]
+tags : [HTTP Response Splitting]
 ---
 
 ## 1. CRLF

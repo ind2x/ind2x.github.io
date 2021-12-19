@@ -1,5 +1,5 @@
 ---
-title : "rgbCTF Reversing Writeup"
+title : rgbCTF Reversing Writeup
 author : IND2X
 date : 2020-07-12
 categories : [Hacking, Reversing]

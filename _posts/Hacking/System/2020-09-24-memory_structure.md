@@ -1,11 +1,9 @@
 ---
-title : "메모리 구조와 함수 호출 규약"
-excerpt : "메모리 구조와 함수 호출 규약"
-toc : true
-toc_sticky : true
-categories :
-  - System
-  - Reversing
+title : 메모리 구조와 함수 호출 규약
+author : IND2X
+date : 2019-09-24
+categories : [Hacking, System]
+tags : [Reversing]
 ---
 
 # 메모리 구조
