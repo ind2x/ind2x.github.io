@@ -1,6 +1,6 @@
 ---
 title : CTF python modules
-categories : [Hacking, Python]
+categories : [Hacking, CTF]
 tags : [Module, Python]
 ---
 
