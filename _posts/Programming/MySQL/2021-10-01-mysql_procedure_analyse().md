@@ -1,7 +1,7 @@
 ---
 title : MySQL procedure analyse()
 categories: [Programming, MySQL]
-tags : [MySQL procedure analyse(), SQL Injection]
+tags : [MySQL_procedure_analyse(), SQL Injection]
 ---
 
 ## Mysql procedure analyse()
