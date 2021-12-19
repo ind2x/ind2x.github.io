@@ -1,7 +1,7 @@
 ---
 title : Houseplant CTF Crypto Solution
 categories : [Hacking, CTF]
-tags : [Houseplant CTF]
+tags : [Houseplant CTF, Crypto]
 ---
 
 ## 1. Broken Yolks 
