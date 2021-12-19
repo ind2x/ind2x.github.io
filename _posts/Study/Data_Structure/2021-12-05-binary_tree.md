@@ -1,5 +1,5 @@
 ---
-title : Data Structure : Binary Tree
+title : "Data Structure : Binary Tree"
 categories : [Study, Data Structure]
 tags : [Binary Tree, Binary Search Tree, Thread Binary Tree, Balanced Binary Search Tree, Heap]
 ---
