@@ -1,6 +1,6 @@
 ---
 title : Houseplant CTF Crypto Solution
-categories : [Hacking, Crypto]
+categories : [Hacking, CTF]
 tags : [Houseplant CTF]
 ---
 
