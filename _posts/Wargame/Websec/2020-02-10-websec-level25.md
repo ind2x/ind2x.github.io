@@ -1,7 +1,7 @@
 ---
 title : "Websec - Level 25"
 categories : [Wargame, Websec]
-tags: [parse_url() vuln]
+tags: ["parse_url() vuln"]
 ---
 
 ## Level 25

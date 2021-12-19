@@ -1,7 +1,7 @@
 ---
 title : "Websec - Level 28"
 categories : [Wargame, Websec]
-tags: [race condition]
+tags: ["race condition"]
 ---
 
 ## Level 28

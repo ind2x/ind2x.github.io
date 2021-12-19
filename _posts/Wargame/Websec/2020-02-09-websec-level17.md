@@ -1,7 +1,7 @@
 ---
 title : "Websec - Level 17"
 categories : [Wargame, Websec]
-tags: [PHP loose comparison vuln]
+tags: ["PHP loose comparison vuln"]
 ---
 
 ## Level 17

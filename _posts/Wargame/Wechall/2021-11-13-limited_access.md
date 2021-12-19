@@ -1,7 +1,7 @@
 ---
 title : "Wechall - Limited Access"
 categories : [Wargame, Wechall]
-tags : [.htaccess, Apache Authentication, Javascript XMLHttpRequest]
+tags : [".htaccess", "Apache Authentication", "Javascript XMLHttpRequest"]
 ---
 
 ## Limited Access

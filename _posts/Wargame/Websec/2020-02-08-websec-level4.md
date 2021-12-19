@@ -1,7 +1,7 @@
 ---
 title : "Websec - Level 4"
 categories : [Wargame, Websec]
-tags : [PHP object injection]
+tags : ["PHP object injection"]
 ---
 
 ## Level 4

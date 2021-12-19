@@ -1,7 +1,7 @@
 ---
 title : "Websec - Level 8"
 categories : [Wargame, Websec]
-tags: [LFI using PHP injected GIF]
+tags: ["LFI using PHP injected GIF"]
 ---
 
 ## Level 8

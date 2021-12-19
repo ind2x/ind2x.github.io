@@ -1,7 +1,7 @@
 ---
 title : "Websec - Level 10 (풀이봄)"
 categories : [Wargame, Websec]
-tags: [type juggling, magic hash]
+tags: ["type juggling", "magic hash"]
 ---
 
 ## Level 10

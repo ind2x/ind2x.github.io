@@ -1,7 +1,7 @@
 ---
 title : "Wechall - Register Globals"
 categories : [Wargame, Wechall]
-tags : [PHP register_globals]
+tags : ["PHP register_globals"]
 ---
 
 ## Register Globals
