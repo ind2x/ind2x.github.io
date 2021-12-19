@@ -1,5 +1,7 @@
 ---
 title : Houseplant CTF Beginner Solution
+author : IND2X
+date : 2020-04-27 12:09:18 +0900
 categories : [Hacking, Crypto]
 tags : [Houseplant CTF]
 ---
