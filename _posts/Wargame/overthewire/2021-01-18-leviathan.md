@@ -1,6 +1,6 @@
 ---
 title : Leviathan
-categories : [Overthewire]
+categories : [Wargame, Overthewire]
 tags : [Linux]
 ---
 
