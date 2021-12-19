@@ -40,14 +40,14 @@ public class fragile
         for(int i = 0; i < flag.length(); i++){
             theflag += (char)((int)(flag.charAt(i)) + (int)(input.charAt(i)));
         }
-        return theflag.equals("ÐdØÓ§åÍaèÒÁ¡");
+        return theflag.equals("ÐdØÓ§åÍaèÒÁ¡");
     }
 }
 ```
-```check```를 보면 입력한 값에 ```flag```값을 더한 값이 ```ÐdØÓ§åÍaèÒÁ¡```와 같으면 true를 리턴하므로 ```ÐdØÓ§åÍaèÒÁ¡```에서 ```flag```값을 뺀 값이 flag임.  
+```check```를 보면 입력한 값에 ```flag```값을 더한 값이 ```ÐdØÓ§åÍaèÒÁ¡```와 같으면 true를 리턴하므로 ```ÐdØÓ§åÍaèÒÁ¡```에서 ```flag```값을 뺀 값이 flag임.  
 ```python
 cmp1="h1_th3r3_1ts_m3"
-cmp2="ÐdØÓ§åÍaèÒÁ¡"
+cmp2="ÐdØÓ§åÍaèÒÁ¡"
 flag=""
 for i in range(0,len(cmp2)):
     flag+=chr(ord(cmp2[i])-ord(cmp1[i]))
@@ -102,7 +102,7 @@ public class breakable
         for(; i < (int)((flags.length)/2); i++){
             flags[i] = Character.toString((char)((int)(flags[i].charAt(0)) + 20));
         }
-        return theflag.equals("ÒdÝ¾¤¤¾ÙàåÐcÝÆ¥ÌÈáÏÜ¦aã");
+        return theflag.equals("ÒdÝ¾¤¤¾ÙàåÐcÝÆ¥ÌÈáÏÜ¦aã");
     }
 }
 ```
@@ -121,9 +121,9 @@ public class breakable
 
 -> theflag[14]~theflag[27]
 ```
-따라서 ```ÒdÝ¾¤¤¾ÙàåÐcÝÆ¥ÌÈáÏÜ¦aã```에서 ```i=13```까지는 ```flag[0]~flag[13]```을 빼면 ```input[2]~input[15]```까지 구할 수 있으므로, 나머지 ```input[0],input[1]```은 ```i=14, 15```에서 ```flag[2], flag[3]```을 빼면 됨. 코드를 짜면 다음과 같음.
+따라서 ```ÒdÝ¾¤¤¾ÙàåÐcÝÆ¥ÌÈáÏÜ¦aã```에서 ```i=13```까지는 ```flag[0]~flag[13]```을 빼면 ```input[2]~input[15]```까지 구할 수 있으므로, 나머지 ```input[0],input[1]```은 ```i=14, 15```에서 ```flag[2], flag[3]```을 빼면 됨. 코드를 짜면 다음과 같음.
 ```python
-cmp1="ÒdÝ¾¤¤¾ÙàåÐcÝÆ¥ÌÈáÏÜ¦aã"
+cmp1="ÒdÝ¾¤¤¾ÙàåÐcÝÆ¥ÌÈáÏÜ¦aã"
 cmp2="k33p_1t_in_pl41n"
 flag=""
 
@@ -172,7 +172,7 @@ public static boolean check(String input){
     for(; i < flag.length(); i++){
         theflag += (char)((int)(flag.charAt(i-3)) + (int)(input.charAt(i)));
     }
-    //ÒdÝ¾¤¤¾ÙàåÐcÝÆ¥ÌÈáÏÜ¦aã
+    //ÒdÝ¾¤¤¾ÙàåÐcÝÆ¥ÌÈáÏÜ¦aã
     String[] flags = theflag.split("");
     for(i=0; i < (int)((flags.length)/2); i++){
         flags[i] = Character.toString((char)((int)(flags[i].charAt(0)) + 20));
@@ -181,7 +181,7 @@ public static boolean check(String input){
     for(int k = 0; k < ((flags.length)/2); k++){
         theflag += flags[k];
     }
-    return theflag.equals("ÄÑÓ¿ÂÒêáøz§è§ñy÷¦");
+    return theflag.equals("ÄÑÓ¿ÂÒêáøz§è§ñy÷¦");
 }
 ```
 코드는 다음과 같음.  
@@ -229,13 +229,13 @@ java substring 함수
 ```
 마지막 부분은 요약하면 이렇게 됨.
 
-theflag=flags[9] ~ flags[17] + flags[0] ~ flags[8] -> ÄÑÓ¿ÂÒêá + øz§è§ñy÷¦
+theflag=flags[9] ~ flags[17] + flags[0] ~ flags[8] -> ÄÑÓ¿ÂÒêá + øz§è§ñy÷¦
 
--> 0번째부터 해주면 -> øz§è§ñy÷¦ÄÑÓ¿ÂÒêá
+-> 0번째부터 해주면 -> øz§è§ñy÷¦ÄÑÓ¿ÂÒêá
 ```
 우선 ```theflag```의 인덱스 0 ~ 8까지의 값에서 20씩 뺀 값을 구하고 위의 내용을 토대로 코드를 짜면 다음과 같음. 
 ```python
-cmp1="øz§è§ñy÷¦ÄÑÓ¿ÂÒêá"    # 순서 바꿔서 넣은 값
+cmp1="øz§è§ñy÷¦ÄÑÓ¿ÂÒêá"    # 순서 바꿔서 넣은 값
 cmp2="r34l_g4m3rs_eXclus1v3"
 flag="h0"
 
@@ -751,6 +751,3 @@ print(''.join(flag1))
 ```
 flag : rtcp{h3r3s_4_c0stly_fl4g_4you} 
 ```
-
-
-  
