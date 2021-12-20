@@ -19,6 +19,7 @@ tags : [Factorial Factorization Algorithm]
 
 마찬가지의 방법으로 b와 c 등을 구할 수 있음.
 ```
+---
 
 ## 백준 7806번 : gcd!
 ```
@@ -32,6 +33,8 @@ tags : [Factorial Factorization Algorithm]
 아래 풀이는 팩토리얼의 소인수는 구하지 않지만, k의 소인수를 구한 뒤 그 소인수들로
 팩토리얼의 소인수인지 판단 후 지수를 비교하여 지수가 더 작은 값을 gcd에 곱해주었음.
 ```
+---
+
 ```cpp
 #include <iostream>
 #include <algorithm>
@@ -86,6 +89,7 @@ int main() {
     return 0;
 }
 ```
+---
 
 ## 참고
 Link : <a href="https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=shalska1234&logNo=50087466089" target="_blank">m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=shalska1234&logNo=50087466089</a>  
