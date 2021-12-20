@@ -28,10 +28,7 @@
   --checkbox-checked-color: var(--link-color);
 
   /* Sidebar */
-  /*--sidebar-bg: rgb(2,0,36);*/ /* radial-gradient(circle, #242424 0%, #1d1f27 100%); */
-  background-image: url('/assets/img/side_bg.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+  --sidebar-bg: rgb(2,0,36); /* radial-gradient(circle, #242424 0%, #1d1f27 100%); */
   --sidebar-muted-color: #6d6c6b;
   --sidebar-active-color: rgb(255 255 255 / 80%);
   --nav-cursor-color: rgb(183, 182, 182);
