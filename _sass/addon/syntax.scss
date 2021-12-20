@@ -159,16 +159,21 @@ div {
 }
 
 .code-header {
+  
+  /*
   @extend %no-cursor;
 
   $code-header-height: 2.25rem;
-
+  */
+  
+  background: var(--code-header-bg);
   border-top-left-radius: $code-radius;
   border-top-right-radius: $code-radius;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: $code-header-height;
+  line-height: 1.85rem;
+  /* height: $code-header-height; */
 
   &::before {
     $dot-size: 0.75rem;
