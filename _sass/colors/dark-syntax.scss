@@ -69,7 +69,16 @@
   .highlight .gi { color: #a6e22e; background-color: #0b5858; } /* Generic.Inserted & Diff Inserted */
 
   /* -----  custom styles ------ */
-
+  
+  --highlight-bg-color: #252525;
+  --highlighter-rouge-color: #07a8f7;
+  --highlight-lineno-color: #6c6c6d;
+  --inline-code-bg: #272822;
+  --code-header-bg: #353535;
+  --lang-badge-color: #6c6c6d;
+  --clipboard-checked-color: #2bcc2b;
+  
+  /*
   --highlight-bg-color: #252525;
   --highlighter-rouge-color: #de6b18;
   --highlight-lineno-color: #6c6c6d;
@@ -78,11 +87,12 @@
   --code-header-muted-color: rgb(60 60 60);
   --code-header-icon-color: rgb(86 86 86);
   --clipboard-checked-color: #2bcc2b;
-
+  */
+  
   .highlight {
     .gp { color: #818c96; }
   }
-
+  
   pre { color: #bfbfbf; } /* override Bootstrap */
   kbd { background-color: black; }
 }
