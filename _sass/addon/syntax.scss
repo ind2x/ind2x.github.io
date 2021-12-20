@@ -287,6 +287,33 @@ div {
       text-transform: none;
     }
   }
+  
+  // the label block
+  span {
+    // label icon
+    i {
+      font-size: 1rem;
+      margin-right: 0.4rem;
+      color: var(--code-header-icon-color);
+
+      &.small {
+        font-size: 70%;
+      }
+    }
+
+    @at-root [file] #{&} > i {
+      position: relative;
+      top: 1px; // center the file icon
+    }
+
+    // label text
+    &::after {
+      content: attr(label-text);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--code-header-text-color);
+    }
+  }
 
   // clipboard
   button {
