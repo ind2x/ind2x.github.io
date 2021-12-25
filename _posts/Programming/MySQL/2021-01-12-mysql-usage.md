@@ -1,5 +1,5 @@
 ---
-title : MySQL 사용법 in Linux
+title : MySQL 사용법 in Linux (Incomplete)
 categories: [Programming, MySQL]
 tags : [MySQL]
 ---
