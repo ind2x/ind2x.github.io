@@ -1,5 +1,5 @@
 ---
-title : Javascript - Obfuscation 4
+title : Javascript - Obfuscation 4 (Incomplete)
 categories : [Wargame, Root-me]
 tags : [자바스크립트 난독화]
 ---
