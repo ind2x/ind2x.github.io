@@ -11,6 +11,7 @@ tags : [Longest Common Substring, LCS]
 ---
 
 ## 백준 5582 - 공통 부분 문자열
+Link : <a href="https://www.acmicpc.net/problem/5582" target="_blank">boj.kr/5582</a>
 ```cpp
 
 ```
