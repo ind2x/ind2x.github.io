@@ -13,6 +13,7 @@ tags : [Longest Common Subsequence, LCS]
 ---
 
 ## 백준 9251번 - LCS
+Link : <a href="https://www.acmicpc.net/problem/9251" target="_blank">boj.kr/9251</a>
 ```cpp
 #include <iostream>
 #include <string>
