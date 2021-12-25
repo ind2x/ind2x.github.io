@@ -8,6 +8,5 @@ tags : [Longest Incresing Subsequence, LIS]
 ```
 
 ```
-
 ---
 
