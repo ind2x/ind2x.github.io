@@ -1,5 +1,5 @@
 ---
-title : Javscript Syntax
+title : Javscript Syntax (Incomplete)
 categories: [Programming, Javascript]
 ---
 
