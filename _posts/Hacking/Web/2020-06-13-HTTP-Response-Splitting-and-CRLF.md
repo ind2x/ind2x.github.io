@@ -1,5 +1,5 @@
 ---
-title : HTTP Response Splitting and CRLF
+title : HTTP Response Splitting and CRLF (Incompleted)
 categories : [Hacking, Web]
 tags : [HTTP Response Splitting]
 ---
