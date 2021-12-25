@@ -1,5 +1,5 @@
 ---
-title : Linux Stack Memory Protection and bypass
+title : Linux Stack Memory Protection and bypass (Incomplete)
 categories : [Hacking, System]
 tags : [스택 메모리 보호기법]
 ---
