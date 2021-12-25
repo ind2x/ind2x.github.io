@@ -1,0 +1,17 @@
+---
+title : 최장 길이 부분수열 알고리즘 [Longest Common Substring]
+categories : [Programming, Algorithm]
+tags : [Longest Common Substring, LCS]
+---
+
+## Longest Common Substring
+```
+
+```
+---
+
+## 백준 5582 - 공통 부분 문자열
+```cpp
+
+```
+---
