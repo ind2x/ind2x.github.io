@@ -1,5 +1,5 @@
 ---
-title : 최장 길이 부분 수열 알고리즘 [Longest Common Subsequence]
+title : 최장 공통 부분 수열 알고리즘 [Longest Common Subsequence]
 categories : [Programming, Algorithm]
 tags : [Longest Common Subsequence, LCS]
 ---
