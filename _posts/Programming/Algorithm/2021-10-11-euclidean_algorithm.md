@@ -1,5 +1,5 @@
 ---
-title : 최대공약수, 최소공배수
+title : 최대공약수, 최소공배수 [GCD, LCM]
 categories: [Programming, Algorithm]
 tags : [유클리드, 최대공약수, 최소공배수]
 ---
