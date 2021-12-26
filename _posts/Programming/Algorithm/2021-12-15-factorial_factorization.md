@@ -1,7 +1,7 @@
 ---
 title : 팩토리얼 소인수분해 알고리즘 [Factorial Factorization Algorithm]
 categories: [Programming, Algorithm]
-tags : [Factorial Factorization Algorithm]
+tags : [Factorial Factorization Algorithm, 소인수분해, 팩토리얼 소인수분해]
 ---
 
 ## 팩토리얼 소인수분해
