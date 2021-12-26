@@ -99,7 +99,7 @@ Link : <a href="https://myjamong.tistory.com/139" target="_blank">https://myjamo
 
 ## 백준 - 1929번 : 소수 구하기
 ---
-Link : <a href="https://www.acmicpc.net/problem/1929" target="_blank">https://www.acmicpc.net/problem/1929</a>
+Link : <a href="https://www.acmicpc.net/problem/1929" target="_blank">acmicpc.net/problem/1929</a>
 ```python
 n,m=map(int, input().split())
 arr=[False,False]+[True]*m
@@ -122,6 +122,7 @@ print(eratos())
 <br>
 
 ## 백준 - 1978번 : 소수 찾기
+Link : <a href="https://www.acmicpc.net/problem/1978" target="_blank">acmicpc.net/problem/1978</a>
 ---
 ```python
 from sys import stdin
