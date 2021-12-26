@@ -71,7 +71,7 @@ tail_includes:
       {% assign author_link = site.social.links[0] %}
     {% endif %}
     
-    /*
+    <!--
     {{ site.data.locales[lang].post.written_by }}
     <em>
       {% if author_link %}
@@ -80,7 +80,7 @@ tail_includes:
         {{ author_name }}
       {% endif %}
     </em>
-    */
+    -->
     
   </div>
  
@@ -112,7 +112,7 @@ tail_includes:
       {% endif %}
 
       <!-- read time -->
-      /* {% include read-time.html content=content prompt=true %} */
+      <!-- {% include read-time.html content=content prompt=true %} -->
 
       <!-- page views -->
       {% if site.google_analytics.pv.proxy_endpoint or site.google_analytics.pv.cache_path %}
@@ -133,7 +133,7 @@ tail_includes:
   {{ content }}
 </div>
 
-/*
+<!-- 
 <div class="post-tail-wrapper text-muted">
 
   <!-- categories -->
@@ -159,7 +159,7 @@ tail_includes:
       {% endfor %}
   </div>
   {% endif %}
-*/
+-->
   
   <div class="post-tail-bottom
     d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
