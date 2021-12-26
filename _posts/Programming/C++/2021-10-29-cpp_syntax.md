@@ -61,6 +61,13 @@ while(cin >> n) {
 }
 ```
 
+## Output
+### 소수점 출력하기
+```cpp
+cout << fixed; // 원하는 자리수만큼 출력
+cout.precision(n); // n자리 만큼 소수점 출력
+```
+
 ## 변수
 ### 초기화
 ```
