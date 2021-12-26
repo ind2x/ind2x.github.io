@@ -1,7 +1,7 @@
 ---
 title : 소인수분해 알고리즘 [Factorization Algorithm]
 categories: [Programming, Algorithm]
-tags : [Factorization Algorithm]
+tags : [Factorization Algorithm, 소인수분해]
 ---
 
 ## 소인수분해
