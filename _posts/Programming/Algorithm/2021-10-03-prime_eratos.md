@@ -5,6 +5,7 @@ tags : [에라토스테네스의 체, 소수 구하기]
 ---
 
 ## 에라토스테네스의 체
+---
 ```
 특정 숫자의 배수는 소수가 아니라는 법칙에 착안하여 
 2 ~ N까지의 숫자에서 숫자들의 배수를 모두 제거한 뒤 
@@ -41,7 +42,11 @@ ex3)
 약수의 중간값(√N)을 구하여 2부터 √N 까지로 나누어서 0이 되는 값이 없으면 소수임.
 ```
 
-## 에라토스테네스의 체 
+<br>
+<br>
+
+## 에라토스테네스의 체 구현
+---
 ```python
 # k는 범위 ex) 100 보다 작은 소수 구하고자 하면 k=100
 
@@ -82,10 +87,18 @@ int main(){
 }
 ```
 
+<br>
+<br>
+
 ## 참고
+---
 Link : <a href="https://myjamong.tistory.com/139" target="_blank">https://myjamong.tistory.com/139</a>
 
+<br>
+<br>
+
 ## 백준 - 1929번 : 소수 구하기
+---
 Link : <a href="https://www.acmicpc.net/problem/1929" target="_blank">https://www.acmicpc.net/problem/1929</a>
 ```python
 n,m=map(int, input().split())
@@ -105,7 +118,11 @@ print(eratos())
 # 143012 KB / 196 ms
 ```
 
+<br>
+<br>
+
 ## 백준 - 1978번 : 소수 찾기
+---
 ```python
 from sys import stdin
 n=int(stdin.readline())
