@@ -58,8 +58,8 @@ tail_includes:
   </div>
   {% endif %}
 
-<div class="post-meta text-muted">
-  <!-- author 
+<div class="post-meta text-muted" style="margin-top : 20px;">
+<!-- author 
   <div>
     {% capture author_name %}{{ page.author.name | default: site.social.name }}{% endcapture %}
     {% assign author_link = nil %}
@@ -79,26 +79,14 @@ tail_includes:
       {% endif %}
     </em>
   </div>
-  -->
-  {% capture author_name %}{{ page.author.name | default: site.social.name }}{% endcapture %}
-  {% assign author_link = nil %}
-
-  {% if page.author.link %}
-    {% assign author_link = page.author.link %}
-  {% elsif author_name == site.social.name %}
-    {% assign author_link = site.social.links[0] %}
-  {% endif %}
-  
-  <div class="d-flex" style="margin-top : 20px;">
-      <!--
-      <em>
-        {% if author_link %}
-          <a href="{{ author_link }}">{{ author_name }}</a>
-        {% else %}
-          {{ author_name }}
-        {% endif %}
-      </em>
-      -->
+-->
+ 
+  <div class="d-flex">
+    
+      <!-- page author -->
+      <span>
+        { page.author.name | default: site.social.name }
+      </span>
     
       <!-- published date -->
       <span>
