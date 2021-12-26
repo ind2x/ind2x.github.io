@@ -86,15 +86,16 @@ tail_includes:
   <div class="d-flex">
     <div>
       <!-- author -->
-      {% capture author_name %}{{ page.author.name | default: site.social.name }}{% endcapture %}
-      {% assign author_link = nil %}
+      <div>
+        {% capture author_name %}{{ page.author.name | default: site.social.name }}{% endcapture %}
+        {% assign author_link = nil %}
 
-      {% if page.author.link %}
-        {% assign author_link = page.author.link %}
-      {% elsif author_name == site.social.name %}
-        {% assign author_link = site.social.links[0] %}
-      {% endif %}
-      
+        {% if page.author.link %}
+          {% assign author_link = page.author.link %}
+        {% elsif author_name == site.social.name %}
+          {% assign author_link = site.social.links[0] %}
+        {% endif %}
+
       <em>
         {% if author_link %}
           <a href="{{ author_link }}">{{ author_name }}</a>
@@ -102,6 +103,7 @@ tail_includes:
           {{ author_name }}
         {% endif %}
       </em>
+    </div>
       
       <!-- published date -->
       <span>
