@@ -1,7 +1,7 @@
 ---
 title : 다이나믹 프로그래밍 [Dynamic Programming]
 categories: [Programming, Algorithm]
-tags : [Dynamic Programming]
+tags : [Dynamic Programming, 다이나믹 프로그래밍, 피보나치 수열, 백준 2775번]
 ---
 
 ## Dynamic Programming
