@@ -89,10 +89,8 @@ tail_includes:
     {% assign author_link = site.social.links[0] %}
   {% endif %}
   
-  <div class="d-flex">
-      margin-top : 20px;
-    
-      <!-- author -->
+  <div class="d-flex" style="margin-top : 20px;">
+     <!--
       <em>
         {% if author_link %}
           <a href="{{ author_link }}">{{ author_name }}</a>
@@ -100,7 +98,8 @@ tail_includes:
           {{ author_name }}
         {% endif %}
       </em>
-      
+      -->
+    
       <!-- published date -->
       <span>
         {{ site.data.locales[lang].post.posted }}
@@ -115,7 +114,7 @@ tail_includes:
       </span>
       {% endif %}
 
-      <!-- read time 
+     <!-- read time 
       {% include read-time.html content=content prompt=true %}
       -->
     
