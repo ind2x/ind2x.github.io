@@ -1,10 +1,11 @@
 ---
 title: BOF - Lv.10 vampire
 categories: [Wargame, BOF]
-tags: [stack buffer overflow]
+tags: [stack buffer overflow, Incomplete]
 ---
 
-## 1. Source Code
+## vampire
+---
 ```c
 /*
         The Lord of the BOF : The Fellowship of the BOF
@@ -57,9 +58,10 @@ main(int argc, char *argv[])
                 memset(argv[i], 0, strlen(argv[i]));
 }
 ```
+<br>
+<br>
 
-## 2. Vulnerability
-
-## 3. Solution
+## Solution
+---
 
 my-pass : 
