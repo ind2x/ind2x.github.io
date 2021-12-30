@@ -1,14 +1,18 @@
 ---
 title : BOF 설정 및 레벨 설명, 쉘코드
 categories: [Wargame, BOF]
+tags: [BOF]
 ---
 
 ## 1. bof 설정 
-
+---
 설정은 여기 참고
 [https://ssaemo.tistory.com/2?category=863627](https://ssaemo.tistory.com/2?category=863627)
+<br>
+<br>
 
 ## 2. 레벨 설명
+---
 ```
 [레벨업 패스워드 확인]
 /bin/my-pass
@@ -35,9 +39,11 @@ LEVEL18 (succubus -> nightmare) : plt
 LEVEL19 (nightmare -> xavis) : fgets + destroyers
 LEVEL20 (xavis -> death_knight) : remote BOF
 ```
+<br>
+<br>
 
 ## 3. 쉘코드
-
+---
 ```
 \x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80   -->25byte
 
