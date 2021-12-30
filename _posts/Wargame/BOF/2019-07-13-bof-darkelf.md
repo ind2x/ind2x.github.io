@@ -61,6 +61,7 @@ main(int argc, char *argv[])
 <br>
 
 ## Solution
+---
 wolfman과 다른점은 코드를 보면 argv[0]의 길이가 77이어야 한다. argv[0]은 파일경로임. argv[0]을 출력해보려고 file 실행파일을 만들어서 보니 argv[0]: ./file 이라고 나옴.  
 그런데 Linux에서는 .////////file 이렇게 해도 실행이 되고 argv[0]도 그럼 .////////file 이렇게 나올거임. 이를 이용해서 문제를 해결.  
   
