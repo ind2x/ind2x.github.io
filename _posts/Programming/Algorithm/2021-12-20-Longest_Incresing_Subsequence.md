@@ -67,10 +67,8 @@ LIS인 이유는 문제 상의 위치 값을 배열로 나타내면 ```arr[1~10]
 
 ## 이분탐색을 이용한 LIS
 ---
-
-이분탐색을 이용하면 DP 실행 과정에서 만들어지는 벡터는 실제 최대 길이 증가 배열이 아닙니다.
-
-만들어지는 배열의 의미는 Vi = p번째까지 보았을 때, LIS의 길이가 i이기 위한 최소의 마지막 수 입니다.
+아래 링크에서 이분탐색 부분 확인  
+Link : <a href="https://chanhuiseok.github.io/posts/algo-49/" target="_blank">chanhuiseok.github.io/posts/algo-49/m</a>
 
 ```cpp
 // O(NlogN)
