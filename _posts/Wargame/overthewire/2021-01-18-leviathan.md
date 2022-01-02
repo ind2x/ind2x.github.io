@@ -1,7 +1,7 @@
 ---
 title : Leviathan
 categories : [Wargame, Overthewire]
-tags : [Linux]
+tags : [Linux, Incomplete]
 ---
 
 ## Leviathan
