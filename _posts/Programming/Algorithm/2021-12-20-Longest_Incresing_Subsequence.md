@@ -61,3 +61,38 @@ LIS인 이유는 문제 상의 위치 값을 배열로 나타내면 ```arr[1~10]
 따라서 ```dp[i] = i번째 전깃줄과 서로 안곂치는 전깃줄의 개수```이며 가장 긴 수열을 찾아내면 되는 것임.
 
 가장 긴 수열이라 함은 서로 안곂치는 전깃줄의 최대 개수이며 이를 전체 전깃줄의 개수에서 빼면 곧 서로 곂치는 전깃줄의 개수를 구할 수 있음.
+
+<br>
+<br>
+
+## 이분탐색을 이용한 LIS
+---
+
+이분탐색을 이용하면 DP 실행 과정에서 만들어지는 벡터는 실제 최대 길이 증가 배열이 아닙니다.
+
+만들어지는 배열의 의미는 Vi = p번째까지 보았을 때, LIS의 길이가 i이기 위한 최소의 마지막 수 입니다.
+
+```cpp
+// O(NlogN)
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+int main(){
+    ios::sync_with_stdio(0); cin.tie(0);
+    int N; cin >> N;
+    vector<int> v;
+    for(int i=0; i<N; ++i){
+        int t; cin >> t;
+        if(i==0) v.push_back(t);
+        else {
+            auto it = lower_bound(v.begin(), v.end(), t) - v.begin();
+            if(v.size()==it) v.push_back(t);
+            
+            else if(v[it]>t) v[it]=t;
+        }
+    }
+    cout << v.size() << '\n';
+}
+```
