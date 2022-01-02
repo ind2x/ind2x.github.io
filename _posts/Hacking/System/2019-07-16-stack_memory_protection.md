@@ -1,7 +1,7 @@
 ---
 title : Linux Stack Memory Protection and bypass (Incomplete)
 categories : [Hacking, System]
-tags : [스택 메모리 보호기법]
+tags : [스택 메모리 보호기법, Incomplete]
 ---
 
 ## 1. ASLR
