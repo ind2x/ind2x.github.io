@@ -1,7 +1,7 @@
 ---
 title : "Wechall - Limited Access Too [Not Solved]"
 categories : [Wargame, Wechall]
-tags : [".htaccess", "Apache Authentication", "Javascript XMLHttpRequest"]
+tags : [".htaccess", Apache Authentication, Javascript XMLHttpRequest, Incomplete]
 ---
 
 ## Limited Access Too
