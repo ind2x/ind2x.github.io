@@ -1,7 +1,7 @@
 ---
 title : HTTP Response Splitting (풀이 봄)
 categories : [Wargame, Root-me]
-tags : [HTTP Response Splitting]
+tags : [HTTP Response Splitting, Incomplete]
 ---
 
 ## HTTP Response Splitting
