@@ -1,7 +1,7 @@
 ---
 title : 암호 정리
 categories : [Hacking, Crypto]
-tags : [Crypto]
+tags : [Crypto, Incomplete]
 ---
 
 # 치환암호
