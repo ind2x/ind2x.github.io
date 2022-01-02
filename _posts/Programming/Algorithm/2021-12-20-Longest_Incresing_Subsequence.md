@@ -68,7 +68,7 @@ LIS인 이유는 문제 상의 위치 값을 배열로 나타내면 ```arr[1~10]
 ## 이분탐색을 이용한 LIS
 ---
 아래 링크에서 이분탐색 부분 확인  
-Link : <a href="https://chanhuiseok.github.io/posts/algo-49/" target="_blank">chanhuiseok.github.io/posts/algo-49/m</a>
+Link : <a href="https://jason9319.tistory.com/113" target="_blank">jason9319.tistory.com/113</a>
 
 ```cpp
 // O(NlogN)
