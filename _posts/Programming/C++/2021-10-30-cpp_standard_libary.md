@@ -5,11 +5,15 @@ tags : [C++ Standard Library]
 ---
 
 ## C++ Standard Library Docs
-Link : <a href="https://docs.microsoft.com/ko-kr/cpp/standard-library/cpp-standard-library-header-files?view=msvc-160" target="_blank">C + + 표준 라이브러리 헤더 파일</a>  
-**참고** : **<a href="https://blog.itsforme.dev/stl/" target="_blank">blog.itsforme.dev/stl{1~3}/</a>**  
+---
+Link : <a href="https://docs.microsoft.com/ko-kr/cpp/standard-library/cpp-standard-library-header-files?view=msvc-160" target="_blank">C + + 표준 라이브러리 헤더 파일</a>   
 함수, 레퍼런스 검색 : <a href="http://cplusplus.com/" target="_blank">cplusplus.com/</a>  
 
+<br>
+<br>
+
 ## string
+---
 ```cpp
 #include <string>
 
@@ -38,8 +42,11 @@ str.substr(pos,len) /* str[pos] ~ str[pos+len-1] 까지 substr */
 
 str.find(str)
 ```
+<br>
+<br>
 
 ## vector
+---
 **가변길이 배열을 사용할 수 있는 라이브러리.**
 ```cpp
 template <class Type, class Allocator = allocator<Type>>
@@ -96,7 +103,11 @@ varName[key] -> operator[], 요소 접근
 ```
 **연산자는 비교연산자만 사용 가능!!! (>, >=, <, <=, ==, !=)**
 
+<br>
+<br>
+
 ## stack
+---
 ```연산자에는 !=, <, >, <=, >=, == 이 있음.```
 ```cpp
 template <class Type, class Container= deque <Type>>
@@ -130,7 +141,11 @@ size() -> size 반환
 top() -> 젤 윗 값 반환
 ```
 
+<br>
+<br>
+
 ## queue
+---
 queue는 stack에서 몇가지만 더 추가하면 됨.
 ```cpp
 template <class Type, class Container = deque <Type>>
@@ -151,8 +166,11 @@ front() -> 첫번째 요소 반환
 ```
 queue의 연산자에는 비교연산자만 사용 가능.
 ```
+<br>
+<br>
 
 ## priority_queue (heap)
+---
 가장 큰 요소가 항상 최상위 위치에 있도록 요소를 정렬
 ```cpp
 template <
@@ -198,7 +216,11 @@ int main(){
 }
 ```
 
+<br>
+<br>
+
 ## deque
+---
 ```cpp
 template <class Type, class Allocator =allocator<Type>>
 class deque
@@ -229,7 +251,11 @@ varName.resize(size, [val]) : deque 새 크기 지정
                               val 값 지정 시 val 값 추가, 생략 시 0 추가
 ```
 
+<br>
+<br>
+
 ## pair
+---
 ```cpp
 // #include <utility> -> vector, algorithm 헤더에 추가되어 있음.
 #include <vector>
@@ -248,9 +274,13 @@ p = make_pair(make_pair(1,2), make_pair(3,4));
 cout << p.first.first << ' ' << p.first.second << ' '; // 1 2
 cout << p.second.first << ' ' << p.second.second << '\n'; // 3 4 \n
 ```
+<br>
+<br>
 
 ## heap
+---
 ### map
+---
 ```
 * 연결된 키 값을 기반으로 요소 값을 효율적으로 검색하는 다양한 크기의 컨테이너
 
@@ -340,7 +370,11 @@ var[key] -> value, operator[]
 var2 =  var -> copy, operator=
 ```
 
+<br>
+<br>
+
 ### set
+---
 ```
 * 연관된 키 값을 기준으로 하며 요소 값의 효율적인 검색을 지원하는 
   가변 크기 컨테이너인 연관 컨테이너. 
@@ -414,8 +448,13 @@ erase : O(logN)
 find : P(logN)
 ```
 
+<br>
+<br>
+
 ## algorithm
+---
 ### sort
+---
 ```cpp
 #include <algorithm>
 
@@ -446,9 +485,11 @@ bool cmp(pair<int, int> a, pair<int, int> b) {
 sort(arr, arr + N, cmp);
 sort(arr, arr + N, greater<DataType>); // greater 구조체 -> 내림차순
 ```
-
+<br>
+<br>
 
 ### binary_search, lower_bound, upper_bound
+---
 ```cpp
 #include <algorithm>
 
@@ -514,3 +555,5 @@ int main() {
     return 0;
 }
 ```
+<br>
+<br>
