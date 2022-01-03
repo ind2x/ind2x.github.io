@@ -57,7 +57,7 @@ class vector
 
 vector<DataType> varName;
 
-vector<DataType> varName(size, value) : size만큼 value로 초기화
+vector<DataType> varName(size, value) : /* size만큼 value로 초기화 */
 
 varName.size() /* 벡터 요소 개수 반환 */
 
@@ -71,35 +71,37 @@ varName.capacity() /* 벡터에 할당된 메모리 길이 */
 
 varName.resize(n) /* 벡터 길이 수정 */
 
-varName.resize(n, value) -> 벡터 길이를 n으로 수정 시 기존보다 크면
-                            추가된 요소의 초기화 값을 value로 설정
+varName.resize(n, value) -> /* 벡터 길이를 n으로 수정 시 기존보다 크면 */
+                            /* 추가된 요소의 초기화 값을 value로 설정 */
 
-varName.push_back(value); -> 벡터 마지막 원소 뒤에 삽입
+varName.push_back(value); -> /* 벡터 마지막 원소 뒤에 삽입 */
 
-varName.pop_back(value); -> 벡터 마지막 값 삭제
+varName.pop_back(value); -> /* 벡터 마지막 값 삭제 */
 
-varName.front(); -> 첫번째 원소를 참조
+varName.front(); -> /* 첫번째 원소를 참조 */
 
-varName.back(); -> 마지막 원소를 참조
+varName.back(); -> /* 마지막 원소를 참조*/ 
 
-varName.clear(); -> 모든 원소를 제거
-                 -> 메모리는 그대로(size는 줄지만 capacity는 그대로)
+varName.clear(); -> /* 모든 원소를 제거 */
+                 -> /* 메모리는 그대로(size는 줄지만 capacity는 그대로) */
 
-varName.begin() -> 첫번째 원소 idx 가리킴, iterator사용
+varName.begin() -> /* 첫번째 원소 idx 가리킴, iterator사용 */
 
-varName.end() -> 마지막 원소 다음 idx 가리킴, iterator 사용
+varName.end() -> /* 마지막 원소 다음 idx 가리킴, iterator 사용 */
 
-varName.rbegin(), rend() -> 역으로 가리킴, reverse_iterator 사용
+varName.rbegin(), rend() -> /* 역으로 가리킴, reverse_iterator 사용 */
 
-varName.empty() -> 비었으면 true, 아니면 false
+varName.empty() -> /* 비었으면 true, 아니면 false */
 
-varName.erase(position) -> position에 위치한 값 제거
+varName.erase(position) -> /* position에 위치한 값 제거 */
 
-varName.erase(first, last) -> first부터 last-1에 위치한 값 제거
+varName.erase(first, last) -> /* first부터 last-1에 위치한 값 제거 */
 
-varName.insert(position, value) -> position에 value 삽입
+varName.insert(position, value) -> /* position에 value 삽입 */
 
-varName[key] -> operator[], 요소 접근
+varName[key] -> /* operator[], 요소 접근 */
+
+varName = vector -> /* operator=, 백터의 요소를 다른 벡터의 복사본으로 변경 */
 ```
 **연산자는 비교연산자만 사용 가능!!! (>, >=, <, <=, ==, !=)**
 
