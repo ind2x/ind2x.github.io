@@ -6,6 +6,8 @@ tags : [Dynamic Programming, 다이나믹 프로그래밍, Longest Incresing Sub
 
 ## LIS (Longest Incresing Subsequence)
 ---
+Link : <a href="https://www.acmicpc.net/problem/11053" target="_blank">백준 11053번 : 가장 긴 증가하는 부분수열</a>
+
 ![image](https://user-images.githubusercontent.com/52172169/147819641-fe0332fe-ad90-4158-ae2e-4c2487435d9e.png)
 
 원소의 개수가 n개인 배열에서 값이 증가하는 부분수열 중에서 길이가 가장 긴 부분수열을 찾아내는 알고리즘. 
@@ -49,6 +51,8 @@ int main()
 <br>
 <br>
 
+Link : <a href="https://www.acmicpc.net/problem/2565" target="_blank">백준 2565번 : 전깃줄</a>
+
 ![image](https://user-images.githubusercontent.com/52172169/147863640-bee2f6c1-b208-454a-8e48-32c17d08ada8.png)
 
 이 문제가 왜 LIS 문제인지 알아야 함.
@@ -61,6 +65,12 @@ LIS인 이유는 문제 상의 위치 값을 배열로 나타내면 ```arr[1~10]
 따라서 ```dp[i] = i번째 전깃줄과 서로 안곂치는 전깃줄의 개수```이며 가장 긴 수열을 찾아내면 되는 것임.
 
 가장 긴 수열이라 함은 서로 안곂치는 전깃줄의 최대 개수이며 이를 전체 전깃줄의 개수에서 빼면 곧 서로 곂치는 전깃줄의 개수를 구할 수 있음.
+
+
+이와 동일한 문제로 <a href="https://www.acmicpc.net/problem/2352" target="_blank">2352번 : 반도체 설계</a>가 있음. 
+
+하지만 전깃줄 문제는 n의 크기가 100으로 작은편인 반면 반도체 문제는 40000으로 시간초과가 나게 될 것임.  
+이 문제는 이분 탐색을 이용해야 함.
 
 <br>
 <br>
