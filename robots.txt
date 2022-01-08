@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /privateData/
 
 Sitemap: https://ind2x.github.io/sitemap.xml
