@@ -71,3 +71,5 @@ int main() {
 ## 정리글
 ---
 Link : <a href="https://velog.io/@emplam27/알고리즘-그림으로-알아보는-LCS-알고리즘-Longest-Common-Substring와-Longest-Common-Subsequence" target="_blank">velog.io/@emplam27/</a>
+
+위 링크에서 최장 공통 부분 수열 찾는 방법에 대해서도 알려줌.
