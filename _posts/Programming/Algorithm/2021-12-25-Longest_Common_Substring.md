@@ -51,10 +51,12 @@ int main()
   cout << res << '\n';
 }
 ```
-
 <br>
 <br>
 
 ## 정리글
 ---
 Link : <a href="https://velog.io/@emplam27/알고리즘-그림으로-알아보는-LCS-알고리즘-Longest-Common-Substring와-Longest-Common-Subsequence" target="_blank">velog.io/@emplam27/</a>
+
+<br>
+<br>
