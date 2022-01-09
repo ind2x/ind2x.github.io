@@ -16,17 +16,40 @@ Link : <a href="https://www.acmicpc.net/problem/5582" target="_blank">백준 558
 
 부분 문자열에서는 같지 않을 때, ```dp[i][j]=0```이 되어야 함.
 
-|      |  A   |  C   |  A   |  Y   |  K   |  P   |
-| :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-|  C   |  0   |  1   |  1   |  1   |  1   |  1   |
-|  A   |  1   |  1   |  2   |  2   |  2   |  2   |
-|  P   |  1   |  1   |  2   |  2   |  2   |  3   |
-|  C   |  1   |  2   |  2   |  2   |  2   |  3   |
-|  A   |  1   |  2   |  3   |  3   |  3   |  3   |
-|  K   |  1   |  2   |  3   |  3   |  4   |  4   |
+같을 때는 부분 수열과 동일하게 이전까지 구한 부분 문자열에 현재 문자를 추가해줘야 함.
 
+따라서 아래와 같이 점화식이 구성이 됨.
+```
+arr[i] == arr[j] => dp[i][j]=dp[i-1][j-1]+1
+
+arr[i] != arr[j] => dp[i][j]=0
+```
+
+문제 코드는 아래와 같음.
 ```cpp
+#include <iostream>
+#include <algorithm>
+#include <string>
+using namespace std;
 
+int dp[4001][4001];
+
+int main()
+{
+  string s1, s2; cin >> s1 >> s2;
+  int i=0, j=0, res=-1;
+  
+  for(; i<s1.size(); i++)
+  {
+      for(j=0; j<s2.size(); j++)
+      {
+          if(s1[i] == s2[j]) { dp[i+1][j+1]=dp[i][j]+1; }
+          else { dp[i+1][j+1]=0; }
+          res=max(res,dp[i+1][j+1]);
+      }
+  }
+  cout << res << '\n';
+}
 ```
 
 <br>
