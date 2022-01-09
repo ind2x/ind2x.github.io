@@ -10,7 +10,7 @@ tags : [다이나믹 프로그래밍, Dynamic Programming, Longest Common Subseq
 
 ![image](https://user-images.githubusercontent.com/52172169/148669138-47614794-7851-44cb-8e8b-5006e5faa0fa.png)
 
-ACAYKP, CAPCAK이 있을 때 최장 공통 부분 문자열을 구하려면 다음과 같다. 
+ACAYKP, CAPCAK이 있을 때 최장 공통 부분 수열을 구하려면 다음과 같다. 
 
 |      |  A   |  C   |  A   |  Y   |  K   |  P   |
 | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
