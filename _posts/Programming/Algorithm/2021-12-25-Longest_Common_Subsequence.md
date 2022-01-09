@@ -1,7 +1,7 @@
 ---
 title : 최장 공통 부분 수열 알고리즘 [Longest Common Subsequence]
 categories : [Programming, Algorithm]
-tags : [Longest Common Subsequence, LCS]
+tags : [다이나믹 프로그래밍, Dynamic Programming, Longest Common Subsequence, LCS, 최장 공통 부분 수열]
 ---
 
 
