@@ -6,14 +6,11 @@ tags : [Longest Common Subsequence, LCS]
 
 
 ## LCS (Longest Common Subsequence)
-```
-
-```
-
 ---
 
-## 백준 9251번 - LCS
-Link : <a href="https://www.acmicpc.net/problem/9251" target="_blank">boj.kr/9251</a>
+![image](https://user-images.githubusercontent.com/52172169/148669138-47614794-7851-44cb-8e8b-5006e5faa0fa.png)
+
+Link : <a href="https://www.acmicpc.net/problem/9251" target="_blank">백준 9251번 : LCS</a>
 ```cpp
 #include <iostream>
 #include <string>
@@ -41,4 +38,4 @@ int main() {
 	return 0;
 }
 ```
----
+
