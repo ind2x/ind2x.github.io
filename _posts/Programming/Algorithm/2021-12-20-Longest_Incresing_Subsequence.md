@@ -12,10 +12,20 @@ Link : <a href="https://www.acmicpc.net/problem/11053" target="_blank">백준 11
 
 원소의 개수가 n개인 배열에서 값이 증가하는 부분수열 중에서 길이가 가장 긴 부분수열을 찾아내는 알고리즘. 
 
+증가 부분수열을 찾는 기준은 ```i번째 원소를 기준으로 i번째 원소보다 앞에 있는 원소들 중 arr[i]보다 작은 값의 개수+1```임.
+
+여기서 중복되는 값을 카운트하면 안됨. 
+
+따라서 요점은 arr[i]보다 작은 값 arr[j]를 찾았다면  
+j번째 원소까지 고려했을때 만들어진 증가 부분수열 중에서 i번째 원소를 추가했을 때 더 길이가 긴 수열을 dp[i]의 값으로 정하는 것임.
+
+```
 dp[i] = i번째 원소보다 앞에 있는 원소 중 arr[i]보다 작은 원소의 개수 + 1
 
-```if arr[i] > arr[j]``` => ```dp[i]=max(dp[i], dp[j]+1)```, j <= i
+if arr[i] > arr[j] => dp[i]=max(dp[i], dp[j]+1), j <= i
+```
 
+아래는 LIS 코드를 구현한 것임.
 ```cpp
 #include <iostream>
 using namespace std;
