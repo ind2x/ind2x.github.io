@@ -114,3 +114,55 @@ int main(){
     cout << v.size() << '\n';
 }
 ```
+
+**이분탐색을 이용해 플레5 LIS 문제를 풀 수 있음.**
+
+![image](https://user-images.githubusercontent.com/52172169/149131095-79387964-caa1-437a-a477-890b2e92a458.png)
+
+Link : <a href="https://www.acmicpc.net/problem/14003" target="_blank">백준 14003번 : 가장 긴 증가하는 부분수열 5</a>
+
+```cpp
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+int arr[1000001];
+int lis[1000001];
+vector<int> dp, ans;
+
+int main()
+{
+    int n; cin >> n;
+    for(int i=1; i<=n; i++) { cin >> arr[i]; }
+    for(int i=1; i<=n; i++)
+    {
+        lis[i]=1;
+        if(i == 1) { dp.push_back(arr[i]); }
+        auto p = lower_bound(dp.begin(), dp.end(), arr[i]) - dp.begin();
+        if(p == dp.size()) 
+        { 
+            dp.push_back(arr[i]); 
+            lis[i]=p+1;
+        }
+        else if(dp[p] > arr[i]) 
+        { 
+            dp[p] = arr[i]; 
+            lis[i]=p+1;
+        }
+    }
+    cout << dp.size() << '\n';
+    int maxv=dp.size();
+    for(int i=n; i>=1; i--)
+    {
+        if(maxv == lis[i])
+        {
+            ans.push_back(arr[i]);
+            maxv--;
+        }
+        if(maxv == 0) { break; }
+    }
+    for(int i=ans.size()-1; i>=0; i--) { cout << ans[i] << ' '; }
+    cout << '\n';
+}
+```
