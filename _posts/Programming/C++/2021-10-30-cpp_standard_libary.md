@@ -76,7 +76,7 @@ varName.resize(n, value) -> /* 벡터 길이를 n으로 수정 시 기존보다 
 
 varName.push_back(value); -> /* 벡터 마지막 원소 뒤에 삽입 */
 
-varName.pop_back(value); -> /* 벡터 마지막 값 삭제 */
+varName.pop_back(); -> /* 벡터 마지막 값 삭제 */
 
 varName.front(); -> /* 첫번째 원소를 참조 */
 
@@ -93,9 +93,11 @@ varName.rbegin(), rend() -> /* 역으로 가리킴, reverse_iterator 사용 */
 
 varName.empty() -> /* 비었으면 true, 아니면 false */
 
-varName.erase(position) -> /* position에 위치한 값 제거 */
+varName.erase(position) -> /* position에 위치한 값 제거 */ 
+                          /* const_iterator position */
 
 varName.erase(first, last) -> /* first부터 last-1에 위치한 값 제거 */
+                              /* const_iterator first, last */
 
 varName.insert(position, value) -> /* position에 value 삽입 */
 
