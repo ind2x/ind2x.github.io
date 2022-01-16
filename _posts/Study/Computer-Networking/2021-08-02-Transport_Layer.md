@@ -1,10 +1,12 @@
 ---
 title : "Transport Layer"
 categories : [Study, Computer Network]
-tags : [Transport Layer]
+tags : [Transport Layer, Incomplete]
 ---
 
-# 트랜스포트 계층 서비스 및 개요
+## 트랜스포트 계층 서비스 및 개요
+<hr style="border-top: 1px solid";>
+
 ```
 트랜스포트 계층 프로토콜은 서로 다른 호스트에서 동작하는 애플리케이션 프로세스들 간의
 논리적 통신(logical communication)을 제공함.
