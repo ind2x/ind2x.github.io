@@ -5,10 +5,10 @@ tags : [sort algorithm, 정렬, selection sort, bubble sort, quick sort, insert 
 ---
 
 ## 정렬의 이해
-<hr style="border-top: 1px solid";>
+<hr style="border-top: 1px solid;">
 
 <br>
 <br>
-<hr style="border: 1px solid";>
+<hr style="border: 1px solid;">
 <br>
 <br>
