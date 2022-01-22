@@ -174,7 +174,7 @@ tags : [Binary Tree, Binary Search Tree, Thread Binary Tree, Balanced Binary Sea
 
 1. 모든 원소는 서로 다른 유일한 키(고유 값)를 갖는다.
 
-2. 원쪽 서브 트리에 있는 원소들의 키는 그 루트의 키보다 작다.
+2. 쪽 서브 트리에 있는 원소들의 키는 그 루트의 키보다 작다.
 
 3. 오른쪽 서브 트리에 있는 원소들의 키는 그 루트의 키보다 크다.
 
