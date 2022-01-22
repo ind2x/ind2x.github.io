@@ -258,7 +258,7 @@ tags : [Binary Tree, Binary Search Tree, Thread Binary Tree, Balanced Binary Sea
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbGCGUR%2FbtqEZLX05Dn%2FmuggX4SxwWpYnwOl0I1AD1%2Fimg.png">
 
 
-노드 삭제 후 자식 노드로 그 자지를 채우면 됨.
+노드 삭제 후 자식 노드로 그 자리를 채우면 됨.
 
 <br>
 <br>
