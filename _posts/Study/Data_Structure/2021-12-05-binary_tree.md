@@ -266,11 +266,6 @@ tags : [Binary Tree, Binary Search Tree, Thread Binary Tree, Balanced Binary Sea
 #### 삭제할 노드가 자식 노드를 두 개 가진 경우
 <hr style="border-top: 1px solid;">
 
-<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbO1HWe%2FbtqE0aQAGzA%2Fn8a1RER4gLRx2DDKy9kqg0%2Fimg.png">
-
-<img src="https://mblogthumb-phinf.pstatic.net/20161012_139/mklmkl2001_14762575571986rTN2_PNG/3.PNG?type=w800">
-
-
 이 경우에는 직계 자식 노드뿐만 아니라 트리 전체에서 찾아야 함.
 
 노드가 삭제되고 자손 노드에게 자리를 물려준 후에도 BST가 유지가 되어야 함.
@@ -283,6 +278,13 @@ tags : [Binary Tree, Binary Search Tree, Thread Binary Tree, Balanced Binary Sea
 2. 오른쪽 서브 트리에 있는 노드들의 키 값보다 작아야 함.
 
 따라서 삭제 노드의 왼쪽 서브 트리에서 가장 큰 자식 노드로 채우거나, 오른쪽 서브 트리에서 가장 작은 자식 노드로 채워야 함.
+
+<br>
+
+![image](https://user-images.githubusercontent.com/52172169/150636318-89c11e63-b774-4242-89ab-f3886342e06a.png)
+
+![image](https://user-images.githubusercontent.com/52172169/150636306-ec6b6cd9-f272-4a83-b26e-c30134b5d5f8.png)
+
 
 <br>
 <br>
