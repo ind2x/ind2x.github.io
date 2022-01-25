@@ -2,6 +2,7 @@
 title: Linux 명령어
 categories: [Programming, Linux]
 tags : [Linux Commands]
+toc: false
 ---
 
 ## Linux Cheat Sheet
