@@ -21,12 +21,12 @@ tags : [Reversing, 메모리 구조]
 
 각 세그먼트는 특정 목적을 위해 존재하는 메모리의 특수 부분을 나타냄.
 
-![image](https://user-images.githubusercontent.com/52172169/150964745-39235646-c6c0-4c64-b2ea-174be524bf44.png)
+<br>
+
+![image](https://user-images.githubusercontent.com/52172169/150983550-051a5ad5-922d-4a87-b452-fe349836cbb9.png)
 
 <br>
-<br>
 <hr style="border: 2px solid;">
-<br>
 <br>
 
 ### Code 영역
@@ -93,7 +93,7 @@ Stack 영역은 다른 영역과 달리 위에서 아래로 쌓이는 구조로 
 ## 스택의 이해
 <hr style="border-top: 1px solid;">
 
-![image](https://user-images.githubusercontent.com/52172169/150964767-61a5506f-c2dc-48b0-b134-3f3684441770.png)
+![image](https://user-images.githubusercontent.com/52172169/150983517-d413e21e-1cfb-4a9c-8ce7-8595b8a4a153.png)
 
 <br>
 
@@ -146,9 +146,8 @@ Stack 영역은 다른 영역과 달리 위에서 아래로 쌓이는 구조로 
 
 호출된 함수에서 또 다른 함수가 호출되면 추가적인 스택 프레임이 생성되는 과정이 반복됨.
 
-
-
 <br>
+
 ```c
 int main()
 {
