@@ -23,7 +23,7 @@ tags : [Reversing, 메모리 구조]
 
 <br>
 
-![image](https://user-images.githubusercontent.com/52172169/150983550-051a5ad5-922d-4a87-b452-fe349836cbb9.png)
+![image](https://user-images.githubusercontent.com/52172169/150986658-6a568bf0-61ca-4095-9c57-7624e4796f5d.png)
 
 <br>
 <hr style="border: 2px solid;">
@@ -93,7 +93,7 @@ Stack 영역은 다른 영역과 달리 위에서 아래로 쌓이는 구조로 
 ## 스택의 이해
 <hr style="border-top: 1px solid;">
 
-![image](https://user-images.githubusercontent.com/52172169/150983517-d413e21e-1cfb-4a9c-8ce7-8595b8a4a153.png)
+![image](https://user-images.githubusercontent.com/52172169/150986693-9bdb1da0-5e6e-496f-acf9-adc44308cbaa.png)
 
 <br>
 
