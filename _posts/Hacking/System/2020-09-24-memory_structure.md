@@ -7,7 +7,17 @@ tags : [Reversing, 메모리 구조]
 ## 메모리 구조
 <hr style="border-top: 1px solid;">
 
-컴파일된 프로그램 메모리는 텍스트<sub>text</sub>, 데이터<sub>data</sub>, bss<sub>block staretd symbol</sub>, 힙<sub>heap</sub>, 스택<sub>stack</sub>의 5개 세그먼트로 나뉨.
+컴파일된 프로그램 메모리는 5개의 세그먼트로 나뉘어짐.
+
++ 텍스트<sub>text</sub>
+
++ 데이터<sub>data</sub>
+
++ bss<sub>block staretd symbol</sub>
+
++ 힙<sub>heap</sub>
+
++ 스택<sub>stack</sub>
 
 각 세그먼트는 특정 목적을 위해 존재하는 메모리의 특수 부분을 나타냄.
 
