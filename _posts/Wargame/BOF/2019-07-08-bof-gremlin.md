@@ -68,7 +68,9 @@ int main(int argc, char *argv[])
 
 환경변수를 이용하면 변수의 주소를 리턴주소로 설정하면 되므로 버퍼의 크기에 상관없이 쉘코드를 실행시킬 수 있다. 
 
-Link : <a href="https://ind2x.github.io/posts/environment_value/" target="_blank">환경변수 설정 및 주소 구하기</a>
++ Link : <a href="https://ind2x.github.io/posts/environment_value/" target="_blank">환경변수 설정 및 주소 구하기</a>
+
+**추가로 환경변수의 주소를 구할 때, 프로그램 이름의 길이가 환경변수 위치에 영향을 준다. 따라서 cobolt가 6글자이므로 프로그램 명을 6글자로 설정하는 것이 좋다.**
 
 <br>
 
