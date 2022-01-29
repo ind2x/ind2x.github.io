@@ -122,7 +122,7 @@ Auth key : ???
 
 2가지가 있음. 
 
-1.Burp suite로 User-Agent 변환  
+1. Burp suite로 User-Agent 변환  
 
 2. 개발자도구로 Network condition에서 User-Agent 변환 
 
