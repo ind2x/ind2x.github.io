@@ -332,6 +332,9 @@ nmap 더 자세히 : <a href="https://ind2x.github.io/posts/nmap/" target="_blan
 <hr style="border-top: 1px solid;">
 
 NSE : Nmap Script Engine
+
+<br>
+
 ```
 nmap -p<port> --script=http-backup-finder --script-args http-backup-finder.url=url host
 
@@ -344,6 +347,12 @@ PORT   STATE SERVICE REASON
 |   http://example.com/index.php~
 |_  http://example.com/help.bak
 ```
+
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
 
 ## nc [option] [hostname] [port] : TCP ,UDP 프로토콜을 사용하는 네트워크 연결에서 데이터를 읽고 쓰는 명령어.
 <hr style="border-top: 1px solid;">
@@ -369,6 +378,12 @@ option
 -z : 연결을 이루기위한 최소한의 데이터 외에는 보내지 않게 하는 옵션
 ```
 
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
+
 ## ltrace [option ...] [command [arg ...]]
 <hr style="border-top: 1px solid;">
 
@@ -381,3 +396,9 @@ u USERNAME         run command with the userid, groupid of username.
 
 -s STRSIZE          specify the maximum string size to print.
 ```
+
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
