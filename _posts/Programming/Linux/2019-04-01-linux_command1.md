@@ -1,257 +1,501 @@
 ---
-title: Linux 명령어
+title: Linux 명령어 1
 categories: [Programming, Linux]
-tags : [Linux Commands]
-toc_sticky: false
+tags : [Linux Commands, Linux Cheat Sheet]
 ---
 
 ## Linux Cheat Sheet
-<a href="http://www.seren.net/documentation/unix%20utilities/Linux_Cheat_Sheet.htm" target="_blank">http://www.seren.net/documentation/unix%20utilities/Linux_Cheat_Sheet.htm</a>
+<hr style="border-top: 1px solid;">
+
+<a href="http://www.seren.net/documentation/unix%20utilities/Linux_Cheat_Sheet.htm" target="_blank">www.seren.net/documentation/unix%20utilities/Linux_Cheat_Sheet.htm</a>
+
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
 
 ## 리눅스 기초 특수기호 문자
-```
-‘>‘ 표준 출력 리다이렉션 : 출력 방향을 바꿈.
+<hr style="border-top: 1px solid;">
 
-ex) ls > test.txt : 출력 내용을 test.txt 파일에 기록한다. //파일이 없다면 생성
-ex) cat > test.txt : 내용을 입력한 후 입력 내용을 test.txt 파일에 저장한다.
++ ```>```
 
-‘>>’ 이면 ls >> test.txt는 출력된 내용을 test.txt 파일에 덧붙인다. //이어쓰기
-```
-```
-‘<’ : 표준 입력
+  표준 출력 리다이렉션으로 출력 방향을 바꿈.
 
-ex) cat < test.txt : test.txt.의 내용을 cat 명령어로 읽은 뒤 화면에 출력
-```
-```
-'*' : 모든 문자와 일치하는 와일드 카드 문자
+  + ```ls > test.txt```
+    
+    출력 내용을 ```test.txt``` 파일에 기록한다. 만약 파일이 없다면 생성한다.
+  
+  + ```cat > test.txt```
+  
+    내용을 입력한 후 입력 내용을 ```test.txt``` 파일에 저장한다.
 
-ex) ls tes* : test.txt, tes/123.txt 등 일치하는 모든 파일/디렉토리(내부)가 출력된다.
+  + ```>>``` 이면 ```ls >> test.txt```는 출력된 내용을 test.txt 파일에 덧붙인다. -> 이어쓰기
 
-(+) 파일 이름 자리에 *를 적으면 모든 파일을 뜻함. ex) ls * ==> 모든 파일 보기
+<br>
 
-'?' : 하나의 문자와 일치하는 와일드 카드 문자 //길이가 1인 임의의 문자
-      ex) ls test.tx? : test.txt, test.txx 등 하나 일치한 파일을 출력한다.
++ ```<```
 
-‘[ ]‘ 은 괄호 안에 포함된 문자 중 하나라도 일치되는 문자.
-ex) ls a[13] : a1 , a3 파일 목록 출력.
+  표준 입력
 
-; : 명령어 분리자로 한 명령 라인에서 여러 가지 명령을 수행할 수 있도록 함
+  + ```cat < test.txt```
+  
+    ```test.txt```의 내용을 cat 명령어로 읽은 뒤 화면에 출력
 
-$ : 쉘 변수를 가르킴. 
+<br>
 
-` : 명령 대체, 큰따옴표안에서 명령어들이 문자열이 아닌 명령어의 역할을 하도록 해준다.
++ ```*```
 
-| : 앞에 나온 명령어의 표준 출력 결과를 다음 명령어의 표준 입력으로 사용
-    ex) ls –al | grep ^d : 모든 파일을 출력하는데 d로 시작하는 파일을 출력.
+  모든 문자와 일치하는 와일드 카드 문자
 
-‘ ’ , “ ” : 문자를 감싸서 문자열로 만들고 문자열 안의 특수기호 기능도 없앰.
+  + ```ls tes*```
+  
+    ```test.txt, tes/123.txt``` 등 일치하는 모든 파일, 디렉토리(내부)가 출력된다.
 
-작은따옴표는 모든 특수기호, 큰 따옴표는 $,`,\를 제외한 모든 특수기호를 일반문자로 간주
+  + 파일 이름 자리에 ```*```를 적으면 모든 파일을 뜻함. 
+  
+    ls * ==> 모든 파일 보기
 
-` ` 또는 $() : 셸은 ` ` 또는 $()로 감싸인 문자열을 명령으로 해석하게 함.
+<br>
 
-\ : 특수문자 앞에 사용, 특수 문자의 효과를 없애고 일반 문자처럼 처리함.
-```
++ ```?```
+
+  하나의 문자와 일치하는 와일드 카드 문자 //길이가 1인 임의의 문자
+   
+  + ```ls test.tx?```
+  
+    ```test.txt, test.txx``` 등 하나 일치한 파일을 출력한다.
+
+<br>
+
++ ```[ ]```
+
+  대괄호 안에 포함된 문자 중 하나라도 일치되는 문자.
+
+  + ```ls a[13]``` : a1 , a3 파일 목록 출력.
+
+<br>
+
++ ```;```
+
+  명령어 분리자로 한 명령 라인에서 여러 가지 명령을 수행할 수 있도록 함
+
+<br>
+
++ ```$```
+
+  쉘 변수를 가르킴. 
+
+<br>
+
++ <code>`</code>
+
+  명령 대체, 큰따옴표안에서 명령어들이 문자열이 아닌 명령어의 역할을 하도록 해준다.
+
+<br>
+
++ ```|```
+
+  앞에 나온 명령어의 표준 출력 결과를 다음 명령어의 표준 입력으로 사용
+   
+  + ```ls –al | grep ^d```
+  
+    모든 파일을 출력하는데 d로 시작하는 파일을 출력.
+
+<br>
+
++ ```' ' , " "```
+
+  문자를 감싸서 문자열로 만들고 문자열 안의 특수기호 기능도 없앰.
+
+  작은따옴표는 모든 특수기호, 큰 따옴표는 $,`,\를 제외한 모든 특수기호를 일반문자로 간주
+
+<br>
+
++ <code>\` \` 또는 $()</code>
+
+  shell은 <code>\` \` 또는 $()</code>로 감싸인 문자열을 명령으로 해석하게 함.
+
+<br>
+
++ ```\```
+
+  특수문자 앞에 사용, 특수 문자의 효과를 없애고 일반 문자처럼 처리함.
+
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
 
 ## 기본 명령어
-```
-rm-rf <file name> : file 강제 삭제
+<hr style="border-top: 1px solid;">
 
-cp-r(복사할 디렉터리 경로) (붙여넣을 디렉터리 경로) //파일 복사임.
++ ```rm-rf <file name>``` : file 강제 삭제
 
-==> cp-r /etc/mnt
++ cp-r (복사할 디렉터리 경로) (붙여넣을 디렉터리 경로) //파일 복사임.
+
+<br>
 
 디렉터리 생성
 
-mkdir –p dir01/dir02 : dir01 디렉터리 안에 dir02디렉터리까지 같이 생성
++ ```mkdir –p dir01/dir02```
 
-bin : binary파일 , 실행 파일
-mnt,tmp: 임시파일
-etc : 설정파일
-```
-```
+  dir01 디렉터리 안에 dir02디렉터리까지 같이 생성
+
+<br>
+
+파일 종류
+
++ bin : binary파일 , 실행 파일
+
++ mnt,tmp: 임시파일
+
++ etc : 설정파일
+
+<br>
+
 파일색깔
 
-파랑: 디렉터리 파일
-하양: 일반 파일
-하늘색: 링크파일
-녹색: 실행파일
-빨강: 압축파일
-```
-```
++ 파랑: 디렉터리 파일
+
++ 하양: 일반 파일
+
++ 하늘색: 링크파일
+
++ 녹색: 실행파일
+
++ 빨강: 압축파일
+
+<br>
+
 파일 경로문자
 
-최상위 디렉터리 : /
-현재 디렉터리 : .
-상위 디렉터리: ..
-홈 디렉터리(root): ~
-이전 작업 디렉터리 : -
-```
-```
-경로 구분자 /
++ 최상위 디렉터리 : /
+
++ 현재 디렉터리 : .
+
++ 상위 디렉터리: ..
+
++ 홈 디렉터리(root): ~
+
++ 이전 작업 디렉터리 : -
+
+<br>
+
+경로 구분자 ```/```
 
 디렉터리 사이에서는 ‘/’로 경로 구분
 
-ex) 현재 root 디렉터리의 하위에 있는 log디렉터리로 이동 시
++ ex) 현재 root 디렉터리의 하위에 있는 log 디렉터리로 이동 시
 
-==> cd log : 하위 디렉터리로 이동 시 에는 / 생략 가능
-==> cd ./log: 현재 디렉터리 안의 log 디렉터리로 이동
-==> cd log/ : 파일 이름뒤에 /붙으면 그 파일은 디렉터리란 의미
-==> cd ./log/
-==> cd /root/log
+  + ```cd log``` : 하위 디렉터리로 이동 시 에는 / 생략 가능
+
+  + ```cd ./log``` : 현재 디렉터리 안의 log 디렉터리로 이동
+
+  + ```cd log/``` : 파일 이름뒤에 /붙으면 그 파일은 디렉터리란 의미
+  
+  + ```cd ./log/```
+
+  + ```cd /root/log```
 
 다 같은 의미임.
-```
+
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
 
 ## man [명령어]
-```
+<hr style="border-top: 1px solid;">
+
 페이지 이동 방법
 
-e : 한줄 앞으로
++ e : 한줄 앞으로
 
-y : 한줄 뒤로
++ y : 한줄 뒤로
 
-f : 한 window 앞으로
++ f : 한 window 앞으로
 
-b : 한 window 뒤로
++ b : 한 window 뒤로
 
-d : half window 앞으로
++ d : half window 앞으로
 
-u : half window 뒤로
++ u : half window 뒤로
 
-이전 페이지 : page up 키 or b
++ 이전 페이지 : page up 키 or b
 
-다음 페이지 : page down 키 or 스페이스바
++ 다음 페이지 : page down 키 or 스페이스바
 
-종료 : q
-```
++ 종료 : q
+
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
 
 ## vi
-```
-vi -r file : 손상된 파일 회복
+<hr style="border-top: 1px solid;">
 
-shift + ↑, ↓ : 한 페이지 앞, 뒤로 이동 
-Ctrl + i, b : 한 화면 위, 아래로 이동
-Ctrl + d, u : 반 화면 위, 아래로 이동
-Ctrl + e, y : 한 줄씩 위, 아래로 이동
++ ```vi -r file``` : 손상된 파일 회복
 
-dw : 한 단어 삭제
-dd : 한 줄 삭제 ex) 5dd : 커서가 있는 라인부터 5개의 라인 삭제
-u : 바로 전에 수행한 명령 취소
-:5, 10o : 5~10번째 행 삭제
+<br>
 
-/name : name 문자열 찾기 
-n : 다음 name으로 이동
-N : 이전 name으로 이동
++ shift + ↑, ↓ : 한 페이지 앞, 뒤로 이동 
 
-:w : 저장
-:wq : 저장하고 vi 종료
-:w file : file에 저장
-:q! : 저장하지 않고 vi 강제 종료
-:r file : file의 내용을 현재 커서가 있는 줄에 출력
-:e file : 현재 화면을 지우고 file의 내용 출력
-:5,10 w file : 5 ~ 10줄까지의 내용을 file에 저장
++ Ctrl + i, b : 한 화면 위, 아래로 이동
 
-:set nu : 행 번호 보여주기
-:set nonu : 행 번호 보여주기 취소
-. : 바로 전에 실행한 명령어 재실행
++ Ctrl + d, u : 반 화면 위, 아래로 이동
 
-:![command] -> vi에서 쉘 실행 ex)!ifconfig
-:set shell ? -> shell 확인
-:set shell=/usr/bin/bash : bash로 쉘 변경 
-:!/bin/bash -> bash 쉘 실행
-```
++ Ctrl + e, y : 한 줄씩 위, 아래로 이동
+
+<br>
+
++ dw : 한 단어 삭제
+
++ dd : 한 줄 삭제 
+
+  ex) 5dd : 커서가 있는 라인부터 5개의 라인 삭제
+
++ u : 바로 전에 수행한 명령 취소
+
++ ```:5, 10``` : 5~10번째 행 삭제
+
++ /name : name 문자열 찾기 
+
++ n : 다음 name으로 이동
+
++ N : 이전 name으로 이동
+
+<br>
+
++ :w : 저장
+
++ :wq : 저장하고 vi 종료
+
++ :w file : file에 저장
+
++ :q! : 저장하지 않고 vi 강제 종료
+
++ :r file : file의 내용을 현재 커서가 있는 줄에 출력
+
++ :e file : 현재 화면을 지우고 file의 내용 출력
+
++ :5,10 w file : 5 ~ 10줄까지의 내용을 file에 저장
+
+<br>
+
++ :set nu : 행 번호 보여주기
+
++ :set nonu : 행 번호 보여주기 취소
+
++ . : 바로 전에 실행한 명령어 재실행
+
+<br>
+
++ :![command] -> vi에서 쉘 실행 ex)!ifconfig
+
++ :set shell ? -> shell 확인
+
++ :set shell=/usr/bin/bash : bash로 쉘 변경 
+
++ :!/bin/bash -> bash 쉘 실행
+
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
 
 ## head
-```
-head [option] [file] : 파일의 앞부분부터 확인, 기본적으로 처음 10행 출력
+<hr style="border-top: 1px solid;">
 
-option :
++ ```head [option] [file]```
 
--n  : 앞부분에서 num행까지 출력
--c : num byte까지의 내용 출력
-```
+  파일의 앞부분부터 확인, 기본적으로 처음 10행 출력
+
+<br>
+
++ option
+
+  + -n  : 앞부분에서 num행까지 출력
+
+  + -c : num byte까지의 내용 출력
+
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
 
 ## tail
-```
-tail [option] [file] : 파일의 끝부분부터 확인, 기본적으로 마지막 10행을 출력
+<hr style="border-top: 1px solid;">
 
-option :
++ ```tail [option] [file]```
 
--n : 앞부분에서 num행까지 출력
--c : num byte까지의 내용 출력
-```
+  파일의 끝부분부터 확인, 기본적으로 마지막 10행을 출력
+
+<br>
+
++ option
+
+  + -n : 앞부분에서 num행까지 출력
+  
+  + -c : num byte까지의 내용 출력
+
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
 
 ## more [file]
-```
-파일을 읽어 화면에 화면 단위로 끊어서 출력하는 명령어. 
-이 명령어는 위에서 아래 방향으로만 출력 되어서 지나간 내용을 다시 볼 수 없는 단점이 있음.
+<hr style="border-top: 1px solid;">
 
-단축키
++ 파일을 읽어 화면에 화면 단위로 끊어서 출력하는 명령어. 
 
-h : more 명령어 상태에서 사용할 수 있는 키 도움말 확인
-q : more 명령어 종료
-enter : 1행 아래로 이동
-space bar, f : 아래로 1페이지 이동
-b : 1페이지씩 앞으로 이동
-= : 현재 위치의 행번호 표시
-/문자열 : 지정한 문자열 검색
-n:/문자열 : 지정한 문자열을 차례대로 검색
-v : 현재 열려있는 파일의 현재 위치에서 vi 편집기 실행
-```
++ 이 명령어는 위에서 아래 방향으로만 출력 되어서 지나간 내용을 다시 볼 수 없는 단점이 있음.
+
+<br>
+
++ 단축키
+
+  + h : more 명령어 상태에서 사용할 수 있는 키 도움말 확인
+
+  + q : more 명령어 종료
+
+  + enter : 1행 아래로 이동
+
+  + space bar, f : 아래로 1페이지 이동
+
+  + b : 1페이지씩 앞으로 이동
+
+  + = : 현재 위치의 행번호 표시
+
+  + /문자열 : 지정한 문자열 검색
+
+  + ```n:/문자열``` : 지정한 문자열을 차례대로 검색
+
+  + v : 현재 열려있는 파일의 현재 위치에서 vi 편집기 실행
+
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
 
 ## cut [option] [file] : 데이터의 열을 추출
+<hr style="border-top: 1px solid;">
+
++ option :
+
+  + -b : 바이트를 기준으로 추출
+
+  + -c : 문자수를 기준으로 추출
+
+  + -f : 파일의 필드를 기준으로 추출
+
+  + -d : 필드 구분자를 지정, 기본 필드 구분은 TAB
+
+<br>
+
 ```
-option :
-
--b : 바이트를 기준으로 추출
--c : 문자수를 기준으로 추출
--f : 파일의 필드를 기준으로 추출
--d : 필드 구분자를 지정, 기본 필드 구분은 TAB
-
-ex) /etc/passwd
-root:x:0:0:root:/root:/bin/bash
+ex) 
+/etc/passwd에 root:x:0:0:root:/root:/bin/bash가 있을 때
 
 -> cut -f 1 -d ':' /etc/passwd : ':'을 필드 구분자로 지정, 1열의 내용을 추출 -> root
+
 -> cut -f 3-4 -d ':' /etc/passwd : , 3, 4열의 내용을 추출 -> 0:0
 ```
 
-## diff [option] [file1] [file2] : 파일 비교 명령어
-```
-options :
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
 
--c : 두 파일간의 차이점 출력
--d : 두 파일간의 차이점을 상세하게 출력
--r : 두 디렉토리간의 차이점 출력, 서브디렉토리 까지 비교
--i : 대소문자의 차이 무시
--w : 모든 공백 차이무시
--s : 두 파일이 같을 때 알림
--u : 두 파일의 변경되는 부분과 변경되는 부분의 근처의 내용도 출력
+## diff [option] [file1] [file2] : 파일 비교 명령어
+<hr style="border-top: 1px solid;">
+
++ options :
+
+  + -c : 두 파일간의 차이점 출력
+  
+  + -d : 두 파일간의 차이점을 상세하게 출력
+
+  + -r : 두 디렉토리간의 차이점 출력, 서브디렉토리 까지 비교
+
+  + -i : 대소문자의 차이 무시
+
+  + -w : 모든 공백 차이무시
+
+  + -s : 두 파일이 같을 때 알림
+
+  + -u : 두 파일의 변경되는 부분과 변경되는 부분의 근처의 내용도 출력
+
+<br>
 
 diff3은 3개 파일 비교
-```
+
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
+
 ## ln -> Link파일을 만드는 명령어
+<hr style="border-top: 1px solid;">
+
 참고 : <a href="https://jhnyang.tistory.com/269" target="_blank">참고</a>
 
-### 심볼릭 링크
-```
-단순히 원본파일을 가리키도록 링크만 시킨 것으로 윈도우에서 '바로가기' 같은 것.
-원본파일의 크기와 무관, 원본이 삭제되면 링크파일은 깜박거리면서 원본이 없다는 것을 알려줌.
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
 
-Usage : ln -s 원본 대상
-ex) ln -s test t -> test라는 파일의 심볼릭 링크 파일인 t를 현재 디렉토리에 생성
-```
+### 심볼릭 링크
+<hr style="border-top: 1px solid;">
+
++ 단순히 원본파일을 가리키도록 링크만 시킨 것으로 윈도우에서 '바로가기' 같은 것.
+
++ 원본파일의 크기와 무관, 원본이 삭제되면 링크파일은 깜박거리면서 원본이 없다는 것을 알려줌.
+
+<br>
+
++ Usage : ```ln -s 원본 대상```
+
+  + ```ln -s test t```
+  
+    test라는 파일의 심볼릭 링크 파일인 t를 현재 디렉토리에 생성
+
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
 
 ### 하드링크
-```
-원본과 동일한 내용의 다른 파일을 생성 -> 원본 삭제되어도 링크 파일 속 데이터는 존재함.
-원본이 변경되면 링크파일도 변경됨.
+<hr style="border-top: 1px solid;">
 
-Usage : ln [option] 원본파일 대상파일(디렉토리) 
-ex) ln test.txt t -> test.txt라는 파일의 하드링크 파일인 t를 현재 디렉토리에 생성
-```
++ 원본과 동일한 내용의 다른 파일을 생성 -> 원본 삭제되어도 링크 파일 속 데이터는 존재함.
+
++ 원본이 변경되면 링크파일도 변경됨.
+
+<br>
+
++ Usage : ```ln [option]``` 원본파일 대상파일(디렉토리) 
+
+  + ```ln test.txt t```
+    
+    test.txt라는 파일의 하드링크 파일인 t를 현재 디렉토리에 생성
+
 
 ## chmod : 파일권한 변경
+<hr style="border-top: 1px solid;">
+
 ```
 쉽게 쓰려면 8진수 형태, 복잡하지만 기능적으로 좋은 심볼릭 형태가 있음.
 
@@ -263,6 +507,8 @@ option :
 ```
 
 ### 8진수 형태 --> chmod [option] [8진수 퍼미션] [filename]
+<hr style="border-top: 1px solid;">
+
 ```
 777 : 일반적인 8진수 형태
 4777 : SetUid 설정, 4000을 더한다.
@@ -290,6 +536,8 @@ test.cnf 파일에 대해 user, group, other 모두 rx의 권한을 주고 w의 
 ```
 
 ### 심볼릭 형태 --> chmod [option] [대상] (+/-/=) (rwx) (filename)
+<hr style="border-top: 1px solid;">
+
 ```
 대상
 u : user의 권한
@@ -312,6 +560,8 @@ other은 r권한만 부여 한다
 ```
 
 ## chown : 파일과 그룹의 소유권을 변경하는 명령어
+<hr style="border-top: 1px solid;">
+
 ```
 Usage : chown [option] [변경할 유저명 : 변경할 그룹명] [파일명]
 
@@ -341,6 +591,8 @@ example
 ```
 
 ## find [path] [option] [action] : 주어진 조건을 검색하여 파일을 찾는다.
+<hr style="border-top: 1px solid;">
+
 ```
 -name [name] : 지정된 이름의 파일을 찾는다.
 
@@ -389,6 +641,8 @@ example
 ```
 
 ## grep [option] ‘pattern’ [file] : ‘pattern’을 file안에서 (옵션에 맞춰) 검색한다.
+<hr style="border-top: 1px solid;">
+
 ```
 -A(-B) num : 일치하는 줄 아래에(위에) 지정한 줄 수(num)만큼의 내용을 더 보여준다.
 
@@ -456,6 +710,8 @@ ex) grep ^\.    : 마침표로 시작되는 줄을 찾음
 ```
 
 ## sort [option] [file] : 텍스트 파일의 내용을 알파벳 순서대로 정렬
+<hr style="border-top: 1px solid;">
+
 ```
 -b : 공백을 무시한다.
 
@@ -479,6 +735,8 @@ ex) grep ^\.    : 마침표로 시작되는 줄을 찾음
 ```
 
 ## uniq [option] : 중복되는 행을 필터링
+<hr style="border-top: 1px solid;">
+
 ```
 -c : 행이 얼마나 중복되는지 계산하여 출력
 
@@ -496,6 +754,8 @@ ex) cat data.txt | sort | uniq –u
 ```
 
 ## file [option] [file name] : 파일의 종류와 파일 정보 출력
+<hr style="border-top: 1px solid;">
+
 ```
 -b : 지정한 파일명은 출력하지 않고 파일의 유형만 출력
 
