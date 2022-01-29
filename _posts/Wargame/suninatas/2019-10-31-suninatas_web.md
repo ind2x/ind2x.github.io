@@ -179,8 +179,10 @@ function PASS(n)
 
 <br>
 
-```> console.log(PASS(12342046413275659))```
-  ```9c43c20c```
+```console
+> console.log(PASS(12342046413275659))
+9c43c20c
+```
 
 <br>
 
@@ -224,7 +226,9 @@ function fnChk_pwd() {
 
 ```szPwd```를 가져오므로 sql injection으로 szPwd 값을 찾으면 됨. 필터링 되는 값들을 제외하고 넣으면 아래와 같음.
 
-input : ```' or 1>0 -- x```
++ input : ```' or 1>0 -- x```
+
+<br>
 
 성공하면 ```auth_key is suninatastopofworld!```이 뜸.
 
@@ -482,6 +486,7 @@ print("Password : {}".format(pw_left+pw_right)) # V3RYHARDSQLI
 
 인증이 안되어서 소문자로 인증하니 성공.
 
+<br>
 
 + Authkey : v3ryhardsqli
 
