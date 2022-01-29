@@ -1,5 +1,5 @@
 ---
-title : 리눅스 명령어 2
+title : Linux 명령어 2
 categories: [Programming, Linux]
 tags: [Linux Commands]
 ---
@@ -7,11 +7,9 @@ tags: [Linux Commands]
 ## file [option] [file name] : 파일의 종류와 파일 정보 출력
 <hr style="border-top: 1px solid;">
 
-```
--b : 지정한 파일명은 출력하지 않고 파일의 유형만 출력
++ -b : 지정한 파일명은 출력하지 않고 파일의 유형만 출력
 
--z : 압축된 파일 내용을 출력 
-```
++ -z : 압축된 파일 내용을 출력 
 
 <br>
 <br>
@@ -22,13 +20,11 @@ tags: [Linux Commands]
 ## strings [option] [file name] : 오브젝트 또는 이진 파일에서 인쇄 가능한 문자열 출력(ASCII 문자를 출력)
 <hr style="border-top: 1px solid;">
 
-``` 
--a : 전체 파일 검색
++ -a : 전체 파일 검색
 
--f : 각 문자열 이전에 파일명 출력
++ -f : 각 문자열 이전에 파일명 출력
 
--min-len (-n min-len) : 최소 문자열 길이 지정, 기본 값은 4 , 즉 4줄 이상의 문자열부터 출력하는거임.
-```
++ ```-min-len (-n min-len)``` : 최소 문자열 길이 지정, 기본 값은 4 , 즉 4줄 이상의 문자열부터 출력하는거임.
 
 <br>
 <br>
@@ -39,30 +35,45 @@ tags: [Linux Commands]
 ## xxd [option] [file name] : 리눅스 shell 상에서 binary파일의 hexdump를 보여주는 명령어
 <hr style="border-top: 1px solid;">
 
-```
--b : dump가 2진수로 출력
++ -b : dump가 2진수로 출력
 
--c [개수] : 행 당 출력되는 열 개수 설정
+<br>
 
-ex) 4byte 씩 100의 길이만큼 출력 ==> xxd –g 4 –l 100 [filename]
++ -c [개수] : 행 당 출력되는 열 개수 설정
 
--g [개수] : 출력시 group으로 묶이는 byte의 개수 설정
+  ex) 4byte 씩 100의 길이만큼 출력 ==> ```xxd –g 4 –l 100 [filename]```
 
-ex) 8열로 마지막 80byte만 출력 ==> xxd –c 8 –s –80 [filename]
+<br>
 
--l [길이] : 설정된 길이 byte만큼 출력
++ -g [개수] : 출력시 group으로 묶이는 byte의 개수 설정
 
--p : 주소나 ASCII 없이 hexdump 내용만 출력
+  ex) 8열로 마지막 80byte만 출력 ==> ```xxd –c 8 –s –80 [filename]```
 
--u : hex를 소문자 대신 대문자로 출력
+<br>
 
--s [+][-] 위치 : 설정된 위치에서부터 hexdump함. 
-                 +위치는 파일의 시작에서부터, -위치는 파일의 끝에서 부터임. 
++ -l [길이] : 설정된 길이 byte만큼 출력
 
--i : C언어에서 사용할 수 있는 형식으로 출력
+<br>
 
--r : 반대로 hexdump를 binary파일로 바꾸어 출력
-```
++ -p : 주소나 ASCII 없이 hexdump 내용만 출력
+
+<br>
+
++ -u : hex를 소문자 대신 대문자로 출력
+
+<br>
+
++ -s [+][-] 위치 : 설정된 위치에서부터 hexdump함. 
+  
+  ```+```위치는 파일의 시작에서부터, -위치는 파일의 끝에서 부터임. 
+
+<br>
+
++ -i : C언어에서 사용할 수 있는 형식으로 출력
+
+<br>
+
++ -r : 반대로 hexdump를 binary파일로 바꾸어 출력
 
 <br>
 <br>
@@ -81,25 +92,35 @@ ex) 8열로 마지막 80byte만 출력 ==> xxd –c 8 –s –80 [filename]
 
   + -i : 디코딩 할 때, 알파벳 아닌 문자 무시하고 출력
 
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
 
-## tr [option] string : 특정 문자를 삭제 혹은 변환한다.
+## tr [option] string1 [string2] : 특정 문자를 삭제 혹은 변환한다.
 <hr style="border-top: 1px solid;">
 
-```
-ex) cat data.txt | tr ‘a-z’ ‘A-Z’ : data.txt를 출력할 때 소문자를 대문자로 변경
++ ```ex) cat data.txt | tr ‘a-z’ ‘A-Z’```
 
--d : 문자열 에서 지정한 문자를 삭제 후 출력
+  data.txt를 출력할 때 소문자를 대문자로 변경
 
-ex) cat data.txt | tr –d ‘0-9’ : data.txt를 출력할 때 숫자 삭제
+<br>
 
--s : 문자열 에서 반복되는 문자 삭제
++ -d : 문자열1에서 지정한 문자를 삭제 후 출력
 
--s 옵션으로 반복되는 문자열 없을 때 원하는 문자로 대체 가능
+  + ```ex) cat data.txt | tr –d ‘0-9’``` : data.txt를 출력할 때 숫자 삭제
 
-ex) data.txt에서 공백이 하나밖에 없는 상황(반복 안되는 상황)
+<br>
 
-==> cat data.txt | tr –s ‘ ’ ‘@’ : data.txt.를 출력할 때 공백을 @로 대체
-```
++ -s : 문자열2에서 반복되는 문자 삭제
+
+  -s 옵션으로 반복되는 문자열 없을 때 원하는 문자로 대체 가능
+
+      ex) data.txt에서 공백이 하나밖에 없는 상황(반복 안되는 상황)
+
+      ==> ```cat data.txt | tr –s ‘ ’ ‘@’``` : data.txt.를 출력할 때 공백을 @로 대체
+
 
 <br>
 <br>
@@ -110,15 +131,17 @@ ex) data.txt에서 공백이 하나밖에 없는 상황(반복 안되는 상황)
 ## bzip2 [option] [file name], 확장자는 .bz2
 <hr style="border-top: 1px solid;">
 
-```
--c : 압축되거나 압축을 푼 파일을 표준출력한다.
 
--z : 파일을 압축 , 압축 시 file name.bz2 파일 생성됨.
++ -c : 압축되거나 압축을 푼 파일을 표준출력한다.
 
--d : 압축해제 
++ -z : 파일을 압축 , 압축 시 file name.bz2 파일 생성됨.
 
-bzcat : 압축 파일 내용 보기 명령어임. (옵션아님)
-```
++ -d : 압축해제 
+
+<br>
+
++ bzcat : 압축 파일 내용 보기 명령어. (옵션아님)
+
 
 <br>
 <br>
@@ -129,13 +152,13 @@ bzcat : 압축 파일 내용 보기 명령어임. (옵션아님)
 ## gzip [option] [file name] , 확장자는 .gz
 <hr style="border-top: 1px solid;">
 
-```
--d : 압축 해제
 
--r : 개별적으로 압축 
++ -d : 압축 해제
 
--rd : 개별적으로 압축 해제
-```
++ -r : 개별적으로 압축 
+
++ -rd : 개별적으로 압축 해제
+
 
 <br>
 <br>
@@ -188,7 +211,6 @@ bzcat : 압축 파일 내용 보기 명령어임. (옵션아님)
   
   + ```ssh <name>@<host address>``` -> 사용자 ID 추가
 
-
 <br>
       
 + options :
@@ -203,19 +225,13 @@ bzcat : 압축 파일 내용 보기 명령어임. (옵션아님)
 
   + -F configfile : 사용자 설정 파일(configfile)을 지정한다.
 
-  + -I smartcard_device 
-  
-    사용자 개인 RSA 키를 저장할 디바이스(smartcard_device)를 지정한다.
+  + -I smartcard_device : 사용자 개인 RSA 키를 저장할 디바이스(smartcard_device)를 지정한다.
 
-  + -i identity_file
-  
-    RSA 나 DSA 인증 파일(indentity_file)을 지정한다.
+  + -i identity_file : RSA 나 DSA 인증 파일(indentity_file)을 지정한다.
   
     ex) ```ssh –i sshkey.private bandit14@localhost```
 
-  + -l [login_name] [IP] == name@IP
-  
-    서버에 로그인할 사용자(login_name)를 지정한다.
+  + -l [login_name] [IP] == ```name@IP``` : 서버에 로그인할 사용자(login_name)를 지정한다.
 
   + -p port : 서버에 접속할 포트를 지정한다.
 
@@ -324,9 +340,6 @@ nmap 더 자세히 : <a href="https://ind2x.github.io/posts/nmap/" target="_blan
 
 <br>
 <br>
-<hr style="border: 2px solid;">
-<br>
-<br>
 
 ### NSE : http-backup-finder
 <hr style="border-top: 1px solid;">
@@ -335,7 +348,7 @@ NSE : Nmap Script Engine
 
 <br>
 
-```
+```console
 nmap -p<port> --script=http-backup-finder --script-args http-backup-finder.url=url host
 
 PORT   STATE SERVICE REASON
@@ -354,29 +367,31 @@ PORT   STATE SERVICE REASON
 <br>
 <br>
 
-## nc [option] [hostname] [port] : TCP ,UDP 프로토콜을 사용하는 네트워크 연결에서 데이터를 읽고 쓰는 명령어.
+## nc [option] [hostname] [port]
 <hr style="border-top: 1px solid;">
 
-```
-네트워크 연결상태를 읽거나 쓸 때 사용됨.
++ 네트워크 연결상태를 읽거나 쓸 때 사용됨.
 
-option
++ TCP, UDP 프로토콜을 사용하는 네트워크 연결에서 데이터를 읽고 쓰는 명령어.
 
--n : 호스트 네임과 포트를 숫자로만 입력받는다.
+<br>
 
--v : 더 많은 정보를 얻을 수 있다.
++ option
 
--u : TCP 연결대신 UDP 연결이 이루어 진다.
+  + -n : 호스트 네임과 포트를 숫자로만 입력받는다.
 
--p : local-port를 지정한다. 주로 –l와 같이 사용.
+  + -v : 더 많은 정보를 얻을 수 있다.
 
--l : listen 모드로 nc를 띄우게 된다. nc를 서버로 이용 시 사용되므로 
-     대상 호스트는 입력하지 않음.
+  + -u : TCP 연결대신 UDP 연결이 이루어 진다.
 
--r :여러개의 포트를 지정했을 때 스캐닝 순서를 랜덤하게 한다.
+  + -p : local-port를 지정한다. 주로 –l와 같이 사용.
 
--z : 연결을 이루기위한 최소한의 데이터 외에는 보내지 않게 하는 옵션
-```
+  + -l : listen 모드로 nc를 띄우게 된다. nc를 서버로 이용 시 사용되므로 대상 호스트는 입력하지 않음.
+
+  + -r :여러개의 포트를 지정했을 때 스캐닝 순서를 랜덤하게 한다.
+
+  + -z : 연결을 이루기위한 최소한의 데이터 외에는 보내지 않게 하는 옵션
+
 
 <br>
 <br>
