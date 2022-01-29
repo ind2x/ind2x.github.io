@@ -137,6 +137,8 @@ int 0x80          # system call을 호출하는 것.
 ```
 
 ## Reference
-<a href="https://m.blog.naver.com/s2kiess/30190492715" target="_blank">https://m.blog.naver.com/s2kiess/30190492715</a>  
+<a href="https://bob3rdnewbie.tistory.com/121" target="_blank">https://bob3rdnewbie.tistory.com/121</a>  
+
 <a href="https://cosyp.tistory.com/205" target="_blank">https://cosyp.tistory.com/205</a>  
+
 <a href="https://htst.tistory.com/70" target="_blank">https://htst.tistory.com/70</a>  
