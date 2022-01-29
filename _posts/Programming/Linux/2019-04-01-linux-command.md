@@ -709,7 +709,11 @@ filtered:   방화벽이나 필터에 막혀 해당 포트의 open, close 여부
 closed:     포트스캔을 한 시점에는 listen 상태가 아님을 나타냄
 unfiltered: 스캔에 응답은 하지만 해당 포트의 open, close 여부는 알 수 없을 때
 ```
-nmap 더 자세히 : <a href="https://pistolwest.github.io/linux/nmap/" target="_blank">https://pistolwest.github.io/linux/nmap/</a>
+nmap 더 자세히 : <a href="https://ind2x.github.io/posts/nmap/" target="_blank">ind2x.github.io/posts/nmap/</a>
+
+<br>
+<br>
+
 ### NSE : http-backup-finder
 NSE : Nmap Script Engine
 ```
