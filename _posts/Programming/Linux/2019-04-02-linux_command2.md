@@ -418,22 +418,3 @@ u USERNAME         run command with the userid, groupid of username.
 <br>
 <br>
 
-## nm [options] objfile
-<hr style="border-top: 1px solid;">
-
-+ 목적 파일의 심볼을 보여주는 명령어로 여러 함수의 주소를 찾을 수 있음.
-
-+ 오브젝트 파일에 포함되어 있는 심볼을 알파벳순으로 1행씩 출력.
-
-+ 기본적인 출력 형식은 bsd 형식 : 심볼 값  | 심볼 클래스 | 심볼명
-
-<br>
-
-심볼 클래스 중 U는 정의되지 않은 심볼을 뜻함.
-
-<br>
-<br>
-<hr style="border: 2px solid;">
-<br>
-<br>
-
