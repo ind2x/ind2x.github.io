@@ -23,7 +23,7 @@ tags : [Reversing, 메모리 구조]
 
 <br>
 
-![image](https://user-images.githubusercontent.com/52172169/150986658-6a568bf0-61ca-4095-9c57-7624e4796f5d.png)
+![image](https://user-images.githubusercontent.com/52172169/151702408-54afc274-a506-4193-ad14-c7f57a5c5b91.png)
 
 <br>
 <hr style="border: 2px solid;">
@@ -93,7 +93,7 @@ Stack 영역은 다른 영역과 달리 위에서 아래로 쌓이는 구조로 
 ## 스택의 이해
 <hr style="border-top: 1px solid;">
 
-![image](https://user-images.githubusercontent.com/52172169/150986693-9bdb1da0-5e6e-496f-acf9-adc44308cbaa.png)
+![image](https://user-images.githubusercontent.com/52172169/151702428-055ba745-0096-423a-9775-4835c9a2fd83.png)
 
 <br>
 
@@ -117,16 +117,6 @@ Stack 영역은 다른 영역과 달리 위에서 아래로 쌓이는 구조로 
 <br>
 
 스택의 구조는 LIFO(Last-In-First-Out)
-
-```
-높은 주소
-            ...
-            Variable
-            SFP (Stack Frame Pointer)
-            RET (Return Address) 
-            ...
-낮은 주소
-```
 
 <br>
 
