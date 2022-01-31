@@ -1,10 +1,23 @@
 ---
 title : CTF python modules
 categories : [Hacking, CTF]
-tags : [Module, Python]
+tags : [Module, Python, CTF Python Module, tools, requests, pwntools, PIL, Crypto, re, passlib.hash]
 ---
 
+## pwntools
+<hr style="border-top: 1px solid;">
+
+Link : <a href="https://ind2x.github.io/posts/pwntools/" target="_blank">ind2x.github.io/posts/pwntools/</a>
+
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
+
 ## requests
+<hr style="border-top: 1px solid;">
+
 ```python
 import requests
 
@@ -16,28 +29,44 @@ header = {
 
 cookies = {'[name]':'value'}
 
-params = {
+params = {            # GET
     'param1':'value1',
     'param2':'value2'
 }
 
-data = {
+data = {              # POST
     'param1':'value1',
     'param2':'value2'
 }
+
 
 res=requests.get(url, headers=headers, params=params, cookies=cookies)
+
 res=requests.post(url,headers=headers, data=data, cookies=cookies)
 
+
 res.request # 내가 보낸 request 객체에 접근 가능 
+
 res.status_code # 응답 코드 
+
 res.raise_for_status() # 200 OK 코드가 아닌 경우 에러 발동 
+
 res.encoding # 인코딩 확인, 값 변경 가능
+
 res.encoding = 'utf-8'
+
 res.text # body의 내용물을 text로 반환. encoding타입을 설정하는게 좋음
+
 res.content # body를 byte로 변환
 ```
+
+<br>
+<br>
+
 **좀 더 복잡한 구조로 POST 요청 시**
+
+<br>
+
 ```python
 import requests, json
 
@@ -47,45 +76,74 @@ res = requests.post(URL, data=json.dumps(data))
 res.json() # json response일 경우 딕셔너리 타입으로 바로 변환
 ```
 
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
+
 ## Crypto
+<hr style="border-top: 1px solid;">
+
 Crypto.Cipher, Crypto.Hash, Crypto.Random 등등이 있는데 자세한 건 여기서 확인 가능  
+
 Link : <a href="https://pycryptodome.readthedocs.io/en/latest/src/util/util.html#module-Crypto.Util.number" target="_blank">module-Crypto.Util.number</a>  
+
+<br>
 
 ```python
 # Crypto.Util.number module
 from Crypto.Util.number import *
 
+
 Crypto.Util.number.GCD(x,y) # x,y의 최대공약수
+
 
 Crypto.Util.number.bytes_to_long(s) # byte string을 long int(big endian)으로 변경
 # -> python 3.2 이상에서는 내장 메소드 사용 ex) int.from_bytes(b'P','big')
 
+
 Crypto.Util.number.inverse(u,v) # u mod(v)의 역원을 리턴
+
 
 Crypto.Util.number.long_to_bytes(n, blocksize=0) # long int를 byte string으로 변환
 # -> 내장 메소드 사용 ex) n=80; n.to_bytes(2,'big')
 ```
 
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
+
 ## re
+<hr style="border-top: 1px solid;">
+
 정규 표현식을 지원하기 위한 모듈
-```  
+
+<br>
+
 자주 사용하는 문자 클래스
 
-\d - 숫자와 매치, [0-9]와 동일한 표현식이다.
++ ```\d``` - 숫자와 매치, [0-9]와 동일한 표현식이다.
 
-\D - 숫자가 아닌 것과 매치, [^0-9]와 동일한 표현식이다.
++ ```\D``` - 숫자가 아닌 것과 매치, [^0-9]와 동일한 표현식이다.
 
-\s - whitespace 문자와 매치, [ \t\n\r\f\v]와 동일한 표현식이다. 
-     맨 앞의 빈 칸은 공백문자(space)를 의미한다.
++ ```\s``` - whitespace 문자와 매치, [ \t\n\r\f\v]와 동일한 표현식이다. 맨 앞의 빈 칸은 공백문자(space)를 의미한다.
 
-\S - whitespace 문자가 아닌 것과 매치, [^ \t\n\r\f\v]와 동일한 표현식이다.
++ ```\S``` - whitespace 문자가 아닌 것과 매치, [^ \t\n\r\f\v]와 동일한 표현식이다.
 
-\w - 문자+숫자(alphanumeric)와 매치, [a-zA-Z0-9_]와 동일한 표현식이다.
++ ```\w``` - 문자+숫자(alphanumeric)와 매치, [a-zA-Z0-9_]와 동일한 표현식이다.
 
-\W - 문자+숫자(alphanumeric)가 아닌 문자와 매치, [^a-zA-Z0-9_]와 동일한 표현식이다.
++ ``\W``` - 문자+숫자(alphanumeric)가 아닌 문자와 매치, [^a-zA-Z0-9_]와 동일한 표현식이다.
 
-+는 "하나 혹은 그 이상 연결된" 이란 뜻.
-```
+* ```+```는 "하나 혹은 그 이상 연결된" 이란 뜻.
+  
+  ex) ```\d+``` : 하나 혹은 그 이상 연결된 숫자를 찾아라
+
+<br>
+<br>
+
 ```python
 import re
 
@@ -94,16 +152,32 @@ re.search(pattern, string)
 
 re.findall(pattern, string) 
 # 정규식과 매치되는 모든 문자열을 리스트로 돌려준다. 
+
 # ex) re.findall("\d+",msg) -> 하나 혹은 그 이상 연결된 숫자를 찾아라
 ```
 
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
+
 ## Image module in PIL(pillow) 
+<hr style="border-top: 1px solid;">
+
 파이썬 이미징 라이브러리로 다양한 이미지 처리 기능 제공.  
+
 Link : <a href="https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.convert" target="_blank">PIL.Image.Image.convert</a>   
-  
+
+<br>
+
 참고 :  
-<a href="https://2nit.tistory.com/22" target="_blank">2nit.tistory.com/22 [Inha init]</a>   
-<a href="http://pythonstudy.xyz/python/article/406-파이썬-이미지-처리-Pillow" target="_blank">pythonstudy.xyz/python/article/406-파이썬-이미지-처리-Pillow</a>  
+Link : <a href="https://2nit.tistory.com/22" target="_blank">2nit.tistory.com/22 [Inha init]</a>   
+
+Link : <a href="http://pythonstudy.xyz/python/article/406-파이썬-이미지-처리-Pillow" target="_blank">pythonstudy.xyz/python/article/406-파이썬-이미지-처리-Pillow</a>  
+
+<br>
+<br>
 
 ```python
 from PIL import Image
@@ -111,70 +185,99 @@ from PIL import Image
 # 이미지 열기
 im = Image.open('python.png')
 
-#새로운 이미지 파일 생성 Image.new(mode, size, color)
+
+# 새로운 이미지 파일 생성 
+# Image.new(mode, size, color)
 new = Image.new('new.png') 
 im2 = Image.new("RGB", (500,500), (200,200,200)) # color default : black(0,0,0)
 im3 = Image.new("RGB", (200,200))  
 
-## mode 종류
+
+# mode 종류
 '''
 1 (1-bit pixels, black and white, stored with one pixel per byte)
+
 L (8-bit pixels, black and white)
+
 P (8-bit pixels, mapped to any other mode using a color palette)
+
 RGB (3x8-bit pixels, true color)
+
 RGBA (4x8-bit pixels, true color with transparency mask)
+
 CMYK (4x8-bit pixels, color separation)
+
 YCbCr (3x8-bit pixels, color video format)
+
 LAB (3x8-bit pixels, the L*a*b color space)
+
 HSV (3x8-bit pixels, Hue, Saturation, Value color space)
+
 I (32-bit signed integer pixels)
+
 F (32-bit floating point pixels)
 '''
 
+
 # 이미지 붙이기
 im2.paste(im3, (20,20,220,220)) # im2에 im3 붙이기
+
 # 2개 튜플인 경우 -> 왼쪽 상단에서 시작, (left, upper)
+
 # 4개 튜플인 경우 -> 왼쪽 상단에서 시작, (left, upper, right, lower)
+
 # 4개인 경우 반드시 덧씌울 공간의 값이 덧씌우는 이미지보다 크면 안됌.
 im2.save("paste_result.jpg")
+
 
 # 이미지의 각 픽셀에 접근
 pix=im.load()
 
+
 # 이미지 크기 출력
 print(im.size) # return (width, height)
  
+
 # 이미지 JPG로 저장
 im.save('python.jpg')
 
+
 # 이미지 포맷 출력
 print(im.format)
+
 
 # Thumbnail 이미지 생성
 size = (64, 64)
 im.thumbnail(size)
 
+
 # 이미지 cropping(일부 잘라내기)
 cropImage = im.crop((100, 100, 150, 150)) #(좌, 상, 우, 하)
 cropImage.save('python-crop.jpg')
 
+
 # 이미지 copy
 im2 = im.copy()
+
 
 # 이미지 회전 및 Resize
 img2 = im.resize((600,600)) # 크기를 600x600으로
 
 img3 = im.rotate(90) # 90도 시계방향 회전
 
+
 # 이미지 필터링 -> 필터종류는 ImageFilter 모듈 import 하여 지정
 
-from PIL import Image, ImageFilter
+# from PIL import Image, ImageFilter
  
 im = Image.open('python.png')
 blurImage = im.filter(ImageFilter.BLUR)
  
 blurImage.save('python-blur.png')
 ```
+
+<br>
+
 ```
 필터 종류는 다음과 같음
 BLUR 
@@ -189,8 +292,19 @@ SMOOTH
 SMOOTH_MORE
 ```
 
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
+
 ### PIL을 이용한 CTF 문제 풀이
+<hr style="border-top: 1px solid;">
+
 문제 : <a href="https://ind2x.github.io/crypto/houseplant-crypto/#6-rainbow-vomit" target="_blank">HouseplantCTF Rainbow Vomit</a>
+
+<br>
+
 ```python
 from PIL import Image
 
@@ -298,25 +412,45 @@ for A in hexhue:
 print(plaintext)
 ```
 
+<br>
+<br>
+<hr style="border: 2px solid;">
+<br>
+<br>
+
 ## passlib.hash
+<hr style="border-top: 1px solid;">
+
 Link : <a href="https://passlib.readthedocs.io/en/stable/lib/passlib.hash.html#unix-hashes" target="_blank">passlib.readthedocs.io/en/stable/lib/passlib.hash.html#unix-hashes</a>  
- 
+
+<br>
+
 ```python
 # 예시로 passlib.hash 중에서 unix hashes를 보면 md5_crypt가 있음. 
 
 from passlib.hash import md5_crypt
 hash = md5_crypt.hash("password") # password를 md5_crypt로 해시
+
 # hash : $1$3azHgidD$SrJPt7B.9rekpmwJwtON31 -> unix /etc/passwd에 저장되는 형태
+
 
 md5_crypt.verify("password", hash) # 값 비교하는 verify 메소드
 # True
 
+
 md5_crypt.using(salt_size=4).hash("password")
 # $1$wu98$9UuD3hvrwehnqyF1D548N0
 
+'''
 using() 메소드 매개변수
 1. salt -> using(salt={salt 값}), 값 명시 안하면 자동생성, 값 입력 시 [./0-9A-Za-z]
 2. salt_size -> 디폴트는 8자리
+'''
 ```
-hashlib의 md5 해시 알고리즘과 다름.  
-passlib.hash는 unix에서 사용하는 해시 알고리즘으로 되어 있음.  
+
+<br>
+
+**```hashlib```의 md5 해시 알고리즘과 다름. ```passlib.hash```는 unix에서 사용하는 해시 알고리즘으로 되어 있음.**
+
+<br>
+<br>
