@@ -64,6 +64,14 @@ res.content # body를 byte로 변환
 ```
 
 <br>
+
++ ```application/x-www-form-urlencoded``` : ```&```으로 분리되고, ```=``` 기호로 값과 키를 연결하는 key-value tuple로 인코딩되는 값. 
+
+  + 영어 알파벳이 아닌 문자들은 percent로 인코딩됨. 따라서 이 content type은 바이너리 데이터에 사용하기에는 적절치 않음. 
+
+  + 바이너리 데이터에는 ```multipart/form-data``` 사용.
+
+<br>
 <br>
 
 **좀 더 복잡한 구조로 POST 요청 시**
