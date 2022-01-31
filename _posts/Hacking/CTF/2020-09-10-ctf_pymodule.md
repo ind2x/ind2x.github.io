@@ -93,7 +93,7 @@ res.json() # json response일 경우 딕셔너리 타입으로 바로 변환
 <br>
 <br>
 
-## Crypto
+## pycryptodome
 <hr style="border-top: 1px solid;">
 
 Crypto.Cipher, Crypto.Hash, Crypto.Random 등등이 있는데 자세한 건 여기서 확인 가능  
@@ -173,7 +173,7 @@ re.findall(pattern, string)
 <br>
 <br>
 
-## Image module in PIL(pillow) 
+## PILLOW
 <hr style="border-top: 1px solid;">
 
 파이썬 이미징 라이브러리로 다양한 이미지 처리 기능 제공.  
