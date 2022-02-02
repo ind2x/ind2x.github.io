@@ -199,7 +199,6 @@ im = Image.open('python.png')
 
 # 새로운 이미지 파일 생성 
 # Image.new(mode, size, color)
-new = Image.new('new.png') 
 im2 = Image.new("RGB", (500,500), (200,200,200)) # color default : black(0,0,0)
 im3 = Image.new("RGB", (200,200))  
 
