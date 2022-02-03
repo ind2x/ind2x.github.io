@@ -1,7 +1,7 @@
 ---
 title : Leviathan
 categories : [Wargame, Overthewire]
-tags : [Linux, Incomplete]
+tags : [Linux commands, ltrace, symbolic link, 심볼릭 링크]
 ---
 
 ## Leviathan
