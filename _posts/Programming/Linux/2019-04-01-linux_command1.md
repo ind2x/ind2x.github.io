@@ -810,7 +810,10 @@ ex) grep ^\.    : 마침표로 시작되는 줄을 찾음
 ex) cat data.txt | sort | uniq –u
 ```
 
-<br>
-<br>
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 Next : <a href="https://ind2x.github.io/posts/linux_command2/">Linux Commands 2</a>
+
+<br><br>
