@@ -16,11 +16,17 @@ sys.setrecursionlimit(10**4)
 : 재귀횟수 설정, 기본은 1000번임. 재귀 횟수를 늘리고자 할 때 사용
 ```
 
+<br><br><hr style="border: 2px solid;"><br><br>
+
 ## itertools
+<hr style="border-top: 1px solid;">
 
 Docs : <a href="https://docs.python.org/ko/3/library/itertools.html" target="_blank">https://docs.python.org/ko/3/library/itertools.html</a>  
+
 **itertools** : ```효율적인 루핑을 위한 이터레이터를 만드는 함수```  
-  
+
+<br><br>
+
 ### 짧은 입력에 관한 시퀀스
 ```python
 chain(*iterables)
@@ -42,6 +48,8 @@ chain.from_iterable(iterable)
 ex) chain.from_iterable(['ABC', 'DEF']) : A B C D E F
 ```
 
+<br><br>
+
 ### 무한 iterator
 ```python
 count(start,[step])
@@ -59,12 +67,17 @@ times 인자가 지정되지 않으면 무기한 실행
   
 ex) repeat(10, 3) : 10 10 10 
 ```
-  
+
+<br><br>
+
 ### 조합형 iterator
 ```python
 product(p, q, .. , [repeat=1]) 
 : 주어진 iterable 객체들에 대해 곱 집합을 리턴
 ```
+
+<br>
+
 ```python
 ex) 
 product('ABCD', repeat=2) : AA AB AC AD BA BB BC BD CA CB CC CD DA DB DC DD
@@ -100,8 +113,12 @@ combinations_with_replacement(iterable, r)
 combinations_with_replacement('ABCD', 2) --> AA AB AC AD BB BC BD CC CD DD
 ```
 
+<br><br><hr style="border: 2px solid;"><br><br>
+
 ## collections
 Docs : <a href="https://docs.python.org/ko/3/library/collections.html" target="_blank">https://docs.python.org/ko/3/library/collections.html</a>  
+
+<br><br>
 
 ### deque
 : ```양쪽 끝에서 빠르게 추가와 삭제를 할 수 있는 리스트류 컨테이너```
@@ -196,6 +213,8 @@ maxlen
 : 데크의 최대 크기 또는 제한이 없으면 None. (read-only attribute)
 ```
 
+<br><br>
+
 ### Counter
 : ```해시 가능한 객체를 세는 데 사용하는 딕셔너리 서브 클래스```  
 ```python
@@ -261,3 +280,20 @@ total()
 >> c = Counter(a=10, b=5, c=0)
 >> c.total() # 15
 ```
+
+<br><br><hr style="border: 2px solid;"><br><br>
+
+## binascii
+<hr style="border-top: 1px solid;">
+
+Link : <a href="https://docs.python.org/ko/3/library/binascii.html" target="_blank">docs.python.org/ko/3/library/binascii.html</a>
+
+<br>
+
++ ```binascii.a2b_hex(hexstr)``` or ```binascii.unhexlify(hexstr)``` : hex to string
+  
+  + ```hexstr``` 인자는 짝수개의 16진수 값으로 int가 아닌 bytes, buffer or ascii 의 형태여야 함.
+  
+  + 변수에 저장하고자 하면 ```str(binascii.unhexlify(hexstr), 'ascii')```로 저장하면 됨.
+
+<br><br><hr style="border: 2px solid;"><br><br>
