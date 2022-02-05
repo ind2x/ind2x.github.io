@@ -183,7 +183,7 @@ Link : <a href="https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL
 <br>
 
 참고 :  
-Link : <a href="https://2nit.tistory.com/22" target="_blank">2nit.tistory.com/22 [Inha init]</a>   
+Link : <a href="https://ddolcat.tistory.com/690" target="_blank">ddolcat.tistory.com/690</a>   
 
 Link : <a href="http://pythonstudy.xyz/python/article/406-파이썬-이미지-처리-Pillow" target="_blank">pythonstudy.xyz/python/article/406-파이썬-이미지-처리-Pillow</a>  
 
