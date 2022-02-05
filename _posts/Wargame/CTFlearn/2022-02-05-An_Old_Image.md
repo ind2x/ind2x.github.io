@@ -26,7 +26,9 @@ old image.png :
 + 컬럼에는 ```x, y red, green``` 총 4개의 컬럼이 있음.
 
 
-<br><br><hr style="border: 2px solid;"><br><br>
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 ## Solution
 <hr style="border-top: 1px solid;">
