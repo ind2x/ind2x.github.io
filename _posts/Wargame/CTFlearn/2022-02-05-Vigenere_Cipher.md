@@ -1,5 +1,5 @@
 ---
-title : "[Crypto] Vigenere Cipher"
+title : "CTFlearn - [Crypto] Vigenere Cipher"
 categories: [Wargame, CTFlearn]
 tags: [Crypto, Vigenere Cipher]
 ---
