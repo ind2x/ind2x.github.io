@@ -812,3 +812,5 @@ ex) cat data.txt | sort | uniq –u
 
 <br>
 <br>
+
+Next : <a href="https://ind2x.github.io/posts/linux_command2/">Linux Commands 2</a>
