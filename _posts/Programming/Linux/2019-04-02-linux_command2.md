@@ -418,3 +418,7 @@ u USERNAME         run command with the userid, groupid of username.
 <br>
 <br>
 
+Next : <a href="https://ind2x.github.io/posts/linux_command3/">Linux Commands 3</a>
+
+<br>
+<br>
