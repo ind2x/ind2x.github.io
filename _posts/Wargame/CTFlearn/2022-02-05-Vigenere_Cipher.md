@@ -19,7 +19,9 @@ key : blorpy
 Cipher : gwox{RgqssihYspOntqpxs}
 ```
 
-<br><br><hr style="border: 2px solid;"><br><br>
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 ## Solution
 <hr style="border-top: 1px solid;">
