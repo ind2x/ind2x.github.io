@@ -311,7 +311,7 @@ SMOOTH_MORE
 ### PIL을 이용한 CTF 문제 풀이
 <hr style="border-top: 1px solid;">
 
-문제 : <a href="https://ind2x.github.io/crypto/houseplant-crypto/#6-rainbow-vomit" target="_blank">HouseplantCTF Rainbow Vomit</a>
+문제 : <a href="https://ind2x.github.io/posts/houseplant-crypto/#6-rainbow-vomit" target="_blank">HouseplantCTF Rainbow Vomit</a>
 
 <br>
 
