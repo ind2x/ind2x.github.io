@@ -1,5 +1,6 @@
 ---
 title: "서비스 거부 공격 (DoS)"
+date: 2022-02-05 19:30 +0900
 categories: [Hacking, Network]
 tags: [Dos, SYN Flooding, Ping of Death, Teardrop, Ping flooding]
 ---
