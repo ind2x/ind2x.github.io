@@ -1,49 +1,199 @@
 ---
 title : 쉘코드 만들기
 categories : [Hacking, System]
-tags : [BOF, shellcode 만들기]
+tags : [BOF, shellcode 만들기, shellcode, system call]
 ---
 
-## system call
-```c
-// write(1, buf, n) : (stdout, 문자열, 문자열 길이)
+## Shellcode
+<hr style="border-top: 1px solid;">
 
+<br>
+
+셸코드는 프로그램의 제어권을 가져오는 훌륭한 방법이다. 그 쎌에서는 프로그램이 할 수 있는 모든 것을 할 수 있다.
+
+셸코드를 맞춤제작 할 수 있다면 공격한 프로그램의 권한을 완벽하게 가져올 수 있다.
+
+보통 셸코드가 ```/etc/passwd```에 관리자 계정을 추가하거나 로그 파일의 해당 줄을 자동으로 지우길 원할 것이다. 맞춤 셸코드를 작성할 수 있다면 하고자 하는 것들을 모두 할 수 있다.
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
+## Assembly와 C
+<hr style="border-top: 1px solid;">
+
+<br>
+
+셸코드 바이트는 아키텍쳐마다 다른 기계어로 셸코드는 어셈블리어로 작성한다. 어셈블리어로 작성하는 것은 C로 작성하는 것과 다르지만 기본 원리는 비슷하다.
+
+운영체제가 커널에서의 입출력, 프로세스 제어, 파일 접근, 네트워크 통신 등을 관리한다. 
+
+컴파일된 C 프로그램은 궁극적으로는 커널로 시스템 콜을 함으로써 이런 작업들을 수행한다. 시스템 콜은 운영체제마다 다르다.
+
+<br>
+
+C에서는 표준 라이브러리가 제공된다.   라이브러리가 다양한 아키텍쳐에 맞는 시스템 콜을 알고 있다.    그래서 라이브러리를 통해 C 프로그램은 여러 시스템에서 컴파일 될 수 있다.
+
+x86 프로세서에서 컴파일된 C 프로그램은 x86 어셈블리어를 생성한다. 어셈블리어는 어느 특정 프로세서 아키텍처용이라고 정해져 있다. 그래서 호환성이 없다.
+
+호환성 있는 표준 라이브러리는 없다. 대신 커널 시스템 콜을 직접 호출할 수 있다.
+
+<br>
+
+```c
 int main() {
-  printf("hello world!\n");  // write(1, "hello world!\n)", 15);  
+  printf("hello world!\n");
 }
 ```
-```
-사용자가 printf() 함수를 사용을 하면 printf() 함수는 내부적으로 write() 함수를 사용함.
 
-사용자가 write() 함수가 호출되면 내부적으로 libc.a에서 system call을 호출하게 되는데
-아래와 같은 기계어 코드가 생성이 됨.
-```
-```
-mov eax, 0x4
-int 0x80
-```
-![](/assets/images/syscall_write.png){: .align-center}
-```
-소프트웨어 인터럽트에는 고유 번호가 존재하는데 시스템 콜도 그 중 한 종류로 고유번호는
-IDT라는 곳에 저장이 되는데 0x80이 system_call의 고유 번호임.
+<br>
 
-system call을 호출하면 system call table에 있는 함수 중 write 함수의 고유 번호는 0x4
+위의 C 코드를 컴파일 할 때, 표준 라이브러리를 거쳐 문자열을 출력하는 ```write()``` 시스템 콜을 호출한다. 
+: ```write(1, "hello world!\n", 13)```
 
-따라서 mov eax, 0x4는 system call table에 있는 write 함수를 호출하는 것이고
-int 0x80은 system call을 호출하는 것임.
-```
-![](https://www.linuxbnb.net/wp-content/uploads/2018/06/system-call-overview-1.png){: .align-center}
-```
-1. Application에서 소프트웨어 인터럽트 발생
-2. C library(libc.a)에서 system call 고유번호 0x80을 레지스터에 저장
-3. Kernel에서 IDT를 참조해 예를 들어 write 함수를 사용하면 write 고유번호 0x4 저장
-```
-출처 : <a href="http://blog.naver.com/s2kiess/30190130352" target="_blank">http://blog.naver.com/s2kiess/30190130352</a> 
+<br>
 
-## 기계어 코드 작성
-<a href="https://m.blog.naver.com/s2kiess/30190492715" target="_blank">https://m.blog.naver.com/s2kiess/30190492715</a>  
+```
+write - write to a file descriptor
 
-### 알아둬야 할 점
+#include <unistd.h>
+
+ssize_t write(int fd, const void *buf, size_t count)
+```
+
+<br>
+
++ fd : file descriptor, 0은 표준 입력, 1은 표준 출력, 2는 표준 에러 출력
+
++ buf : 문자열 포인터
+
++ count : 문자열 길이
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
+## System Call
+<hr style="border-top: 1px solid;">
+
+<br>
+
+모든 가능한 리눅스 시스템 콜은 숫자로 나열돼 있다. 그래서 어셈블리로 시스템 콜을 할 때 숫자로 참조 가능하다.
+
+이 시스템 콜은 ```/usr/include/asm-i386/unistd.h```에 열거돼 있다. 
+
+예를 들어, exit()와 write()는 아래와 같이 정의되어 있다.
+
+<br>
+
+```c
+#define __NR_exit     1
+#define __NR_write    4
+```
+
+<br>
+
+어셈블리 명령어 중 mov, int를 통해 시스템 콜을 호출 가능하다.
+
++ ```mov <dst> <src>``` : src의 값을 dst로 복사한다.
+
++ ```int <signal>``` : 커널로 인터럽트 시그널을 보낸다. **```int 0x80```은 커널에게 시스템 콜을 하는 데 사용된다.**
+
+<br>
+
+```int 0x80``` 명령이 실행되면 커널은 네 개의 레지스터를 기반으로 시스템 콜을 만든다. 모든 레지스터는 mov 명령으로 설정된다.
+
+<br>
+
++ EAX 레지스터는 시스템 콜을 명시하는 데 사용된다. (시스템 콜 값)
+
++ EBX, ECX, EDX 레지스터는 첫 번째, 두 번재, 세 번째 인자를 시스템 콜에 묶어두는 데 사용된다.
+
+<br>
+
+위의 C코드를 어셈블리 코드로 만들면 아래와 같다. 
+
+```asm
+; hello.asm
+
+section .data     ; data segment
+msg     db      "hello, world!", 0x0a   ; string and new line
+
+section .text   ; text segment
+global _start   ; ELF 링킹을 위한 초기 엔트리 포인트
+
+_start:
+
+; SYSCALL: write(1, msg, 14)
+mov eax, 4        ; write 시스템 콜 값은 4이므로 eax에 4을 넣음
+mov ebx, 1        ; 첫 번째 인자 1
+mov ecx, msg      ; 두 번째 인자 msg
+mov edx, 14       ; 세 번재 인자 14(hello, world!\n)
+int 0x80          ; 시스템 콜 호출
+
+
+; SYSCALL: exit(0)
+mov eax,1
+mov ebx,0
+int 0x80  
+```
+
+<br>
+
+![image](https://user-images.githubusercontent.com/52172169/153008394-80a5edbe-bb56-4daa-b943-d00b82054574.png)
+
+<br>
+
+실행 바이너리를 만들려면 이 어셈블리 코드는 먼저 어셈블돼 실행 가능한 형식으로 링크돼야 한다. 컴파일러가 이 모든 과정을 자동으로 수행한다.
+
+ELF 바이너리를 생성하려면 링커에게 어셈블리 명렁이 어디서부터 시작하는지 알려주는 ```global _start```줄이 필요하다.
+
+어셈블리 코드를 어셈블하여 object 파일로 만들고 object 파일을 링커 프로그램을 통해 실행 가능한 바이너리를 만들어낸다.
+
+<br>
+
+위의 어셈블리 코드는 셸코드가 아니다. 혼자 동작하기 때문이다.
+
+셸코드는 혼자 동작하지도 않고 링킹도 반드시 필요하다. 
+
+<br>
+
+Assembly 변수 선언 참고
+: <a href="https://ffoorreeuunn.tistory.com/48" target="_blank">ffoorreeuunn.tistory.com/48</a>
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
+## Shellcode 만들기
+<hr style="border-top: 1px solid;">
+
+<br>
+
+셸코드는 실제로 실행 가능한 프로그램은 아니므로 셸코드를 작성할 때 메모리상 데이터 배치나 메모리 세그먼트에 신경 쓰지 않아도 된다.
+
+**명령은 스스로 동작하고, 프로세서의 현재 상태에 관계없이 제어권을 가져올 수만 있으면 된다.** 그래서 셸코드는 위치 독립적 코드라 볼 수 있다.
+
+<br>
+
+위의 코드를 셸코드로 만드려면 셸코드에서 ```hello world!``` 문자열 바이트는 어셈블리 명령 바이트와 섞여 있어야 한다.
+
+정의 가능하거나 예측 가능한 메모리 세그먼트가 없기 때문이다. 이는 EIP가 문자열을 기계어 명령으로 변환하려 하지 않는 동안은 괜찮지만 데이터로 문자열에 접근하려면 문자열 포인터가 필요하다.
+
+하지만 셸코드가 실행될 때는 셸코드는 메모리상 어디에라도 위치할 수 있다. 그래서 **문자열의 절대 메모리 주소는 EIP에 상대적 주소로 계산될 필요가 있다.**
+
+그런데 어셈블리 명령으로 EIP에 접근할 수 없으므로 약간의 기교가 필요하다.
+
+<br>
+
+
+
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
+## 알아둬야 할 점
 ```
 만약 쉘에서 만들거라면 확장자는 .s로 저장, 자세한 건 reference에서 확인
 
