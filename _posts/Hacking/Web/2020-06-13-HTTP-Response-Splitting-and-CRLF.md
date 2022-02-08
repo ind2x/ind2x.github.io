@@ -1,7 +1,7 @@
 ---
 title : HTTP Response Splitting and CRLF (Incompleted)
 categories : [Hacking, Web]
-tags : [HTTP Response Splitting]
+tags : [HTTP Response Splitting, Incomplete]
 ---
 
 ## 1. CRLF
