@@ -53,8 +53,8 @@ int main() {
 
 <br>
 
-```
-write - write to a file descriptor
+```c
+// write - write to a file descriptor
 
 #include <unistd.h>
 
@@ -116,7 +116,7 @@ ssize_t write(int fd, const void *buf, size_t count)
 
 위의 C코드를 어셈블리 코드로 만들면 아래와 같다. nasm 어셈블러를 사용하여 어셈블하였다.
 
-```assembly
+```nasm
 ; hello.asm
 
 section .data     ; data segment
@@ -215,7 +215,8 @@ nasm assembly 변수 선언 참고
 
 <br>
 
-```assembly
+```nasm
+BITS 32         ; nasm에게 32
 
   call func
   db "Hello, world!", 0x0a, 0x0d
@@ -264,7 +265,7 @@ call 명령어를 사용하면 점프를 하게 되는데 점프하는 바이트
 
 <br>
 
-```assembly
+```nasm
 jmp short one
 
 two :
@@ -361,7 +362,7 @@ int main() // main(int argc, char *argv[], char *envp[])
 
 <br>
 
-```assembly
+```nasm
 jmp short two
   
 one:
@@ -478,7 +479,7 @@ pop eax
 
 <br>
 
-```
+```nasm
 mov BYTE al, 164
 
 push BYTE 11
@@ -487,4 +488,34 @@ pop eax
 
 <br><br>
 <hr style="border: 2px solid;">
+<br><br>
+
+## 포트 바인딩 셸코드과 리버스 셸코드
+<hr style="border-top: 1px solid;"><br>
+
+원격 프로그램을 공격할 때는 셸코드는 네트워크를 통해 통신해 루트 프롬프트를 활성화시켜야 한다.
+
+포트 바인딩 셸코드는 연결된 네트워크 포트로 셸을 바인딩한다.
+
+<br><br>
+
+포트 바인딩 셸코드는 방화벽으로 쉽게 막을 수 있다. 대부분의 방화벽은 알려진 특정 포트를 제외하고는 들어오는 연결을 막는다.
+
+하지만 방화벽은 편의성을 방해하지 않으려고 **일반적으로 나가는 연결은 거르지 않는다.**
+
+방화벽 안쪽에서는 어떤 웹 페이지에든 접근할 수 있고, 나가는 연결을 만들 수 있다. 즉, 셸코드가 나가는 연결을 만들 수 있다면 방화벽을 무시하고 공격할 수 있다.
+
+이런 셸코드를 ```리버스 셸코드``` 또는 ```커넥트-백 셸코드```라 한다.
+
+**리버스 셸코드는 공격자로부터의 연결을 기다리는 대신 공격자의 IP 주소로 들아오는 TCP 연결을 만든다.**
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
+## 셸코드 종류
+<hr style="border-top: 1px solid;"><br>
+
+Link : <a href="https://spark.kro.kr/9" target="_blank">spark.kro.kr/9</a>
+
 <br><br>
