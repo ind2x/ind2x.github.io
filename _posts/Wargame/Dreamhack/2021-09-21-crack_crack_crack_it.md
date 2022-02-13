@@ -2,7 +2,7 @@
 title: crack_crack_crack_it (풀이 봄)
 date: 2021-09-21 23:47 +0900
 categories: [Wargame, Dreamhack]
-tags : [python itertools.product library, python passlib.hash.md5_library, linux unix password md5 algorithm]
+tags : [python itertools.product library, python passlib.hash.md5_library, linux unix password md5 algorithm, wargame.kr, dreamhack.io]
 ---
 
 ## crack_crack_crack_it
@@ -54,9 +54,13 @@ linux, unix password 저장 형식이다.
 풀이
 : <a href="https://blog.naver.com/is_king/221843606396" target="_blank">blog.naver.com/is_king/221843606396</a>
 
+<br>
+
 passlib(md5_crypt) 
 : <a href="https://passlib.readthedocs.io/en/stable/lib/passlib.hash.md5_crypt.html" target="_blank">passlib.readthedocs.io/en/stable/lib/passlib.hash.md5_crypt.html</a>
 : <a href="https://ind2x.github.io/posts/ctf_pymodule/#passlibhash" target="_blank">ind2x.github.io/posts/ctf_pymodule/#passlibhash</a>
+
+<br>
 
 itertools 
 : <a href="https://docs.python.org/ko/3/library/itertools.html" target="_blank">docs.python.org/ko/3/library/itertools.html</a>
