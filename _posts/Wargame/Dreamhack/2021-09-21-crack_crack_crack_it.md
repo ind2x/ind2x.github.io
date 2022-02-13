@@ -69,6 +69,8 @@ itertools
 
 위의 풀이에서 md5 해쉬와 md5_crypt 해쉬의 차이점을 보여줌.
 
+<br>
+
 ```python
 import string
 from itertools import product
@@ -98,6 +100,8 @@ for len in range(1,20) :
     if fail == 0 :
         break
 ```
+
+<br>
 
 <br><br>
 <hr style="border: 2px solid;">
