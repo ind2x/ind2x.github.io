@@ -5,7 +5,7 @@ tags : [Reversing, 메모리 구조]
 ---
 
 ## 메모리 구조
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 컴파일된 프로그램 메모리는 5개의 세그먼트로 나뉘어짐.
 
@@ -25,12 +25,12 @@ tags : [Reversing, 메모리 구조]
 
 ![image](https://user-images.githubusercontent.com/52172169/151702408-54afc274-a506-4193-ad14-c7f57a5c5b91.png)
 
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
+<br><br>
 
 ### Code 영역
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 실행되는 프로그램의 코드 부분이 저장되는 영역 (변수는 저장하지 않음) , Text 영역이라고도 불림
 
@@ -42,7 +42,7 @@ tags : [Reversing, 메모리 구조]
 <br>
 
 ### Data 영역
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 전역변수, 정적 변수 등이 저장되는 공간
 
@@ -56,7 +56,7 @@ tags : [Reversing, 메모리 구조]
 <br>
 
 ### Stack 영역
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 **지역 변수와 함수 호출 시 매개 변수가 저장되는 공간**
 
@@ -74,7 +74,7 @@ Stack 영역은 다른 영역과 달리 위에서 아래로 쌓이는 구조로 
 <br>
 
 ### Heap 영역
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 프로그래머가 동적 할당을 해 생성한 변수가 Heap 영역에 저장됨. 
 
@@ -84,19 +84,16 @@ Stack 영역은 다른 영역과 달리 위에서 아래로 쌓이는 구조로 
 
 **힙은 낮은 메모리 주소에서 높은 메모리 주소 방향으로 증가.**
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## 스택의 이해
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 ![image](https://user-images.githubusercontent.com/52172169/151702428-055ba745-0096-423a-9775-4835c9a2fd83.png)
 
 <br>
-
 
 + 프로그램 정보 -> 공유 라이브러리 등
 
@@ -153,14 +150,12 @@ int main()
 }
 ```
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## Calling Convention
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 함수를 호출하는 규약으로 스택을 이용하여 파라미터를 전달할 때 인자 전달 방법, 인자 전달 순서, 
 전달된 파라미터가 해제되는 곳, 리턴 값 전달 등을 명시함.
@@ -171,7 +166,7 @@ int main()
 <br>
 
 ### _cdecl
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 매개 변수 전달 방식 : 우측 -> 좌측
 
@@ -183,7 +178,7 @@ C, C++에서의 default
 <br>
 
 ### _stdcall
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 매개 변수 전달 방식 : 우측 -> 좌측
 
@@ -194,7 +189,7 @@ C, C++에서의 default
 <br>
 
 ### _fastcall
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 매개 변수 전달 방식 : ecx, edx, 우측 -> 좌측(처음 두 개의 파라미터는 ecx, edx에 저장)
 
@@ -204,20 +199,18 @@ C, C++에서의 default
 <br>
 
 ### thiscall
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 매개 변수 전달 방식 : ecx, 우측 -> 좌측(처음 한 개의 파라미터는 ecx에 저장)
 
 함수 내부에서 파라미터 해제를 담당(프로시저 복귀 전 파라미터 해제)
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## 추가 자료
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 메모리 구조 : <a href="https://dongdd.tistory.com/36" target="_blank">https://dongdd.tistory.com/36</a>  
 
