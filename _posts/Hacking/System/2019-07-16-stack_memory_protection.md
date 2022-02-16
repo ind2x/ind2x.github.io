@@ -1,8 +1,18 @@
 ---
-title : Linux Stack Memory Protection and bypass (Incomplete)
+title : Linux Stack Memory Protection and bypass
 categories : [Hacking, System]
 tags : [스택 메모리 보호기법, ASLR, NX, SSP, Stack Smashing Protector, Stack Canary, RELRO, PIE, Incomplete]
 ---
+
+## 참고
+<hr style="border-top: 1px solid;"><br>
+
+Link
+: <a href="https://www.lazenca.net/display/TEC/02.Protection+Tech" target="_blank">lazenca.net/display/TEC/02.Protection+Tech</a>
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 ## NX
 <hr style="border-top: 1px solid;"><br>
