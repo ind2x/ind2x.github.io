@@ -44,7 +44,7 @@ Link
 ## ASLR
 <hr style="border-top: 1px solid;"><br>
 
-```Address Space Layout Randomization (공격자가 쉽게 주소값을 알지 못하게 해주는 보호기법)``
+```Address Space Layout Randomization (공격자가 쉽게 주소값을 알지 못하게 해주는 보호기법)```
 
 실행마다 스택의 배치가 무작위로 바뀌게 된다.
 
@@ -52,12 +52,12 @@ Link
 
 + ```/proc/sys/kernel/randomize_va_space``` :  파일의 값을 확인하면 알 수 있음.
   + 0 : 적용 x
-  + 1 : 스택, 힙 메모리 랜덤화
+  + 1 : 스택, 라이브러리 메모리 랜덤화
   + 2 : 스택, 힙, 라이브러리 메모리 랜덤화
 
 <br>
 
-+ 스택을 포함한 메모리의 주소를 랜덤하게 할당.
++ 스택을 포함한 메모리의 주소를 랜덤하게 할당. BUT ```.data``` 영역은 변경 X
 
 + 완전한 랜덤은 아님, 순서와 패턴을 어느정도 유지한 채로 랜덤하게 함.
 
