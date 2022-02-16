@@ -1,7 +1,7 @@
 ---
 title : 메모리 구조와 함수 호출 규약
 categories : [Hacking, System]
-tags : [Reversing, 메모리 구조]
+tags : [Reversing, 메모리 구조, 함수 호출 규약]
 ---
 
 ## 메모리 구조
@@ -161,6 +161,11 @@ int main()
 전달된 파라미터가 해제되는 곳, 리턴 값 전달 등을 명시함.
 
 64bit - fastcall 호출규약 / 32bit - cdecl & stdcall & fastcall 모두 사용함.
+
+<br>
+
+추가 
+: <a href="https://com24everyday.tistory.com/330" target="_blank">com24everyday.tistory.com/330</a>
 
 <br>
 <br>
