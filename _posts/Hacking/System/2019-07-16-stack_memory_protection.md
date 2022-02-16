@@ -4,7 +4,7 @@ categories : [Hacking, System]
 tags : [스택 메모리 보호기법, ASLR, NX, SSP, Stack Smashing Protector, Stack Canary, RELRO, PIE, Incomplete]
 ---
 
-## 참고
+## 필독
 <hr style="border-top: 1px solid;"><br>
 
 Link
