@@ -1,5 +1,5 @@
 ---
-title : Linux Stack Memory Protection and bypass
+title : Linux Stack Memory Protection And Bypass
 categories : [Hacking, System]
 tags : [스택 메모리 보호기법, ASLR, NX, SSP, Stack Smashing Protector, Stack Canary, RELRO, PIE, Incomplete]
 ---
@@ -59,11 +59,12 @@ Link
 
 + 스택을 포함한 메모리의 주소를 랜덤하게 할당. BUT ```.data``` 영역은 변경 X
 
-+ 완전한 랜덤은 아님, 순서와 패턴을 어느정도 유지한 채로 랜덤하게 함. -> 취약점
++ **완전한 랜덤은 아님, 순서와 패턴을 어느정도 유지한 채로 랜덤하게 함. ---> 취약점**
   
-  + 주소가 매번 바뀌어도 취약함수로부터 리턴 주소까지의 오프셋이 일정하므로 오프셋 값을 알아내면 됨. 
+  + **주소가 매번 바뀌어도 취약함수로부터 리턴 주소까지의 오프셋이 일정하므로 오프셋 값을 알아내면 됨.**
 
 + 해제: ```(sudo) sysctl -w kernel.randomize_va_space=0(=1,2 는 on, 0은 off)```
++ 
 
 + bypass : nop sledding, leak, etc...
 
