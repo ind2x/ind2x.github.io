@@ -48,8 +48,54 @@ tags : [Crypto, Incomplete]
 <hr style="border: 2px solid;">
 <br><br>
 
-# DES 
+# 대칭 암호
+<hr style="border-top: 1px solid;"><br>
+
+대칭 암호는 암호화와 복호화에 동일한 키를 사용한다. 
+
+이 방식은 비대칭 암호 방식보다 암호화/복호화 속도가 빠르기는 하지만 키 분배를 안전하게 하는 게 가장 어렵다.
+
 <br>
+
+크게 블록 암호와 스트림 암호로 나뉜다.
+
+블록 암호는 고정 크기의 블록 단위로 작업을 수행한다. 이 방식에서는 동일한 키를 사용했을 경우 한 평문 블록이 항상 같은 암호 블록으로 암호화된다.
+
+DES, Blowfish, AES(Rijndael)가 있다.
+
+<br>
+
+스트림 암호는 한 번에 1비트나 1바이트씩 임의의 비트 스트림을 만들어낸다. 이것을 키스트림이라 하는데, 키 스트림ㄹ은 평문과 XOR된다. 
+
+이 방식은 연속적인 데이터 스트림을 암호화하는 데 유용하다.
+
+RC4, LSFR이 있다.
+
+<br><br>
+
+## 블록 암호 
+<hr style="border-top: 1px solid;"><br>
+
+블록 암호 방식에서 가장 많이 이용되는 개념에는 혼돈과 확산이 있다.
+
+혼동
+: 평문, 암호문, 키 사이의 관계를 감추려고 사용하는 방법을 의미한다.
+
+<br>
+
+확산
+: 평문 비트와 키 비트가 가능한 한 많은 암호문에 영향을 주게 함을 의미한다. 
+
+<br>
+
+혼합 암호는 여러 단순 연산을 반복해 이 두 가지 개념을 모두 구현한 방식이다. DES와 AES 모두 혼합 암호 방식이다.
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
+
+# DES 
 
 ## 구조
 <hr style="border-top: 1px solid;"><br>
@@ -64,7 +110,7 @@ tags : [Crypto, Incomplete]
 
   + Ciphertext : 64bit
 
-  + encrypt key : 64bit -> remove parity bit (8) -> 56bit -> key schedule -> 48 bit  
+  + Encrypt Key : 64bit -> remove parity bit (8) -> 56bit -> key schedule -> 48 bit  
 
 <br>
 
@@ -187,8 +233,14 @@ tags : [Crypto, Incomplete]
 <br><br>
 
 # AES
+<hr style="border-top: 1px solid;"><br>
 
 
+
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 # RSA
 <hr style="border-top: 1px solid;"><br>
