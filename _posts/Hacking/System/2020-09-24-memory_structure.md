@@ -219,7 +219,9 @@ C, C++에서의 default
 ## 추가 자료
 <hr style="border-top: 1px solid;"><br>
 
-메모리 구조 : <a href="https://dongdd.tistory.com/36" target="_blank">https://dongdd.tistory.com/36</a>  
+메모리 구조 
+: <a href="https://dongdd.tistory.com/36" target="_blank">https://dongdd.tistory.com/36</a>  
+: <a href="https://bpsecblog.wordpress.com/gdb_memory/" target="_blank">bpsecblog.wordpress.com/gdb_memory/</a>
 
 기초 지식 : <a href="https://dongdd.tistory.com/79?category=779916" target="_blank">https://dongdd.tistory.com/79?category=779916</a>   
 
