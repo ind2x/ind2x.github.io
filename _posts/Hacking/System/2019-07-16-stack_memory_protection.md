@@ -9,6 +9,7 @@ tags : [스택 메모리 보호기법, ASLR, NX, SSP, Stack Smashing Protector, 
 
 Link
 : <a href="https://www.lazenca.net/display/TEC/02.Protection+Tech" target="_blank">lazenca.net/display/TEC/02.Protection+Tech</a>
+: <a href="https://bpsecblog.wordpress.com/memory_protect_linux/" target="_blank">bpsecblog.wordpress.com/memory_protect_linux/</a>
 
 <br><br>
 <hr style="border: 2px solid;">
