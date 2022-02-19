@@ -4,6 +4,20 @@ categories : [Hacking, Crypto]
 tags : [Crypto, Incomplete]
 ---
 
+# 암호 기법의 분류
+<hr style="border-top: 1px solid;"><br>
+
+![image](https://user-images.githubusercontent.com/52172169/154783101-9f3189c2-36a3-4b6e-a242-6bc010f185ee.png)
+
+
+출처
+: https://yjshin.tistory.com/entry/암호학-암호기법의-분류-치환암호-전치암호-블록암호-스트림암호-링크암호-종단간암호-하드웨어암호-소프트웨어-암호 [YJUN IT BLOG]
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
+
 # 치환암호
 <hr style="border-top: 1px solid;"><br>
 
