@@ -5,7 +5,7 @@ tags : [Module, Python, CTF Python Module, tools, requests, pwntools, PIL, Crypt
 ---
 
 ## pwntools
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 Link : <a href="https://ind2x.github.io/posts/pwntools/" target="_blank">ind2x.github.io/posts/pwntools/</a>
 
@@ -16,10 +16,7 @@ Link : <a href="https://ind2x.github.io/posts/pwntools/" target="_blank">ind2x.g
 <br>
 
 ## requests
-<hr style="border-top: 1px solid;">
-
-<br>
-<br>
+<hr style="border-top: 1px solid;"><br>
 
 ```python
 import requests
@@ -65,6 +62,11 @@ res.content # body를 byte로 변환
 
 <br>
 
+html 코드 파싱할 때 사용하는 Beautiful Soup 사용법
+: <a href="https://rednooby.tistory.com/97" target="_blank">rednooby.tistory.com/97</a>
+
+<br>
+
 + ```application/x-www-form-urlencoded``` : ```&```으로 분리되고, ```=``` 기호로 값과 키를 연결하는 key-value tuple로 인코딩되는 값. 
 
   + 영어 알파벳이 아닌 문자들은 percent로 인코딩됨. 따라서 이 content type은 바이너리 데이터에 사용하기에는 적절치 않음. 
@@ -87,14 +89,12 @@ res = requests.post(URL, data=json.dumps(data))
 res.json() # json response일 경우 딕셔너리 타입으로 바로 변환
 ```
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## pycryptodome
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 Crypto.Cipher, Crypto.Hash, Crypto.Random 등등이 있는데 자세한 건 여기서 확인 가능  
 
@@ -121,14 +121,12 @@ Crypto.Util.number.long_to_bytes(n, blocksize=0) # long int를 byte string으로
 # -> 내장 메소드 사용 ex) n=80; n.to_bytes(2,'big')
 ```
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## re
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 정규 표현식을 지원하기 위한 모듈
 
@@ -167,14 +165,12 @@ re.findall(pattern, string)
 # ex) re.findall("\d+",msg) -> 하나 혹은 그 이상 연결된 숫자를 찾아라
 ```
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## PILLOW
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 파이썬 이미징 라이브러리로 다양한 이미지 처리 기능 제공.  
 
@@ -302,14 +298,12 @@ SMOOTH
 SMOOTH_MORE
 ```
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ### PIL을 이용한 CTF 문제 풀이
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 문제 : <a href="https://ind2x.github.io/posts/houseplant-crypto/#6-rainbow-vomit" target="_blank">HouseplantCTF Rainbow Vomit</a>
 
@@ -422,14 +416,12 @@ for A in hexhue:
 print(plaintext)
 ```
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## passlib.hash
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 Link : <a href="https://passlib.readthedocs.io/en/stable/lib/passlib.hash.html#unix-hashes" target="_blank">passlib.readthedocs.io/en/stable/lib/passlib.hash.html#unix-hashes</a>  
 
@@ -462,5 +454,7 @@ using() 메소드 매개변수
 
 **```hashlib```의 md5 해시 알고리즘과 다름. ```passlib.hash```는 unix에서 사용하는 해시 알고리즘으로 되어 있음.**
 
-<br>
-<br>
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
