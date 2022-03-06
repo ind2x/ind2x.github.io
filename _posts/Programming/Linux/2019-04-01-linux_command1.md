@@ -5,18 +5,16 @@ tags : [Linux Commands, Linux Cheat Sheet]
 ---
 
 ## Linux Cheat Sheet
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 <a href="http://www.seren.net/documentation/unix%20utilities/Linux_Cheat_Sheet.htm" target="_blank">www.seren.net/documentation/unix%20utilities/Linux_Cheat_Sheet.htm</a>
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## 리눅스 기초 특수기호 문자
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 + ```>```
 
@@ -88,12 +86,6 @@ tags : [Linux Commands, Linux Cheat Sheet]
 
 <br>
 
-+ <code>`</code>
-
-  명령 대체, 큰따옴표안에서 명령어들이 문자열이 아닌 명령어의 역할을 하도록 해준다.
-
-<br>
-
 + ```|```
 
   앞에 나온 명령어의 표준 출력 결과를 다음 명령어의 표준 입력으로 사용
@@ -123,13 +115,21 @@ tags : [Linux Commands, Linux Cheat Sheet]
   특수문자 앞에 사용, 특수 문자의 효과를 없애고 일반 문자처럼 처리함.
 
 <br>
-<br>
+
++ ```|| , &&```
+
+  한 줄에 여러 명령어 연속 실행
+  
+  ```&&```은 앞 명령어가 에러가 나지 않아야 뒷 명령어 실행 (Logical AND)
+  
+  ```||```은 앞 명령어가 에러가 나면 뒷 명령어 실행 (Logical OR)
+
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## 기본 명령어
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 + ```rm-rf <file name>``` : file 강제 삭제
 
@@ -201,14 +201,12 @@ tags : [Linux Commands, Linux Cheat Sheet]
 
 다 같은 의미임.
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## man [명령어]
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 페이지 이동 방법
 
@@ -237,7 +235,7 @@ tags : [Linux Commands, Linux Cheat Sheet]
 <br>
 
 ## vi
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 + ```vi -r file``` : 손상된 파일 회복
 
@@ -310,7 +308,7 @@ tags : [Linux Commands, Linux Cheat Sheet]
 <br>
 
 ## head
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 + ```head [option] [file]```
 
@@ -331,7 +329,7 @@ tags : [Linux Commands, Linux Cheat Sheet]
 <br>
 
 ## tail
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 + ```tail [option] [file]```
 
@@ -352,7 +350,7 @@ tags : [Linux Commands, Linux Cheat Sheet]
 <br>
 
 ## more [file]
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 + 파일을 읽어 화면에 화면 단위로 끊어서 출력하는 명령어. 
 
@@ -387,7 +385,7 @@ tags : [Linux Commands, Linux Cheat Sheet]
 <br>
 
 ## cut [option] [file] : 데이터의 열을 추출
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 + option :
 
@@ -417,7 +415,7 @@ ex)
 <br>
 
 ## diff [option] [file1] [file2] : 파일 비교 명령어
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 + options :
 
@@ -446,7 +444,7 @@ diff3은 3개 파일 비교
 <br>
 
 ## ln -> Link파일을 만드는 명령어
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 참고 : <a href="https://jhnyang.tistory.com/269" target="_blank">참고</a>
 
@@ -457,7 +455,7 @@ diff3은 3개 파일 비교
 <br>
 
 ### 심볼릭 링크
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 + 단순히 원본파일을 가리키도록 링크만 시킨 것으로 윈도우에서 '바로가기' 같은 것.
 
@@ -478,7 +476,7 @@ diff3은 3개 파일 비교
 <br>
 
 ### 하드링크
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 + 원본과 동일한 내용의 다른 파일을 생성 -> 원본 삭제되어도 링크 파일 속 데이터는 존재함.
 
@@ -499,7 +497,7 @@ diff3은 3개 파일 비교
 <br>
 
 ## chmod : 파일권한 변경
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 + 쉽게 쓰려면 8진수 형태, 복잡하지만 기능적으로 좋은 심볼릭 형태가 있음.
 
@@ -519,7 +517,7 @@ diff3은 3개 파일 비교
 <br>
 
 ### 8진수 형태 --> chmod [option] [8진수 퍼미션] [filename]
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 ```
 777 : 일반적인 8진수 형태
@@ -554,7 +552,7 @@ test.cnf 파일에 대해 user, group, other 모두 rx의 권한을 주고 w의 
 <br>
 
 ### 심볼릭 형태 --> chmod [option] [대상] (+/-/=) (rwx) (filename)
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 ```
 대상
@@ -584,7 +582,7 @@ other은 r권한만 부여 한다
 <br>
 
 ## chown : 파일과 그룹의 소유권을 변경하는 명령어
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 ```
 Usage : chown [option] [변경할 유저명 : 변경할 그룹명] [파일명]
@@ -621,7 +619,7 @@ example
 <br>
 
 ## find [path] [option] [action] : 주어진 조건을 검색하여 파일을 찾는다.
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 ```
 -name [name] : 지정된 이름의 파일을 찾는다.
@@ -677,7 +675,7 @@ example
 <br>
 
 ## grep [option] ‘pattern’ [file] : ‘pattern’을 file안에서 (옵션에 맞춰) 검색한다.
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 ```
 -A(-B) num : 일치하는 줄 아래에(위에) 지정한 줄 수(num)만큼의 내용을 더 보여준다.
@@ -761,7 +759,7 @@ ex) grep ^\.    : 마침표로 시작되는 줄을 찾음
 <br>
 
 ## sort [option] [file] : 텍스트 파일의 내용을 알파벳 순서대로 정렬
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 ```
 -b : 공백을 무시한다.
@@ -792,7 +790,7 @@ ex) grep ^\.    : 마침표로 시작되는 줄을 찾음
 <br>
 
 ## uniq [option] : 중복되는 행을 필터링
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 ```
 -c : 행이 얼마나 중복되는지 계산하여 출력
@@ -814,6 +812,7 @@ ex) cat data.txt | sort | uniq –u
 <hr style="border: 2px solid;">
 <br><br>
 
-Next : <a href="https://ind2x.github.io/posts/linux_command2/">Linux Commands 2</a>
+Next 
+: <a href="https://ind2x.github.io/posts/linux_command2/">Linux Commands 2</a>
 
 <br><br>
