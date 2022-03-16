@@ -1,7 +1,7 @@
 ---
 title : "Websec - Level 28 (풀이봄)"
 categories : [Wargame, Websec]
-tags: [race condition, Incomplete]
+tags: [websec, websec level 28 writeup, race condition]
 ---
 
 ## Level 28
