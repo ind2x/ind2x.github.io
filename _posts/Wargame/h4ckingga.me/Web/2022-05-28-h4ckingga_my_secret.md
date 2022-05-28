@@ -1,8 +1,8 @@
 ---
 title: my_secret
 date: 2022-05-28-21:42 +0900
-categories: [h4ckingga.me, Web]
-tags: [unserialize 취약점, magic hash]
+categories: [Wargame,h4ckingga.me]
+tags: [h4ckingga.me web, unserialize 취약점, magic hash]
 ---
 
 ## my_secret
