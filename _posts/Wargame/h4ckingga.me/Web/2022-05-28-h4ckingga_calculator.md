@@ -1,8 +1,8 @@
 ---
 title: Calculator
 date: 2022-05-28-21:37 +0900
-categories: [h4ckingga.me, Web]
-tags: [ssti]
+categories: [Wargame,h4ckingga.me]
+tags: [h4ckingga.me web, ssti]
 ---
 
 ## Calculator
