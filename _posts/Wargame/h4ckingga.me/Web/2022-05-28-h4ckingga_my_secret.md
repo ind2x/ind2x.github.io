@@ -2,7 +2,7 @@
 title: my_secret
 date: 2022-05-28-21:42 +0900
 categories: [h4ckingga.me, Web]
-tags: [unserialize 취약점]
+tags: [unserialize 취약점, magic hash]
 ---
 
 ## my_secret
@@ -56,6 +56,15 @@ serialize
 <br>
 
 repl에서 obj 클래스를 serialize하면 값이 나오므로 그 값에서 문제 상에서 원하는 값으로 변경 후 보내주면 된다.
+
+근데 문제에서 I_am_robot이 문자열이 아니라 변수이다.
+
+이 값은 어디서 확인하나면 ```/robots.txt```에서 확인할 수 있다.
+: 0e로 시작한다. 따라서 0을 넣어주면 통과한다.
+
+<br>
+
+그러므로 key 값으로 0을 넣어서 serialize 한 값을 넣어주면 플래그가 나온다.
 
 <br><br>
 <hr style="border: 2px solid;">
