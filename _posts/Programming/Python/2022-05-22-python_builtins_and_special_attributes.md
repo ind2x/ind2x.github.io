@@ -1,5 +1,5 @@
 ---
-title: Python builtins 모듈
+title: Python builtins 모듈과 특수 어트리뷰트
 date: 2022-05-22 22:06 +0900
 categories: [Programming, Python]
 tags: [python built-in, python special attributes, __builtins__, dir(), __dict__]
