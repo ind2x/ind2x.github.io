@@ -5,6 +5,8 @@ tags : [".htaccess", Apache Authentication, Javascript XMLHttpRequest, Incomplet
 ---
 
 ## Limited Access Too
+<hr style="border-top: 1px solid;"><br>
+
 ```
 Haha, thank you so much for your feedback from the first challenge.
 Especially thanks to a special person 
@@ -14,7 +16,11 @@ The protected/protected.php is now secured :)
 
 To prove me wrong, please access protected/protected.php again.
 ```
+
+<br>
+
 **GeSHi`ed Plaintext code for .htaccess** 
+
 ```console
 AuthUserFile .htpasswd
 AuthGroupFile /dev/null
@@ -30,10 +36,22 @@ RewriteCond %{REQUEST_METHOD} ^TRACE
 RewriteRule ^ - [F]
 ```
 
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
 ## Solution
-Link : <a href="https://httpd.apache.org/docs/2.2/ko/mod/mod_rewrite.html" target="_blank">httpd.apache.org/docs/2.2/ko/mod/mod_rewrite.html</a>  
-정리 : <a href="https://blog.munilive.com/posts/how-to-use-htaccess-rewrite-rule.html" target="_blank">blog.munilive.com/posts/how-to-use-htaccess-rewrite-rule.html</a>   
-```정리되어 있는 게시글을 참고하여 정리를 하면 다음과 같음.```  
-```
-PROPFIND, PROPPATCH, LOCK, UNLOCK
-```
+<hr style="border-top: 1px solid;"><br>
+
+Link 
+: <a href="https://httpd.apache.org/docs/2.2/ko/mod/mod_rewrite.html" target="_blank">httpd.apache.org/docs/2.2/ko/mod/mod_rewrite.html</a>  
+
+<br>
+
+RewriteRule 
+: <a href="https://blog.munilive.com/posts/how-to-use-htaccess-rewrite-rule.html" target="_blank">blog.munilive.com/posts/how-to-use-htaccess-rewrite-rule.html</a>   
+: <a href="https://gmate.tistory.com/317" target="_blank">gmate.tistory.com/317</a>
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>

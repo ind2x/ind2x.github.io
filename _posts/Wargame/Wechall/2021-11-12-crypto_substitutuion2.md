@@ -4,6 +4,8 @@ categories : [Wargame, Wechall]
 ---
 
 ## Crypto - Substitution II
+<hr style="border-top: 1px solid;"><br>
+
 ```
 I have created an advanced version of the simple substitution cipher.
 It can now use chars in range from 0-255, but that should not stop you.
@@ -11,6 +13,9 @@ It can now use chars in range from 0-255, but that should not stop you.
 The ciphertext is in the language of this text, 
 and uses correct punctuation and case-sensitivity.
 ```
+
+<br>
+
 ```
 0A 2A 68 48 03 F7 5D 07 19 F7 5D 3C 2A 68 7E DE
 91 2E 30 3C 7E 91 2A 68 C4 91 AA F7 7E 91 30 F7
@@ -29,20 +34,25 @@ C8 03 3B 6B 5D 3C 2A 68 91 7E 30 C4 92 C4 91 F7
 3C F7 C8 C4 00 5A 3C DE 
 ```
 
-## Solution
-```
-빈도수를 분석해 보았음.
-문제에서 구두점 사용 및 대소문자를 구분하였다고 함.
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
-확실한 건 문장의 젤 마지막인 DE는 점이 된다는 것.
-따라서 DE 뒤에 오는 값인 91이 공백이 됨.
+## Solution
+<hr style="border-top: 1px solid;"><br>
+
+빈도수를 분석해 보았음. 문제에서 구두점 사용 및 대소문자를 구분하였다고 함.
+
+확실한 건 문장의 젤 마지막인 DE는 점이 된다는 것. 따라서 DE 뒤에 오는 값인 91이 공백이 됨.
 
 대문자가 되는 값들은 0A, 2E, 43, 15, 08
-```
-```
-빈도수별로 넣어주면서 같은 빈도수가 나오면 그 전 결과에서 
-추측해서 넣는 방식으로 substitution 1과 동일한 방식으로 풀어 나갔음..
-```
+
+<br>
+
+빈도수별로 넣어주면서 같은 빈도수가 나오면 그 전 결과에서 추측해서 넣는 방식으로 substitution 1과 동일한 방식으로 풀어 나갔음..
+
+<br>
+
 ```python
 cipher="""0A 2A 68 48 03 F7 5D 07 19 F7 5D 3C 2A 68 7E DE
 91 2E 30 3C 7E 91 2A 68 C4 91 AA F7 7E 91 30 F7
@@ -126,6 +136,9 @@ for i in plain :
     if i == '.' :
         print('')
 ```
+
+<br>
+
 ```
 Congratulations.
 This one was har_er_ but you got it.
@@ -134,7 +147,12 @@ The problem with this cipher is that the key is pretty long.
 I will come up with a better encryption sheme any soon.
 Your solution is_ nehrniace_bi.
 ```
-```
-정답 부분에 한자리 밖에 안남았고, 저 부분이 00인데
-_ellow 부분도 00이어서 적절한 값인 f를 넣었더니 통과.
-```
+
+<br>
+
+정답 부분에 한자리 밖에 안남았고, 저 부분이 00인데 ```_ellow``` 부분도 00이어서 적절한 값인 f를 넣었더니 통과.
+
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>

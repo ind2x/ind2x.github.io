@@ -50,7 +50,7 @@ Select file <input type='file' name='flag_file' id='flag_file' hidden class="hid
 
 else 문을 보면 sleep(1) 코드가 있고 else문이 끝나고 unlink를 함.
 
-즉, 1초 약간 넘는 시간동안은 파일을 볼 수 있다는 소리가 됨. 이런 기법을 race condition이라고 함. 
+즉, 1초 약간 넘는 시간동안은 파일을 볼 수 있다는 소리가 됨. 이런 기법을 ```Race Condition``` 이라고 함. 
 
 <br>
 

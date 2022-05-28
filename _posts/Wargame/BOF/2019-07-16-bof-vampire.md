@@ -1,11 +1,12 @@
 ---
-title: BOF - Lv.10 vampire
+title: BOF - Lv.10 vampire (Incomplete)
 categories: [Wargame, BOF]
 tags: [stack buffer overflow, Incomplete]
 ---
 
 ## vampire
----
+<hr style="border-top: 1px solid;"><br>
+
 ```c
 /*
         The Lord of the BOF : The Fellowship of the BOF
@@ -58,10 +59,13 @@ main(int argc, char *argv[])
                 memset(argv[i], 0, strlen(argv[i]));
 }
 ```
-<br>
-<br>
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 ## Solution
----
+<hr style="border-top: 1px solid;"><br>
+
 
 my-pass : 

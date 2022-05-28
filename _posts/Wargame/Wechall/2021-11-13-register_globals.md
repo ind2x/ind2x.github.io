@@ -5,6 +5,8 @@ tags : ["PHP register_globals"]
 ---
 
 ## Register Globals
+<hr style="border-top: 1px solid;"><br>
+
 ```
 This challenge is a relict of old PHP times, 
 where register globals has been enabled by default, 
@@ -16,6 +18,9 @@ I have also setup a test account: test:test
 
 Enjoy!
 ```
+
+<br>
+
 ```php
 <?php
 # EMULATE REGISTER GLOBALS = ON
@@ -73,13 +78,19 @@ require_once 'challenge/html_foot.php';
 ?>
 ```
 
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
 ## Solution
-```
+<hr style="border-top: 1px solid;"><br>
+
 php 5.4 이전 버전에서 발생한 취약점으로 php.ini에 register_globals 라는 옵션이 있음.
 
-이 옵션을 On 하게 되면 
-GET 또는 POST 방식 등으로 전될 된 모든 변수가 자동으로 php의 변수로 변환이 됨.
-```
+이 옵션을 On 하게 되면 GET 또는 POST 방식 등으로 전될 된 모든 변수가 자동으로 php의 변수로 변환이 됨.
+
+<br>
+
 ```php
 <?php 
 	if(isset($get)){
@@ -90,20 +101,35 @@ GET 또는 POST 방식 등으로 전될 된 모든 변수가 자동으로 php의
 	}
 ?>
 ```
-```
-위에 코드를 예시로 하면 
-$get에 아무 값도 없으므로 fail이 출력되지만
-?get=1을 하면 register_globals 옵션에 의해 get 변수로 변환되어 success가 출력됨.
-```
+
+<br>
+
+위에 코드를 예시로 하면 ```$get```에 아무 값도 없으므로 fail이 출력되지만 ```?get=1```을 하면 register_globals 옵션에 의해 get 변수로 변환되어 success가 출력됨.
+
 따라서 문제 상에서 우리가 봐야 할 코드는 다음과 같음.
+
+<br>
+
 ```php
 if (strtolower($login[0]) === 'admin') {
        $chall->onChallengeSolved(GWF_Session::getUserID());
 }
 ```
-```
-$login[0] == 'admin' 이어야 하므로 ?login[0]=admin -> 성공
-```
+
+<br>
+
+```$login[0] == 'admin'``` 이어야 하므로 ```?login[0]=admin -> 성공```
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 ## 참고
-Link : <a href="https://lactea.kr/entry/php-registerglobals-on-취약점" target="_blank">lactea.kr/entry/php-registerglobals-on-취약점</a>
+<hr style="border-top: 1px solid;"><br>
+
+Link 
+: <a href="https://lactea.kr/entry/php-registerglobals-on-취약점" target="_blank">lactea.kr/entry/php-registerglobals-on-취약점</a>
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>

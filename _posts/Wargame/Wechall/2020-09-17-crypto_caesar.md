@@ -4,11 +4,17 @@ categories : [Wargame, Wechall]
 ---
 
 ## Crypto - Caesar I
-```
-MAX JNBVD UKHPG YHQ CNFIL HOXK MAX ETSR WHZ HY VTXLTK TGW RHNK NGBJNX LHENMBHG BL KHLVVIWZXHGV
-```
+<hr style="border-top: 1px solid;"><br>
+
+```MAX JNBVD UKHPG YHQ CNFIL HOXK MAX ETSR WHZ HY VTXLTK TGW RHNK NGBJNX LHENMBHG BL KHLVVIWZXHGV```
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 ## Solution
+<hr style="border-top: 1px solid;"><br>
+
 ```python
 import string
 
@@ -27,6 +33,9 @@ for i in range(1,26):
             plain+=j       
     print("plaintext:",plain, ", key :",i)
 ```
+
+<br>
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -91,3 +100,7 @@ plaintext : KYV HLZTB SIFNE WFO ALDGJ FMVI KYV CRQP UFX FW TRVJRI REU PFLI LEZHL
 plaintext : LZW IMAUC TJGOF XGP BMEHK GNWJ LZW DSRQ VG
 '''
 ```
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>

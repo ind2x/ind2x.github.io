@@ -1,5 +1,5 @@
 ---
-title : 암호 정리
+title : 암호 정리 (Incomplete)
 categories : [Hacking, Crypto]
 tags : [Crypto, Incomplete]
 ---

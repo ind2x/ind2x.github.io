@@ -5,13 +5,14 @@ tags: [Dynamic Programming, 다이나믹 프로그래밍, Graph, 그래프, Floy
 ---
 
 ## Floyd-Warshall
----
+<hr style="border-top: 1px solid;"><br>
 
+Link 
+: <a href="https://www.acmicpc.net/problem/11404" target="_blank">11404번 : 플로이드</a>
 
 ![image](https://user-images.githubusercontent.com/52172169/148632668-08748145-ee60-420e-911c-6c00f38fe8f4.png)
 
-Link : <a href="https://www.acmicpc.net/problem/11404" target="_blank">11404번 : 플로이드</a>
-
+<br>
 
 ```cpp
 #include <iostream>
@@ -27,8 +28,10 @@ int main(){
         }
         dp[i][i] = 0;
     }
-    //초기화 : 자기 자신은 0, 나머지는 INF(무한)
-    //입력단계에서 dp[i][j] : i에서 j까지의 거리
+    // 초기화 : 자기 자신은 0, 나머지는 INF(무한)
+    
+    
+    // 입력단계에서 dp[i][j] : i에서 j까지의 거리
     for(int i=0; i<M; ++i){
         int u, v, w; cin >> u >> v >> w;
         u--, v--;
@@ -42,7 +45,7 @@ int main(){
             }
         }
     }
-    //dp갱신 후 dp[i][j] : i에서 j까지의 최단거리
+    // dp갱신 후 dp[i][j] : i에서 j까지의 최단거리
 
     for(int i=0; i<N; ++i){
         for(int j=0; j<N; ++j){
@@ -53,3 +56,7 @@ int main(){
     }
 }
 ```
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>

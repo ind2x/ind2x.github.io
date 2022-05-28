@@ -5,7 +5,7 @@ tags: [Linux commands]
 ---
 
 ## nm [options] objfile
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 + 목적 파일의 심볼을 보여주는 명령어로 여러 함수의 주소를 찾을 수 있음.
 
@@ -17,14 +17,12 @@ tags: [Linux commands]
 
 심볼 클래스 중 U는 정의되지 않은 심볼을 뜻함.
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## objdump [options] objfile
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 + 하나 이상의 오브젝트 파일에 대한 정보 표시
 
@@ -42,8 +40,6 @@ tags: [Linux commands]
 
   + -s : 지정된 섹션의 모든 내용 표시
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>

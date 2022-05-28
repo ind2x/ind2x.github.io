@@ -4,6 +4,8 @@ categories : [Wargame, Wechall]
 ---
 
 ## Crypto - Caesar II
+<hr style="border-top: 1px solid;"><br>
+
 ```
 I guess you are done with Caesar I, aren't you?
 The big problem with caesar is that it does not allow digits or other characters.
@@ -12,6 +14,9 @@ The keyspace has increased from 26 to 128 too. \o/
 
 Enjoy!
 ```
+
+<br>
+
 ```
 59 01 01 76 20 7C 01 74 3E 20 0B 01 07 20 05 01
 7E 08 77 76 20 01 00 77 20 7F 01 04 77 20 75 7A
@@ -31,14 +36,19 @@ Enjoy!
 04 78 76 77 40 
 ```
 
-## Solution
-```
-1번과의 차이점은 1번에서는 알파벳 이외의 값은 암호화되지 않았는데
-이번 문제에선 숫자 공백 등 모든 값을 암호화 했다는 점.
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
-너무 길어서 첫 번째 암호문만 디코딩 해보니 key=110임을 확인함.
-그런데 띄워쓰기가 안되어있어서 공백은 그냥 추가하도록 함.
-```
+## Solution
+<hr style="border-top: 1px solid;"><br>
+
+1번과의 차이점은 1번에서는 알파벳 이외의 값은 암호화되지 않았는데 이번 문제에선 숫자 공백 등 모든 값을 암호화 했다는 점.
+
+너무 길어서 첫 번째 암호문만 디코딩 해보니 key=110임을 확인함. 그런데 띄워쓰기가 안되어있어서 공백은 그냥 추가하도록 함.
+
+<br>
+
 ```python
 cipher="""59 01 01 76 20 7C 01 74 3E 20 0B 01 07 20 05 01
 7E 08 77 76 20 01 00 77 20 7F 01 04 77 20 75 7A
@@ -65,6 +75,9 @@ for i in cipher :
         plain+=chr((int(i,16)+110)%128)
 print(plain)
 ```
+
+<br>
+
 ```
 Good job, you solved one more challenge in your journey. 
 This one was fairly easy to crack. 
@@ -72,3 +85,7 @@ Wasn't it? 128 keys is a quite small keyspace,
 so it shouldn't have taken you too long to decrypt this message. 
 Well done, your solution is isbohmhdrfde.
 ```
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>

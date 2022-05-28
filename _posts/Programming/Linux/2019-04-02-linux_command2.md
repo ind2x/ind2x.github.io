@@ -4,87 +4,84 @@ categories: [Programming, Linux]
 tags: [Linux Commands]
 ---
 
-## file [option] [file name] : 파일의 종류와 파일 정보 출력
-<hr style="border-top: 1px solid;">
+## file [option] [file name]
+<hr style="border-top: 1px solid;"><br>
 
-+ -b : 지정한 파일명은 출력하지 않고 파일의 유형만 출력
-
-+ -z : 압축된 파일 내용을 출력 
++ 파일의 종류와 파일 정보 출력
 
 <br>
-<br>
+
++ option
+
+  + -b : 지정한 파일명은 출력하지 않고 파일의 유형만 출력
+
+  + -z : 압축된 파일 내용을 출력 
+
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-## strings [option] [file name] : 오브젝트 또는 이진 파일에서 인쇄 가능한 문자열 출력(ASCII 문자를 출력)
-<hr style="border-top: 1px solid;">
+## strings [option] [file name]
+<hr style="border-top: 1px solid;"><br>
 
-+ -a : 전체 파일 검색
-
-+ -f : 각 문자열 이전에 파일명 출력
-
-+ ```-min-len (-n min-len)``` : 최소 문자열 길이 지정, 기본 값은 4 , 즉 4줄 이상의 문자열부터 출력하는거임.
++ 오브젝트 또는 이진 파일에서 인쇄 가능한 문자열 출력(ASCII 문자를 출력)
 
 <br>
-<br>
+
++ option
+
+  + -a : 전체 파일 검색
+
+  + -f : 각 문자열 이전에 파일명 출력
+
+  + ```-min-len (-n min-len)``` 
+    + 최소 문자열 길이 지정, 기본 값은 4 , 즉 4줄 이상의 문자열부터 출력하는거임.
+
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-## xxd [option] [file name] : 리눅스 shell 상에서 binary파일의 hexdump를 보여주는 명령어
-<hr style="border-top: 1px solid;">
+## xxd [option] [file name]
+<hr style="border-top: 1px solid;"><br>
 
-+ -b : dump가 2진수로 출력
-
-<br>
-
-+ -c [개수] : 행 당 출력되는 열 개수 설정
-
-  ex) 4byte 씩 100의 길이만큼 출력 ==> ```xxd –g 4 –l 100 [filename]```
++ 리눅스 shell 상에서 binary파일의 hexdump를 보여주는 명령어
 
 <br>
 
-+ -g [개수] : 출력시 group으로 묶이는 byte의 개수 설정
++ option
 
-  ex) 8열로 마지막 80byte만 출력 ==> ```xxd –c 8 –s –80 [filename]```
+  + -b : dump가 2진수로 출력
 
-<br>
+  + -c [개수] : 행 당 출력되는 열 개수 설정
 
-+ -l [길이] : 설정된 길이 byte만큼 출력
+    + ex) 4byte 씩 100의 길이만큼 출력 ==> ```xxd –g 4 –l 100 [filename]```
 
-<br>
+  + -g [개수] : 출력시 group으로 묶이는 byte의 개수 설정
 
-+ -p : 주소나 ASCII 없이 hexdump 내용만 출력
+    + ex) 8열로 마지막 80byte만 출력 ==> ```xxd –c 8 –s –80 [filename]```
 
-<br>
+  + -l [길이] : 설정된 길이 byte만큼 출력
 
-+ -u : hex를 소문자 대신 대문자로 출력
+  + -p : 주소나 ASCII 없이 hexdump 내용만 출력
 
-<br>
+  + -u : hex를 소문자 대신 대문자로 출력
 
-+ -s [+][-] 위치 : 설정된 위치에서부터 hexdump함. 
+  + -s [+][-] 위치 : 설정된 위치에서부터 hexdump함. 
   
-  ```+```위치는 파일의 시작에서부터, -위치는 파일의 끝에서 부터임. 
+    + ```+```위치는 파일의 시작에서부터, -위치는 파일의 끝에서 부터임. 
 
-<br>
+  + -i : C언어에서 사용할 수 있는 형식으로 출력
 
-+ -i : C언어에서 사용할 수 있는 형식으로 출력
+  + -r : 반대로 hexdump를 binary파일로 바꾸어 출력
 
-<br>
-
-+ -r : 반대로 hexdump를 binary파일로 바꾸어 출력
-
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## base64 [option] [file name] 
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
-실행파일이나 zip파일 등을 ASCII 영역의 문자들로만 이루어진 일련의 문자열로 바꾸는 인코딩 방식, 문자열을 base64로 인코드 디코드 해줌
++ 실행파일이나 zip파일 등을 ASCII 영역의 문자들로만 이루어진 일련의 문자열로 바꾸는 인코딩 방식, 문자열을 base64로 인코드 디코드 해줌
 
 + option : 
 
@@ -92,18 +89,20 @@ tags: [Linux Commands]
 
   + -i : 디코딩 할 때, 알파벳 아닌 문자 무시하고 출력
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-## tr [option] string1 [string2] : 특정 문자를 삭제 혹은 변환한다.
-<hr style="border-top: 1px solid;">
+## tr [option] string1 [string2]
+<hr style="border-top: 1px solid;"><br>
+
++ 특정 문자를 삭제 혹은 변환한다.
+
+<br>
 
 + ```ex) cat data.txt | tr ‘a-z’ ‘A-Z’```
 
-  data.txt를 출력할 때 소문자를 대문자로 변경
+  + data.txt를 출력할 때 소문자를 대문자로 변경
 
 <br>
 
@@ -115,22 +114,21 @@ tags: [Linux Commands]
 
 + -s : 문자열2에서 반복되는 문자 삭제
 
-  -s 옵션으로 반복되는 문자열 없을 때 원하는 문자로 대체 가능
+  + ```-s``` 옵션으로 반복되는 문자열 없을 때 원하는 문자로 대체 가능
 
-      ex) data.txt에서 공백이 하나밖에 없는 상황(반복 안되는 상황)
+      + ex) data.txt에서 공백이 하나밖에 없는 상황(반복 안되는 상황)
 
-      ==> ```cat data.txt | tr –s ‘ ’ ‘@’``` : data.txt.를 출력할 때 공백을 @로 대체
+      + ==> ```cat data.txt | tr –s ‘ ’ ‘@’``` : data.txt.를 출력할 때 공백을 @로 대체
 
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-## bzip2 [option] [file name], 확장자는 .bz2
-<hr style="border-top: 1px solid;">
+## bzip2 [option] [file name]
+<hr style="border-top: 1px solid;"><br>
 
++ 확장자 .bz2
 
 + -c : 압축되거나 압축을 푼 파일을 표준출력한다.
 
@@ -143,15 +141,14 @@ tags: [Linux Commands]
 + bzcat : 압축 파일 내용 보기 명령어. (옵션아님)
 
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-## gzip [option] [file name] , 확장자는 .gz
-<hr style="border-top: 1px solid;">
+## gzip [option] [file name]
+<hr style="border-top: 1px solid;"><br>
 
++ 확장자 : .gz
 
 + -d : 압축 해제
 
@@ -160,14 +157,14 @@ tags: [Linux Commands]
 + -rd : 개별적으로 압축 해제
 
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-## tar [option] [file name1] [file name2] : 여러 파일을 묶거나 해제함
-<hr style="border-top: 1px solid;">
+## tar [option] [file name1] [file name2]
+<hr style="border-top: 1px solid;"><br>
+
++ 여러 파일을 묶거나 해제함
 
 + 파일명1은 결과 파일명, 파일명2는 압축 또는 묶음 파일 
 
@@ -196,14 +193,12 @@ tags: [Linux Commands]
   + -f (file) : 파일로서 백업을 하겠다는 옵션
 
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## ssh [option] [IP] 
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 + usage
 
@@ -247,14 +242,12 @@ tags: [Linux Commands]
 
 원격에서 ssh를 이용한 명령어 실행 방법은 뒤에다 “명령어” 해주면 됨.
   
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## telnet [option] [host [port]]
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 + host : 접속할 호스트로 인터넷 주소형식으로 사용
 
@@ -264,14 +257,16 @@ tags: [Linux Commands]
 
 + -a : 현재 사용자를 ID로 사용하여 접속한다.
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-## s_client : openssl 명령으로 운영중인 웹서버의 SSL인증서 정보를 살펴볼 수 있다 
-<hr style="border-top: 1px solid;">
+## s_client 
+<hr style="border-top: 1px solid;"><br>
+
++ openssl 명령으로 운영중인 웹서버의 SSL인증서 정보를 살펴볼 수 있다 
+
+<br>
 
 + Usage
 
@@ -294,14 +289,16 @@ tags: [Linux Commands]
   + -pass arg : private key를 위한 password을 전달
 
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-## nmap: Network exploration tool and security / port scanner
-<hr style="border-top: 1px solid;">
+## nmap
+<hr style="border-top: 1px solid;"><br>
+
++ Network exploration tool and security / port scanner
+
+<br>
 
 + Usage
 
@@ -342,7 +339,7 @@ nmap 더 자세히 : <a href="https://ind2x.github.io/posts/nmap/" target="_blan
 <br>
 
 ### NSE : http-backup-finder
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 NSE : Nmap Script Engine
 
@@ -361,14 +358,12 @@ PORT   STATE SERVICE REASON
 |_  http://example.com/help.bak
 ```
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## nc [option] [hostname] [port]
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
 + 네트워크 연결상태를 읽거나 쓸 때 사용됨.
 
@@ -393,32 +388,29 @@ PORT   STATE SERVICE REASON
   + -z : 연결을 이루기위한 최소한의 데이터 외에는 보내지 않게 하는 옵션
 
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## ltrace [option ...] [command [arg ...]]
-<hr style="border-top: 1px solid;">
+<hr style="border-top: 1px solid;"><br>
 
-```
-Trace library calls of a given program.
++ Trace library calls of a given program.
 
-o, --output=FILENAME write the trace output to file with given name
++ option
 
-u USERNAME         run command with the userid, groupid of username.
+  + o, --output=FILENAME write the trace output to file with given name
 
--s STRSIZE          specify the maximum string size to print.
-```
+  + u USERNAME : run command with the userid, groupid of username.
 
-<br>
-<br>
+  + ```-s STRSIZE``` : specify the maximum string size to print.
+
+
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-Next : <a href="https://ind2x.github.io/posts/linux_command3/">Linux Commands 3</a>
+Next 
+: <a href="https://ind2x.github.io/posts/linux_command3/">Linux Commands 3</a>
 
-<br>
-<br>
+<br><br>

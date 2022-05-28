@@ -7,7 +7,8 @@ tags : [Linux Commands, Linux Cheat Sheet]
 ## Linux Cheat Sheet
 <hr style="border-top: 1px solid;"><br>
 
-<a href="http://www.seren.net/documentation/unix%20utilities/Linux_Cheat_Sheet.htm" target="_blank">www.seren.net/documentation/unix%20utilities/Linux_Cheat_Sheet.htm</a>
+Cheat Sheet
+: <a href="http://www.seren.net/documentation/unix%20utilities/Linux_Cheat_Sheet.htm" target="_blank">seren.net/documentation/unix%20utilities/Linux_Cheat_Sheet.htm</a>
 
 <br><br>
 <hr style="border: 2px solid;">
@@ -52,7 +53,7 @@ tags : [Linux Commands, Linux Cheat Sheet]
 
   + 파일 이름 자리에 ```*```를 적으면 모든 파일을 뜻함. 
   
-    ls * ==> 모든 파일 보기
+    ```ls *``` ==> 모든 파일 보기
 
 <br>
 
@@ -133,15 +134,13 @@ tags : [Linux Commands, Linux Cheat Sheet]
 
 + ```rm-rf <file name>``` : file 강제 삭제
 
-+ cp-r (복사할 디렉터리 경로) (붙여넣을 디렉터리 경로) //파일 복사임.
++ ```cp-r (복사할 디렉터리 경로) (붙여넣을 디렉터리 경로)``` : 파일 복사
 
 <br>
 
 디렉터리 생성
 
-+ ```mkdir –p dir01/dir02```
-
-  dir01 디렉터리 안에 dir02디렉터리까지 같이 생성
++ ```mkdir –p dir01/dir02``` : dir01 디렉터리 안에 dir02디렉터리까지 같이 생성
 
 <br>
 
@@ -228,11 +227,9 @@ tags : [Linux Commands, Linux Cheat Sheet]
 
 + 종료 : q
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## vi
 <hr style="border-top: 1px solid;"><br>
@@ -241,13 +238,13 @@ tags : [Linux Commands, Linux Cheat Sheet]
 
 <br>
 
-+ shift + ↑, ↓ : 한 페이지 앞, 뒤로 이동 
++ ```shift + ↑, ↓``` : 한 페이지 앞, 뒤로 이동 
 
-+ Ctrl + i, b : 한 화면 위, 아래로 이동
++ ```Ctrl + i, b``` : 한 화면 위, 아래로 이동
 
-+ Ctrl + d, u : 반 화면 위, 아래로 이동
++ ```Ctrl + d, u``` : 반 화면 위, 아래로 이동
 
-+ Ctrl + e, y : 한 줄씩 위, 아래로 이동
++ ```Ctrl + e, y``` : 한 줄씩 위, 아래로 이동
 
 <br>
 
@@ -261,7 +258,7 @@ tags : [Linux Commands, Linux Cheat Sheet]
 
 + ```:5, 10``` : 5~10번째 행 삭제
 
-+ /name : name 문자열 찾기 
++ ```/name``` : name 문자열 찾기 
 
 + n : 다음 name으로 이동
 
@@ -269,43 +266,41 @@ tags : [Linux Commands, Linux Cheat Sheet]
 
 <br>
 
-+ :w : 저장
++ ```:w``` : 저장
 
-+ :wq : 저장하고 vi 종료
++ ```:wq``` : 저장하고 vi 종료
 
-+ :w file : file에 저장
++ ```:w``` file : file에 저장
 
-+ :q! : 저장하지 않고 vi 강제 종료
++ ```:q!``` : 저장하지 않고 vi 강제 종료
 
-+ :r file : file의 내용을 현재 커서가 있는 줄에 출력
++ ```:r file``` : file의 내용을 현재 커서가 있는 줄에 출력
 
-+ :e file : 현재 화면을 지우고 file의 내용 출력
++ ```:e file``` : 현재 화면을 지우고 file의 내용 출력
 
-+ :5,10 w file : 5 ~ 10줄까지의 내용을 file에 저장
-
-<br>
-
-+ :set nu : 행 번호 보여주기
-
-+ :set nonu : 행 번호 보여주기 취소
-
-+ . : 바로 전에 실행한 명령어 재실행
++ ```:5,10 w file``` : 5 ~ 10줄까지의 내용을 file에 저장
 
 <br>
 
-+ :![command] -> vi에서 쉘 실행 ex)!ifconfig
++ ```:set nu``` : 행 번호 보여주기
 
-+ :set shell ? -> shell 확인
++ ```:set nonu``` : 행 번호 보여주기 취소
 
-+ :set shell=/usr/bin/bash : bash로 쉘 변경 
-
-+ :!/bin/bash -> bash 쉘 실행
++ ```.``` : 바로 전에 실행한 명령어 재실행
 
 <br>
-<br>
+
++ ```:![command]``` -> vi에서 쉘 실행 ex)!ifconfig
+
++ ```:set shell ?``` -> shell 확인
+
++ ```:set shell=/usr/bin/bash``` : bash로 쉘 변경 
+
++ ```:!/bin/bash``` -> bash 쉘 실행
+
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## head
 <hr style="border-top: 1px solid;"><br>
@@ -322,11 +317,9 @@ tags : [Linux Commands, Linux Cheat Sheet]
 
   + -c : num byte까지의 내용 출력
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## tail
 <hr style="border-top: 1px solid;"><br>
@@ -343,11 +336,9 @@ tags : [Linux Commands, Linux Cheat Sheet]
   
   + -c : num byte까지의 내용 출력
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ## more [file]
 <hr style="border-top: 1px solid;"><br>
@@ -378,14 +369,16 @@ tags : [Linux Commands, Linux Cheat Sheet]
 
   + v : 현재 열려있는 파일의 현재 위치에서 vi 편집기 실행
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-## cut [option] [file] : 데이터의 열을 추출
+## cut [option] [file]
 <hr style="border-top: 1px solid;"><br>
+
++ 데이터의 열을 추출
+
+<br>
 
 + option :
 
@@ -408,14 +401,14 @@ ex)
 -> cut -f 3-4 -d ':' /etc/passwd : , 3, 4열의 내용을 추출 -> 0:0
 ```
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-## diff [option] [file1] [file2] : 파일 비교 명령어
+## diff [option] [file1] [file2]
 <hr style="border-top: 1px solid;"><br>
+
++ 파일 비교 명령어
 
 + options :
 
@@ -437,22 +430,21 @@ ex)
 
 diff3은 3개 파일 비교
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-## ln -> Link파일을 만드는 명령어
+## ln
 <hr style="border-top: 1px solid;"><br>
 
-참고 : <a href="https://jhnyang.tistory.com/269" target="_blank">참고</a>
++ Link파일을 만드는 명령어
 
-<br>
-<br>
+참고 
+: <a href="https://jhnyang.tistory.com/269" target="_blank">jhnyang.tistory.com/269</a>
+
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ### 심볼릭 링크
 <hr style="border-top: 1px solid;"><br>
@@ -465,15 +457,11 @@ diff3은 3개 파일 비교
 
 + Usage : ```ln -s 원본 대상```
 
-  + ```ln -s test t```
-  
-    test라는 파일의 심볼릭 링크 파일인 t를 현재 디렉토리에 생성
+  + ```ln -s test t``` : test라는 파일의 심볼릭 링크 파일인 t를 현재 디렉토리에 생성
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
 ### 하드링크
 <hr style="border-top: 1px solid;"><br>
@@ -486,18 +474,16 @@ diff3은 3개 파일 비교
 
 + Usage : ```ln [option]``` 원본파일 대상파일(디렉토리) 
 
-  + ```ln test.txt t```
-    
-    test.txt라는 파일의 하드링크 파일인 t를 현재 디렉토리에 생성
+  + ```ln test.txt t``` : test.txt라는 파일의 하드링크 파일인 t를 현재 디렉토리에 생성
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-## chmod : 파일권한 변경
+## chmod
 <hr style="border-top: 1px solid;"><br>
+
++ 파일권한 변경
 
 + 쉽게 쓰려면 8진수 형태, 복잡하지만 기능적으로 좋은 심볼릭 형태가 있음.
 
@@ -509,15 +495,16 @@ diff3은 3개 파일 비교
 
   + -c : 권한 변경 파일내용을 출력
 
-
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-### 8진수 형태 --> chmod [option] [8진수 퍼미션] [filename]
+### 8진수 형태
 <hr style="border-top: 1px solid;"><br>
+
++ ```chmod [option] [8진수 퍼미션] [filename]```
+
+<br>
 
 ```
 777 : 일반적인 8진수 형태
@@ -545,14 +532,16 @@ ex) chmod 555 test.cnf
 test.cnf 파일에 대해 user, group, other 모두 rx의 권한을 주고 w의 권한은 제거한다.
 ```
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-### 심볼릭 형태 --> chmod [option] [대상] (+/-/=) (rwx) (filename)
+### 심볼릭 형태
 <hr style="border-top: 1px solid;"><br>
+
++  ```chmod [option] [대상] (+/-/=) (rwx) (filename)```
+
+<br>
 
 ```
 대상
@@ -565,38 +554,52 @@ a : 모든 사용자 권한
 – : 해당 권한을 제거한다.
 = : 해당 권한을 설정한데로 변경한다.
 
+
 ex)　chmod u-x,g+r test.cnf 
 test.cnf 파일에 대해 
 user는 기존 권한에서 x권한만 제거한다. 나머지 권한은 그대로 유지 된다. 
 group은 기존 권한에서 r권한을 추가한다. 나머지 권한은 그대로 유지 된다.
+
 
 ex)　chmod u=rx,g=-,o=r test.cnf 
 test.cnf 파일에 대해 user는 rx 권한만 부여, group는 모든 권한 제거, 
 other은 r권한만 부여 한다
 ```
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-## chown : 파일과 그룹의 소유권을 변경하는 명령어
+## chown
 <hr style="border-top: 1px solid;"><br>
 
-```
-Usage : chown [option] [변경할 유저명 : 변경할 그룹명] [파일명]
++ 파일과 그룹의 소유권을 변경하는 명령어
 
-option : -R : 하위 디렉토리에도 모든 권한 변경 
+<br>
 
-명령어
-소유자 – 소유자만 변경한다.
-:그룹명 – 그룹만 변경한다.
-소유자: – 소유자와 그룹 모두 동일한걸로 변경한다.
-소유자:그룹명 – 소유자와 그룹을 서로 다른걸로 변경한다. (물론 같은걸 해도 상관없다.)
+Usage 
+: ```chown [option] [변경할 유저명 : 변경할 그룹명] [파일명]```
+
+option 
+: ```-R``` => 하위 디렉토리에도 모든 권한 변경 
+
+<br>
+
++ 명령어
+
+  + ```소유자``` : 소유자만 변경한다.
+
+  + ```:그룹명``` : 그룹만 변경한다.
+
+  + ```소유자:``` : 소유자와 그룹 모두 동일한걸로 변경한다.
+
+  + ```소유자:그룹명``` : 소유자와 그룹을 서로 다른걸로 변경한다. (물론 같은걸 해도 상관없다.)
+
+<br>
 
 파일명에는 설정을 위한 파일명 또는 디렉토리명 이용 , 와일드 카드 이용 가능
 
+```
 example
 
 1) chown member1 test.cnf 
@@ -612,14 +615,16 @@ example
    test.cnf 파일에 대해 소유자는 member1, 그룹명은 member2로 바꾼다.
 ```
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-## find [path] [option] [action] : 주어진 조건을 검색하여 파일을 찾는다.
+## find [path] [option] [action]
 <hr style="border-top: 1px solid;"><br>
+
++ 주어진 조건을 경로에서 검색하여 파일을 찾는다.
+
+<br>
 
 ```
 -name [name] : 지정된 이름의 파일을 찾는다.
@@ -629,12 +634,12 @@ example
 -group [name] : group 소유의 파일을 찾는다.
 
 -type [형식] : 지정된 형식의 파일을 찾는다.
-• b : 블록파일
-• c : 문자
-• d : 디렉터리
-• f : 파일
-• l : 링크파일
-• s : 소켓
+  • b : 블록파일
+  • c : 문자
+  • d : 디렉터리
+  • f : 파일
+  • l : 링크파일
+  • s : 소켓
 
 -perm [mode] : 정확히 같은 권한을 가진 파일을 찾는다.
 
@@ -643,15 +648,20 @@ example
 -perm /[mode] : mode에 있는 권한 중에서 하나만이라도 만족하는 것 출력
 
 -size [+/-]n[bckw] : 지정된 크기의 파일을 찾는다.
-• +n : n보다 크다
-• -n : n보다 작다
-• n : n이다
-• b : 512-byte
-• c : byte
-• k : kilobytes
-• w : 2-byte
+  • +n : n보다 크다
+  • -n : n보다 작다
+  • n : n이다
+  • b : 512-byte
+  • c : byte
+  • k : kilobytes
+  • w : 2-byte
+```
 
-※action
+<br>
+
++ action
+
+```
 -inum number : 지정한 아이노드 번호와 파일을 찾는다.
 
 -print : 표준출력으로 검색된 파일명을 출력한다.
@@ -663,19 +673,23 @@ example
 
 2>/dev/null : find 옵션 뒤에 붙이면 에러메세지를 모두 버려주고 
               해당 조건에 정확히 부합하는 내용만을 출력해줌
-
-너무 파일이 많고 검색된 내용도 많아서 콘솔화면에 전부 표현할 수 없다면 more을 활용.
-쪽단위로 출력할 수 있게 해줍니다.
 ```
 
-<br>
-<br>
+너무 파일이 많고 검색된 내용도 많아서 콘솔화면에 전부 표현할 수 없다면 more을 활용. 쪽단위로 출력할 수 있게 해줍니다.
+
+
+<br><br>
 <hr style="border: 2px solid;">
-<br>
+<br><br>
+
+## grep [option] pattern [file]
+<hr style="border-top: 1px solid;"><br>
+
++ pattern을 file안에서 (옵션에 맞춰) 검색한다.
+
 <br>
 
-## grep [option] ‘pattern’ [file] : ‘pattern’을 file안에서 (옵션에 맞춰) 검색한다.
-<hr style="border-top: 1px solid;"><br>
++ option
 
 ```
 -A(-B) num : 일치하는 줄 아래에(위에) 지정한 줄 수(num)만큼의 내용을 더 보여준다.
@@ -752,14 +766,16 @@ ex) grep ^\.    : 마침표로 시작되는 줄을 찾음
 ==> 패턴을 따옴표(")나 작은 따옴표(')로 감싸주어야 한다.
 ```
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-## sort [option] [file] : 텍스트 파일의 내용을 알파벳 순서대로 정렬
+## sort [option] [file] 
 <hr style="border-top: 1px solid;"><br>
+
++ 텍스트 파일의 내용을 알파벳 순서대로 정렬
+
+<br>
 
 ```
 -b : 공백을 무시한다.
@@ -783,14 +799,16 @@ ex) grep ^\.    : 마침표로 시작되는 줄을 찾음
 -f : 모든 문자를 소문자로 인식
 ```
 
-<br>
-<br>
+<br><br>
 <hr style="border: 2px solid;">
-<br>
-<br>
+<br><br>
 
-## uniq [option] : 중복되는 행을 필터링
+## uniq [option]
 <hr style="border-top: 1px solid;"><br>
+
++ 중복되는 행을 필터링
+
+<br>
 
 ```
 -c : 행이 얼마나 중복되는지 계산하여 출력
@@ -803,8 +821,8 @@ ex) grep ^\.    : 마침표로 시작되는 줄을 찾음
 
 -u : 중복되지 않는 행만 출력
 
-무작위로 있으면 인식 x
-==> 그래서 sort와 uniq 명령어가 보통은 같이 쓰임.
+
+무작위로 있으면 인식 x ----> sort와 uniq 명령어가 보통은 같이 쓰임.
 ex) cat data.txt | sort | uniq –u
 ```
 
