@@ -1,6 +1,6 @@
 ---
 title: my_secret
-date: 2022-05-28-21:42 +0900
+date: 2022-05-28 21:42 +0900
 categories: [Wargame,h4ckingga.me]
 tags: [h4ckingga.me web, unserialize 취약점, magic hash]
 ---
