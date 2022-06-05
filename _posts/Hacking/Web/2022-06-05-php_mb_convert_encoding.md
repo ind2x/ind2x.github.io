@@ -1,6 +1,6 @@
 ---
 title : PHP mb_convert_encoding 취약점
-categories: [Programming, PHP]
+categories: [Hacking,Web]
 tags : [mb_convert_encoding 취약점]
 ---
 
