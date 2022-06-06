@@ -20,6 +20,7 @@ $query = 'SELECT id,username FROM users WHERE id=' . $injection . ' LIMIT 1';
 <br><br>
 
 ## Solution
+<hr style="border-top: 1px solid;"><br>
 
 db는 sqlite3으로 MySQL의 information_schema와 같은 역할을 하는 테이블은 ```sqlite_master```.
 
