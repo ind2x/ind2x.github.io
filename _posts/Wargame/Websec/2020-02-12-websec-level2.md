@@ -5,6 +5,8 @@ tags: [SQLi]
 ---
 
 ## Level 2
+<hr style="border-top: 1px solid;"><br>
+
 ``` php
 ini_set('display_errors', 'on');
 
@@ -32,20 +34,20 @@ if (isset ($_POST['submit']) && isset ($_POST['user_id'])) {
     $userDetails = $lt->doQuery ($_POST['user_id']);
 }
 ```
-$userDetails 값이 존재하면 id,username을 출력해준다.  
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 ## Solution
-```
+<hr style="border-top: 1px solid;"><br>
+
 level1과 다른점은 필터링을 한다는 점이다.
 
 근데 필터링하는 문자들을 공백으로 바꿔준다는 점에서 취약점이 발생한다. 
 
-uniunionon 이런식으로 써준다면 필터링을 우회할 수 있다.
-```
-```
-1 uniunionon selselectect 1,password frfromom users -- 
-라고 입력을 해주면 쿼리에는 
+```uniunionon``` 이런식으로 써준다면 필터링을 우회할 수 있다.
 
-SELECT id,username FROM users WHERE id=1 union select 1,password from users -- LIMIT 1
-로 들어가서 플래그를 얻는다. 
-```
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
