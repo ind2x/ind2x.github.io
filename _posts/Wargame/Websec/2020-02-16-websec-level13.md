@@ -5,6 +5,8 @@ tags: [SQLi]
 ---
 
 ## Level 13
+<hr style="border-top: 1px solid;"><br>
+
 ``` php
 $db->exec('CREATE TABLE users (
   user_id   INTEGER PRIMARY KEY,
@@ -35,14 +37,22 @@ $selector = implode(',', array_unique($tmp));
 $query = "SELECT user_id, user_privileges, user_name FROM users WHERE (user_id in (" . $selector . "));";
 ```
 
-## Solution
-```
-로컬에 코드를 복사를 해와서 여러가지를 넣다가 
-','의 개수에 따라 for문에서 오류가 나오는 것을 발견을 함.
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
-간단하게 확인을 하면 값으로 ,a를 주면 $selector의 값은 a가 됨.
-```
+## Solution
+<hr style="border-top: 1px solid;"><br>
+
+로컬에 코드를 복사를 해와서 여러가지를 넣다가 ','의 개수에 따라 for문에서 오류가 나오는 것을 발견을 함.
+
+간단하게 확인을 하면, 값으로 ```,a```를 주면 ```$selector```의 값은 a가 됨.
+
+<br>
+
 ','가 3개일 때 원하는 문자열이 나오는 것을 확인함.  
-```sql
-,,,1)) union select 1,2,user_password from users-- 
-```
+: ```,,,1)) union select 1,2,user_password from users-- ```
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
