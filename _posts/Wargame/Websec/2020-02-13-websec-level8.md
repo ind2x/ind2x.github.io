@@ -5,6 +5,8 @@ tags: ["LFI using PHP injected GIF"]
 ---
 
 ## Level 8
+<hr style="border-top: 1px solid;"><br>
+
 ``` php
 $uploadedFile = sprintf('%1$s/%2$s', '/uploads', sha1($_FILES['fileToUpload']['name']) . '.gif');
 
@@ -27,22 +29,27 @@ if ($_FILES['fileToUpload']['size'] <= 50000) {
 else { echo '<p class="text-danger">The file is too big</p>'; }
 ```
 
-gif파일인지 검사를 하는 코드가 있어서 파일은 반드시 gif파일만 올릴 수 있음. 
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
 
 ## Solution
-```
-텍스트파일을 gif파일로 변환해서 업로드 한 뒤 
+<hr style="border-top: 1px solid;"><br>
 
-burp suite로 보면은 GIF89a로 시작한다는 점을 알 수 있음. 
+gif파일인지 검사를 하는 코드가 있어서 파일은 반드시 gif파일만 올릴 수 있음. 
+
+
+텍스트파일을 gif파일로 변환해서 업로드 한 뒤 burp suite로 보면은 ```GIF89a```로 시작한다는 점을 알 수 있음. 
 
 이를 이용해서 문제를 풀 수 있음.
-```
-```
-GIF89a만 남기고 
 
-php 코드를 넣어주면 
-현재경로에 있는 파일을 볼 수 있음. 
-```
+<br>
+
+**```GIF89a```만 남기고 php 코드를 넣어주면 현재경로에 있는 파일을 볼 수 있음.**
+
+<br>
+
 ```php
 print_r(scandir('./')); 
 
@@ -57,7 +64,11 @@ Array
     [6] => uploads
 )
 ```
-```
-그 다음 file_get_contents함수를 이용해서
-flag.txt 파일을 읽어 플래그를 흭득하면 됨.
-```
+
+<br>
+
+그 다음 ```file_get_contents```함수를 이용해서 flag.txt 파일을 읽어 플래그를 흭득하면 됨.
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
