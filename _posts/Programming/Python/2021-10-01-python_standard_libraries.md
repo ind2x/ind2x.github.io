@@ -352,6 +352,11 @@ Link
 ## threading
 <hr style="border-top: 1px solid;"><br>
 
+Link 
+: <a href="https://docs.python.org/ko/3/library/threading.html" target="_blank">docs.python.org/ko/3/library/threading.html</a>
+
+<br>
+
 
 
 <br><br>
