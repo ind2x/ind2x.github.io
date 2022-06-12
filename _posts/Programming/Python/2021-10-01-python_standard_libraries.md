@@ -26,19 +26,14 @@ List
 ## sys
 <hr style="border-top: 1px solid;"><br>
 
-```
-sys.stdin.readline()
+```sys.stdin.readline()```
+: ```input()``` 대신 사용, time out 발생 시 input 대신 사용하면 됨.
 
---> input() 대신 사용, time out 발생 시 input 대신 사용하면 됨.
-```
 
 <br>
 
-```
-sys.setrecursionlimit(10**4)
-
---> 재귀횟수 설정, 기본은 1000번임. 재귀 횟수를 늘리고자 할 때 사용
-```
+```sys.setrecursionlimit(10**4)```
+: 재귀횟수 설정, 기본은 1000번임. 재귀 횟수를 늘리고자 할 때 사용
 
 <br><br>
 <hr style="border: 2px solid;">
@@ -47,10 +42,9 @@ sys.setrecursionlimit(10**4)
 ## itertools
 <hr style="border-top: 1px solid;"><br>
 
-Docs 
-: <a href="https://docs.python.org/ko/3/library/itertools.html" target="_blank">docs.python.org/ko/3/library/itertools.html</a>  
-
-**itertools** : ```효율적인 루핑을 위한 이터레이터를 만드는 함수```
+itertools 
+: 효율적인 루핑을 위한 이터레이터를 만드는 함수
+: <a href="https://docs.python.org/ko/3/library/itertools.html" target="_blank">docs.python.org/ko/3/library/itertools.html</a> 
 
 <br><br>
 
@@ -120,8 +114,6 @@ repeat(object, [times])
 ```product(p, q, .. , [repeat=1])```
 : 주어진 iterable 객체들에 대해 곱 집합을 리턴
 
-<br>
-
 ```python
 # ex) 
 product('ABCD', repeat=2) : AA AB AC AD BA BB BC BD CA CB CC CD DA DB DC DD
@@ -137,11 +129,7 @@ product(A, repeat=4) --> product(A, A, A, A) -> A A A A
 
 ```permutations(iterable, r=None)```
 : iterable에서 요소의 연속된 길이 r 순열을 반환
-
-r이 지정되지 않았거나 None이면, r의 기본값은 iterable의 길이이며 
-가능한 모든 최대 길이 순열이 생성됨.
-
-<br>
+: r이 지정되지 않았거나 None이면, r의 기본값은 iterable의 길이이며 가능한 모든 최대 길이 순열이 생성됨.
 
 ```python
 # ex) 
@@ -155,8 +143,6 @@ permutations(range(3)) --> 012 021 102 120 201 210
 ```combinations(iterable, r)```
 : 입력 iterable에서 요소의 길이 r 서브 시퀀스들을 반환
 
-<br>
-
 ```python
 combinations('ABCD', 2) --> AB AC AD BC BD CD
 
@@ -167,8 +153,6 @@ combinations(range(4), 3) --> 012 013 023 123
 
 ```combinations_with_replacement(iterable, r)```
 : combinations 기능에서 추가로 개별 요소를 두 번 이상 반복할 수 있음
-
-<br>
 
 ```python
 combinations_with_replacement('ABCD', 2) --> AA AB AC AD BB BC BD CC CD DD
@@ -181,7 +165,8 @@ combinations_with_replacement('ABCD', 2) --> AA AB AC AD BB BC BD CC CD DD
 ## collections
 <hr style="border-top: 1px solid;"><br>
 
-Docs : <a href="https://docs.python.org/ko/3/library/collections.html" target="_blank">docs.python.org/ko/3/library/collections.html</a>  
+Docs 
+: <a href="https://docs.python.org/ko/3/library/collections.html" target="_blank">docs.python.org/ko/3/library/collections.html</a>  
 
 <br><br>
 
@@ -202,7 +187,7 @@ Docs : <a href="https://docs.python.org/ko/3/library/collections.html" target="_
 
 <br>
 
-deque는 스레드 안전하고 메모리 효율적인 데크의 양쪽 끝에서의 ```append```와 ```pop```을 양쪽에서 거의 같은 O(1) 성능으로 지원함.
+deque는 append, pop 연산 시 거의 O(1) 성능으로 지원함.
 
 list는 append, pop 연산 시 O(n)
 
@@ -225,20 +210,15 @@ list는 append, pop 연산 시 O(n)
   + extend(iterable) : iterable 인자에서 온 요소를 추가하여 데크의 오른쪽을 확장.
 
   + extendleft(iterable)
-  
-    iterable에서 온 요소를 추가하여 데크의 왼쪽을 확장. 
-    
-    일련의 왼쪽 추가는 iterable 인자에 있는 요소의 순서를 뒤집는 결과를 줌.
+    + iterable에서 온 요소를 추가하여 데크의 왼쪽을 확장. 
+    + 일련의 왼쪽 추가는 iterable 인자에 있는 요소의 순서를 뒤집는 결과를 줌.
 
   + ```index(x[, start[, stop]])```
-  
-    데크에 있는 x의 위치를 반환 (인덱스 start 또는 그 이후, 그리고 인덱스 stop 이전).
-    
-    첫 번째 일치를 반환하거나 찾을 수 없으면 ValueError를 발생.
+    + 데크에 있는 x의 위치를 반환 (인덱스 start 또는 그 이후, 그리고 인덱스 stop 이전).
+    + 첫 번째 일치를 반환하거나 찾을 수 없으면 ValueError를 발생.
 
   + insert(i, x) : x를 데크의 i 위치에 삽입합니다.
-
-    삽입으로 인해 제한된 길이의 데크가 maxlen 이상으로 커지면, IndexError가 발생.
+    + 삽입으로 인해 제한된 길이의 데크가 maxlen 이상으로 커지면, IndexError가 발생.
 
   + pop() : 데크의 오른쪽에서 요소를 제거하고 반환. 요소가 없으면, IndexError를 발생.
 
@@ -247,8 +227,7 @@ list는 append, pop 연산 시 O(n)
   + remove(value) : value의 첫 번째 항목을 제거. 찾을 수 없으면, ValueError를 발생.
 
   + reverse() : 데크의 요소들을 제자리에서 순서를 뒤집고 None을 반환.
-
-    reversed(deque)는 파이썬 내장함수 이므로 지원함.
+    + ```reversed(deque)```는 파이썬 내장함수 이므로 지원함.
 
   + rotate(n=1) : 데크를 n 단계 오른쪽으로 회전. n이 음수이면, 왼쪽으로 회전.
 
@@ -294,11 +273,9 @@ c['sausage'] = 0                        # counter entry with a zero count
 del c['sausage']                        # del actually removes the entry
 ```
 
-<br>
+<br><br>
 
 **Counter methods**
-
-<br>
 
 elements()
 : 반복되는 요소에 대한 이터레이터를 만나는 순서대로 반환. 
@@ -365,10 +342,17 @@ Link
 <br>
 
 + ```binascii.a2b_hex(hexstr)``` or ```binascii.unhexlify(hexstr)``` : hex to string
-  
   + ```hexstr``` 인자는 짝수개의 16진수 값으로 int가 아닌 bytes, buffer or ascii 의 형태여야 함.
-  
   + 변수에 저장하고자 하면 ```str(binascii.unhexlify(hexstr), 'ascii')```로 저장하면 됨.
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
+## threading
+<hr style="border-top: 1px solid;"><br>
+
+
 
 <br><br>
 <hr style="border: 2px solid;">
