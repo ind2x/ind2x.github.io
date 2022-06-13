@@ -1,5 +1,6 @@
 ---
 title : Root-me IP restriction bypass
+date: 2022-06-13-17:10 +0900
 categories : [Wargame, Root-me]
 tags : [X-Forwarded-For]
 ---
