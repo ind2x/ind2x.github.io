@@ -1,9 +1,12 @@
 ---
-title : Backup file (풀이 봄)
+title : Root-me Backup file (풀이 봄)
 categories : [Wargame, Root-me]
+tags: [nmap, nmap NSE, nmap http backup finder]
 ---
 
-# Backup file
+## Backup file (풀이 봄)
+<hr style="border-top: 1px solid;"><br>
+
 ```
 Author
 g0uZ,  27 February 2011
@@ -11,7 +14,18 @@ g0uZ,  27 February 2011
 Statement
 No clue.
 ```
-풀이를 찾아보니 http-backup-finder라는게 있다고 함. nmap을 이용하면 됨.  
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
+## Solution
+<hr style="border-top: 1px solid;"><br>
+
+풀이를 찾아보니.. nmap의 NSE로 ```http-backup-finder```라는게 있다고 함.
+
+<br>
+
 ```
 nmap -p 80 --script=http-backup-finder --script-args http-backup-finder.url=/web-serveur/ch11/index.php challenge01.root-me.org
 
@@ -28,3 +42,7 @@ PORT   STATE SERVICE
 
 Nmap done: 1 IP address (1 host up) scanned in 12.76 seconds
 ```
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
