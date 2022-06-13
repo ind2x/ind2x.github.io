@@ -4,7 +4,7 @@ categories : [Wargame, Root-me]
 tags : [CRLF]
 ---
 
-## CRLF 20 Points
+## CRLF
 <hr style="border-top: 1px solid;"><br>
 
 ```
