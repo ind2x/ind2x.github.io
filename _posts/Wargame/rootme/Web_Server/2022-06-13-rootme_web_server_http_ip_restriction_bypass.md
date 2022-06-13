@@ -41,6 +41,25 @@ RFC1918에 따르면 내부망 IP 대역은 아래와 같다.
 
 <br>
 
+```X-Forwarded-For``` 헤더를 통해 클라이언트 IP를 변경할 수 있다.
+: <a href="http://blog.plura.io/?p=6597" target="_blank">blog.plura.io/?p=6597</a>
+
+아래 내용은 위의 블로그에서 가져온 설명이다.
+
+<br>
+
+웹 서버 앞에 Proxy server, caching server 등의 장비가 있을 경우, 웹서버는 Proxy server 이나 장비 IP 에서 접속한 것으로 인식한다.
+
+따라서 웹서버는 실제 클라이언트 IP 가 아닌 앞단에 있는 Proxy 서버 IP 를 요청한 IP 로 인식하고, Proxy 장비 IP 로 웹로그를 남기게 된다.
+
+이때 웹프로그램에서는 ```X-Forwarded-For``` HTTP Hearder 에 있는 클라이언트 IP 를 찾아 실제 요청한 클라이언트 IP 를 알 수 있고, 웹로그에도 실제 요청한 클라이언트 IP 를 남길 수 있다.
+
+```X-Forwarded-For``` 는 다음과 같이 콤마를 구분자로 Client 와 Proxy IP 가 들어가게 되므로 첫번째 IP 를 가져오면 클라이언트를 식별할 수 있다.
+: ```X-Forwarded-For: client, proxy1, proxy2```
+
+<br>
+
+따라서 내 헤더에 ```X-Forwarded-For: 10.0.0.1```이라고 추가만 해주면 패스워드가 나온다.
 
 <br><br>
 <hr style="border: 2px solid;">
