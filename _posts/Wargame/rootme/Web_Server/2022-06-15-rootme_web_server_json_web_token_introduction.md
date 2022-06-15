@@ -25,6 +25,11 @@ To validate the challenge, connect as admin.
 ## Solution
 <hr style="border-top: 1px solid;"><br>
 
+```JWT(Json Web Token)```이란?
+: <a href="https://brunch.co.kr/@jinyoungchoi95/1" target="_blank">brunch.co.kr/@jinyoungchoi95/1</a>
+
+<br>
+
 
 
 
