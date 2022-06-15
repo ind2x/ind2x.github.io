@@ -2,7 +2,7 @@
 title : Root-me JSON Web Token (JWT) Introduction
 date: 2022-06-15-22:17 +0900
 categories : [Wargame, Root-me]
-tags : [JSON Web Token, JWT]
+tags : [JSON Web Token, JWT, JWT None algorithm injection, JWT none type injection]
 ---
 
 ## JSON Web Token (JWT) - Introduction
