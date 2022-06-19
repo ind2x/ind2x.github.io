@@ -2,7 +2,7 @@
 title: Root-me PHP register globals
 date: 2022-06-19-11:43  +0900
 categories: [Wargame,Root-me]
-tags: [php register_globals]
+tags: [php register_globals, extract]
 ---
 
 ## PHP - register globals
@@ -103,6 +103,11 @@ echo $aff;
 
 ?>
 ```
+
+<br>
+
+extract 함수가 사용된 것이 보인다.
+: <a href="https://bbolmin.tistory.com/53" target="_blank">bbolmin.tistory.com/53</a>
 
 <br>
 
