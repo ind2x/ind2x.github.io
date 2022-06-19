@@ -1,8 +1,8 @@
 ---
-title: Root-me PHP Remote Xdebug
+title: Root-me PHP Remote Xdebug (Incomplete)
 date: 2022-06-19-13:00  +0900
 categories: [Wargame,Root-me]
-tags: [xdebug]
+tags: [xdebug, Incomplete]
 ---
 
 ## PHP - Remote Xdebug
