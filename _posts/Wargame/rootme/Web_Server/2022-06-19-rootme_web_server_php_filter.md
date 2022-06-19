@@ -26,7 +26,9 @@ Retrieve the administrator password of this application.
 
 inc 파라미터가 있는데 여기로 들어갈 페이지를 입력을 받는다.
 
-```../```를 입력해주면 warning이 뜨면서 에러를 출력해주는데, 보면은 입력 값이 include에 포함된다. 즉, ```include($_GET['inc'])```로 되어 있다.
+```../```를 입력해주면 warning이 뜨면서 에러를 출력해주는데, 보면은 입력 값이 include에 포함된다. 
+
+즉, ```include($_GET['inc'])```로 되어 있다.
 
 LFI 공격을 할 때, include 함수에도 wrapper를 사용할 수 있다. 
 
