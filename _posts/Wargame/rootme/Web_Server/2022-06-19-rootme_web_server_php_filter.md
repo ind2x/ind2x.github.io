@@ -2,7 +2,7 @@
 title : Root-me PHP Filters
 date: 2022-06-19-11:13 +0900
 categories : [Wargame, Root-me]
-tags : []
+tags : [LFI]
 ---
 
 ## PHP - Filters
