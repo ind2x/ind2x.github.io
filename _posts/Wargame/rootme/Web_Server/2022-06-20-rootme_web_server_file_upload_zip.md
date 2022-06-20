@@ -1,6 +1,6 @@
 ---
 title: Root-me File upload ZIP
-date: 2022-0  +0900
+date: 2022-06-20-14:00  +0900
 categories: [Wargame, Root-me]
 tags: [file upload, zip file upload, zip slip attack, zip based exploit with symlink]
 ---
