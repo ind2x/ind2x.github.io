@@ -9,7 +9,13 @@ tags: [LFI, LFI Double Encoding]
 <hr style="border-top: 1px solid;"><br>
 
 ```
+30 Points
+Include can be dangerous.
+Author
+zM_,  13 June 2016
 
+Statement
+Find the validation password in the source files of the website.
 ```
 
 <br><br>
