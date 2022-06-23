@@ -5,6 +5,8 @@ tags : [LFI]
 ---
 
 ## Local File Inclusion
+<hr style="border-top: 1px solid;"><br>
+
 ```
 Author
 g0uZ,  2 October 2011
@@ -12,7 +14,18 @@ g0uZ,  2 October 2011
 Statement
 Get in the admin section.
 ```
-```file=../```을 했더니 여러개의 파일들이 나오고 그 중 index.php가 포함되어 있음.  
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
+## Solution
+<hr style="border-top: 1px solid;"><br>
+
+```file=../```을 했더니 여러개의 파일들이 나오고 그 중 index.php가 포함되어 있음.
+
+<br>
+
 ```php
 <?php
 $authorized_dir=array('esprit', 'archives', 'coding', 'sysadm', 'crypto', 'reseau');
@@ -72,7 +85,13 @@ echo $aff;
 
 ?>
 ```
+
+<br>
+
 절대경로를 반환하기 때문에 도저히 방법이 생각이 안나던 중 files 경로를 건들이다가 ```files=../files../admin```을 했더니 ```index.php```가 있었음.  
+
+<br>
+
 ```php
 <?php
 function http_digest_parse($txt)
@@ -122,8 +141,9 @@ echo "<html>
       </html>";
 ?>
 ```
-따라서 admin페이지에 가서 코드에 있는 비밀번호를 사용하면 들어갈 수 있음.
-```
-flag : OpbNJ60xYpvAQU8
-```
 
+따라서 admin페이지에 가서 코드에 있는 비밀번호를 사용하면 들어갈 수 있음.
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
