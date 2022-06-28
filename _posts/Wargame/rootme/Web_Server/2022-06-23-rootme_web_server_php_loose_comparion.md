@@ -1,8 +1,8 @@
 ---
-title : Root-me PHP Loose Comparison
+title : Root-me PHP Loose Comparison (Incomplete)
 date: 2022-06-23-18:36 +0900
 categories : [Wargame, Root-me]
-tags : [PHP Loose Comparison]
+tags : [PHP Loose Comparison, Incomplete]
 ---
 
 ## PHP - Loose Comparison
