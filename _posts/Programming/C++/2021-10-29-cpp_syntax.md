@@ -100,14 +100,13 @@ cout.precision(n); // n자리 만큼 소수점 출력
 ### 초기화
 <hr style="border-top: 1px solid;"><br>
 
-직접초기화
-: ```int x(5);```
+```cpp
+int x(5); // 직접 초기화
 
-복사초기화
-: ```int x = 5;```
+int x = 5; // 복사초기화
 
-유니폼 초기화
-: ```int x {5};```
+int x {5}; // 유니폼 초기화
+```
 
 <br>
 
