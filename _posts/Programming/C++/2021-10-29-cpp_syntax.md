@@ -415,10 +415,18 @@ Area of Wall 2 : 90.3
 Area of Wall 3 : 90.3
 ```
 
+<br><br>
+
 ### Class 생성자 초기화 리스트
+<hr style="border-top: 1px solid;"><br>
+
 ```cpp
 className() : var1(value), var2(value), ..., varN(value) {}
+```
 
+<br>
+
+```cpp
 // example
 class Something {
     private :
@@ -435,12 +443,17 @@ int main() {
     Something B{5,'c'}; // 유니폼 초기화
 }
 ```
-```
+
+<br>
+
 기본 값이 있더라도 초기화 리스트가 우선시 됨.
-즉, var1=10 -> value1, var2='a' -> value2
-```
+: 즉, var1=10 -> value1, var2='a' -> value2
+
+<br><br>
 
 ### 생성자 위임
+<hr style="border-top: 1px solid;"><br>
+
 ```cpp
 Circle::Circle() {
 	radius = 1;
@@ -451,10 +464,15 @@ Circle::Circle(int r) {
     std::cout << "반지름 : << radius << " 원생성" << std::endl;
 }
 ```
-```
+
+<br>
+
 생성자 위임이란 생성자에서 다른 생성자를 호출하는 것을 말함.
+
 생성자 위임을 통해 중복되는 코드를 제거할 수 있음.
-```
+
+<br>
+
 ```cpp
 Circle::Circle() : Circle(1) {} // Circle(int r)의 생성자 호출, 위임 생성자
 
@@ -464,13 +482,25 @@ Circle::Circle(int r) { //타겟 생성자
 }
 ```
 
+<br><br>
+
 ### 객체를 매개변수로 받는 함수
+<hr style="border-top: 1px solid;"><br>
+
 <img src="https://cdn.programiz.com/sites/tutorial2program/files/cpp-pass-object-to-function.png" width="500" height="400" align="center">
 
+<br><br>
+
 ### 리턴형이 객체인 함수
+<hr style="border-top: 1px solid;"><br>
+
 <img src="https://cdn.programiz.com/sites/tutorial2program/files/cpp-return-object-from-function.png" width="500" height="400" align="center">
 
+<br><br>
+
 ### 연산자 오버로딩
+<hr style="border-top: 1px solid;"><br>
+
 ```cpp
 class className {
     ... .. ...
@@ -486,6 +516,9 @@ operator is a keyword.
 symbol : +, <, -, ++, etc.
 */
 ```
+
+<br>
+
 ```cpp
 // Overload ++ when used as prefix and postfix
 
@@ -543,7 +576,11 @@ Count: 6
 Count: 6
 ```
 
+<br><br>
+
 ### this 포인터
+<hr style="border-top: 1px solid;"><br>
+
 ```cpp
 class Test {
   private:
@@ -556,7 +593,11 @@ class Test {
 }
 ```
 
+<br><br>
+
 ### 상속
+<hr style="border-top: 1px solid;"><br>
+
 ```cpp
 #include <iostream>
 #include <string>
@@ -625,15 +666,19 @@ int main() {
     return 0;
 }
 ```
-```
+
+<br>
+
 Base class인 Animal에 멤버 변수를 봐야 함.
-color -> private, type -> protected
+: color -> private, type -> protected
 
 protected, public은 derived class에서도 접근 가능함.
-단, protected는 직접 접근하는 것은 불가능함.
+: 단, protected는 직접 접근하는 것은 불가능함.
 
 private은 접근이 불가능함.
-```
+
+<br>
+
 ```cpp
 class Dog : public Animal {
 
@@ -648,22 +693,26 @@ class Dog : public Animal {
 dog1.type = "mammal";
 ```
 
-| Specifier | Same Class | Derived class | Outside Class |
-|-----------|------------|---------------|---------------|
-| public    | Yes        | Yes           | Yes           |
-| private   | Yes        | No            | No            |
-| protected | Yes        | Yes           | No            |
+<br>
 
-```
+![image](https://user-images.githubusercontent.com/52172169/177031344-d514989a-74da-4000-a9d4-05593c82b433.png)
+
+<br>
+
 상속 받을 때, keyword에 따라 달라짐.
 
-public : public, protected 그대로 가져옴.
++ public
+  + public, protected 그대로 가져옴.
 
-private : public, protected -> private으로 바뀜,
-          기존 클래스의 private 멤버 변수는 접근 불가능.
++ private
+  + public, protected -> private으로 바뀜,
+  + 기존 클래스의 private 멤버 변수는 접근 불가능.
           
-protected : public, protected -> protected로 변경.
-```
++ protected
+  + public, protected -> protected로 변경.
+
+<br>
+
 ```cpp
 class Base {
     public:
@@ -674,6 +723,9 @@ class Base {
         int z;
 };
 ```
+
+<br>
+
 ```cpp
 class PublicDerived: public Base {
     // x is public
@@ -681,13 +733,11 @@ class PublicDerived: public Base {
     // z is not accessible from PublicDerived
 };
 ```
-**Accessibility in public inheritance**  
 
-| Accessibility | private members | protected members | public members |
-|:-------------:|:---------------:|:-----------------:|:--------------:|
-|   Base Class  |       Yes       |        Yes        |       Yes      |
-| Derived Class |        No       |        Yes        |       Yes      |
-  
+![image](https://user-images.githubusercontent.com/52172169/177031541-8d585677-087c-4bc1-ba91-7dc562ed40d7.png)
+
+<br>
+
 ```cpp
 class ProtectedDerived: protected Base {
     // x is protected
@@ -695,12 +745,10 @@ class ProtectedDerived: protected Base {
     // z is not accessible from ProtectedDerived
 };
 ```
-**Accessibility in protected inheritance**  
 
-| Accessibility | private members |            protected members           |             public members             |
-|:-------------:|:---------------:|:--------------------------------------:|:--------------------------------------:|
-|   Base Class  |       Yes       |                   Yes                  |                   Yes                  |
-| Derived Class |        No       | Yes (inherited as protected variables) | Yes (inherited as protected variables) |
+![image](https://user-images.githubusercontent.com/52172169/177031554-12e6a644-7145-49de-a4a4-562aa82e932f.png)
+
+<br>
   
 ```cpp
 class PrivateDerived: private Base {
@@ -709,17 +757,26 @@ class PrivateDerived: private Base {
     // z is not accessible from PrivateDerived
 }
 ```
-**Accessibility in private inheritance**  
 
-| Accessibility | private members |           protected members          |            public members            |
-|:-------------:|:---------------:|:------------------------------------:|:------------------------------------:|
-|   Base Class  |       Yes       |                  Yes                 |                  Yes                 |
-| Derived Class |        No       | Yes (inherited as private variables) | Yes (inherited as private variables) |
-  
+![image](https://user-images.githubusercontent.com/52172169/177031624-0e94ceef-a57d-4047-b81c-cedca7948ba3.png)
+
+<br><br>
+
 ### Function Overriding
+<hr style="border-top: 1px solid;"><br>
+
+출처
+: <a href="https://www.programiz.com/cpp-programming/function-overriding" target="_blank">programiz.com/cpp-programming/function-overriding</a>
+
+<br>
+
 <img src="https://cdn.programiz.com/sites/tutorial2program/files/cpp-function-overriding.png" width="500" height="400" align="center">
 
+<br>
+
 <img src="https://cdn.programiz.com/sites/tutorial2program/files/cpp-access-overridden-function-using-object.png" width="500" height="400" align="center">
+
+<br>
 
 ```cpp
 // C++ program to access overridden function using pointer
@@ -755,13 +812,19 @@ int main() {
 }
 // Output : Base Function
 ```
-```
-ptr이 derived1을 가리키고 있지만, ptr은 타입이 Base이므로
-Base의 print 함수를 불러오는 것임.
-```
+
+<br>
+
+ptr이 derived1을 가리키고 있지만, ptr은 타입이 Base이므로 Base의 print 함수를 불러오는 것임.
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 ## Template
 ### Function Template
+<hr style="border-top: 1px solid;"><br>
+
 ```cpp
 template <typename T>
 T functionName(T parameter1, T parameter2, ...) {
@@ -774,6 +837,9 @@ T add(T num1, T num2) {
    return (num1 + num2);
 }
 ```
+
+<br>
+
 ```
 typename : keyword
 T : template argument that accepts different data types
@@ -781,10 +847,19 @@ T : template argument that accepts different data types
 Usage : functionName<dataType>(parameter1, parameter2,...);
 ```
 
+<br>
+
 <img src="https://cdn.programiz.com/sites/tutorial2program/files/cpp-function-template.png" width="500" height="400" align="center">
 
+<br><br>
+
 ### Class Template
+<hr style="border-top: 1px solid;"><br>
+
 기본형은 다음과 같음.
+
+<br>
+
 ```cpp
 template <class T>
 class className {
@@ -796,9 +871,14 @@ class className {
     ... .. ...
 };
 ```
-```
-Usage : className<dataType> classObject;
-```
+
+<br>
+
+Usage 
+: ```className<dataType> classObject;```
+
+<br>
+
 ```cpp
 // example
 #include <iostream>
@@ -831,7 +911,13 @@ int Number = 7
 double Number = 7.7
 */
 ```
+
+<br>
+
 여러 개의 데이터형을 받는 방법은 아래와 같음.
+
+<br>
+
 ```cpp
 template <class T, class U, class V = int>
 class ClassName {
@@ -844,6 +930,9 @@ class ClassName {
     ... .. ...
 };
 ```
+
+<br>
+
 ```cpp
 // example
 #include <iostream>
@@ -878,3 +967,7 @@ int main() {
     return 0;
 }
 ```
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
