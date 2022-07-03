@@ -4,11 +4,20 @@ categories : [Programming, C++]
 ---
 
 ## 참고
-Link : <a href="https://www.programiz.com/cpp-programming" target="_blank">www.programiz.com/cpp-programming</a>  
-Link : <a href="https://boycoding.tistory.com/category/C%2B%2B%20이야기" target="_blank">boycoding.tistory.com/category/C++ 이야기</a>  
+<hr style="border-top: 1px solid;"><br>
+
+Link
+: <a href="https://www.programiz.com/cpp-programming" target="_blank">programiz.com/cpp-programming</a>  
+: <a href="https://boycoding.tistory.com/category/C%2B%2B%20이야기" target="_blank">boycoding.tistory.com/category/C++ 이야기</a>  
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 ## Input
-### cin, cout 입출력속도 향상 
+### cin, cout 입출력속도 향상
+<hr style="border-top: 1px solid;"><br>
+
 ```cpp
 int main() {
     ios::sync_with_stdio(false); 
@@ -21,12 +30,19 @@ int main() {
 }
 
 /*
+
 주의 : 위 코드 사용시 printf(), scanf() 사용 금지
 
 endl 절대 사용 금지 -> 출력 속도 낮아짐.
+
 */
 ```
+
+<br><br>
+
 ### char, string 타입 입력받기
+<hr style="border-top: 1px solid;"><br>
+
 ```cpp
 string str;
 
@@ -36,24 +52,26 @@ cin.get(str,길이)
 
 getline(cin,str)
 ```
-**>>>>>>>>>>>>>>주의 사항<<<<<<<<<<<<<<**
-```
-1. >> 연산자는 공백 전까지만 출력함.
 
-2. cin은 '\n'을 변수에 담지 않고 입력 버퍼에 저장함.
+<br>
 
-3. getline은 변수에 '\n'을 담음.
-```
-```
-2번과 3번에 따라, cin 다음 getline을 동시에 사용하는 경우
-cin으로 값을 입력하면, 버퍼에 '\n'이 남아있으므로 
-그 다음 getline으로 입력 받을 시 입력이 안될 것임.
++ 주의 사항
+  + >> 연산자는 공백 전까지만 출력함.
+  + cin은 '\n'을 변수에 담지 않고 입력 버퍼에 저장함.
+  + getline은 변수에 '\n'을 담음.
+
+<br>
+
+2번과 3번에 따라, cin 다음 ```getline```을 동시에 사용하는 경우 cin으로 값을 입력하면, 버퍼에 '\n'이 남아있으므로 그 다음 ```getline```으로 입력 받을 시 입력이 안될 것임.
 
 따라서 cin 사용 후 cin.ignore 함수를 사용해야 함.
-cin.ignore(32767, '\n');
-```
+: ```cin.ignore(32767, '\n');```
+
+<br><br>
 
 ### 무한 입력
+<hr style="border-top: 1px solid;"><br>
+
 ```cpp
 int n;
 while(cin >> n) {
@@ -61,50 +79,68 @@ while(cin >> n) {
 }
 ```
 
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
 ## Output
 ### 소수점 출력하기
+<hr style="border-top: 1px solid;"><br>
+
 ```cpp
 cout << fixed; // 원하는 자리수만큼 출력
 cout.precision(n); // n자리 만큼 소수점 출력
 ```
 
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
 ## 변수
 ### 초기화
-```
+<hr style="border-top: 1px solid;"><br>
+
 직접초기화
-int x(5);
+: ```int x(5);```
 
 복사초기화
-int x = 5;
+: ```int x = 5;```
 
 유니폼 초기화
-int x {5}
-```
-```
+: ```int x {5};```
+
+<br>
+
 복사 초기화 및 직접 초기화는 일부 타입의 변수에 대해서만 작동함. 
 
-모든 데이터 타입에서 작동하는 단일 초기화 메커니즘을 제공하기 위해 
-C++ 11은 유니폼 초기화라는 새로운 형태의 초기화 메커니즘을 추가함.
+모든 데이터 타입에서 작동하는 단일 초기화 메커니즘을 제공하기 위해 C++ 11은 유니폼 초기화라는 새로운 형태의 초기화 메커니즘을 추가함.
 
 유니폼 초기화는 형 변환을 허용하지 않음.
-```
-```
+
+<br>
+
+```cpp
 int x{5};
 int x{} -> x = 0
 int x{4.5} -> compile error
 ```
 
+<br><br>
+
 ### 참조형 변수
-```
+<hr style="border-top: 1px solid;"><br>
+
 C++은 3가지의 참조형 변수를 지원한다고 함.
+: 1. non-const 값 참조형
+: 2. const 값 참조형
+: 3. r-value 참조형
 
-1. non-const 값 참조형
-2. const 값 참조형
-3. r-value 참조형
+<br>
 
-참조형은 인수의 값을 수정하려는 경우나 
-인수의 비싼 복사본을 만들지 않으려는 경우 함수 매개변수로 자주 사용됨.
-```
+참조형은 인수의 값을 수정하려는 경우나 인수의 비싼 복사본을 만들지 않으려는 경우 함수 매개변수로 자주 사용됨.
+
+<br>
+
 ```cpp
 /* Reference to non-const values */
 
@@ -114,6 +150,9 @@ int& ref = value;
 value = 6; -> ref = 6
 ref = 7; ->  value = 7
 ```
+
+<br>
+
 ```
 참조형은 반드시 선언과 동시에 초기화 해줘야 함.
 포인터는 null 값으로 초기화 할 수 있지만, 참조형은 불가능.
