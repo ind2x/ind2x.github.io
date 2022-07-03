@@ -218,28 +218,38 @@ int& r=v2 -> ERROR
 ## auto
 <hr style="border-top: 1px solid;"><br>
 
-```
-auto 키워드는 선언된 변수의 초기화 식을 사용하여 
-해당 형식을 추론하도록 컴파일러에 지시함.
+auto 키워드는 선언된 변수의 초기화 식을 사용하여 해당 형식을 추론하도록 컴파일러에 지시함.
 
-즉, auto 키워드를 사용하면 
-초깃값의 형식에 맞춰 선언하는 인스턴스(변수)의 형식이 자동으로 결정됨. 
+즉, auto 키워드를 사용하면 초깃값의 형식에 맞춰 선언하는 인스턴스(변수)의 형식이 자동으로 결정됨. 
 
 이것을 타입 추론(type inference)이라고 함.
-```
-```
-auto 키워드를 사용한 변수는 반드시 초기화를 해줘야 함.
+
+<br>
+
+**auto 키워드를 사용한 변수는 반드시 초기화를 해줘야 함.**
+
 초기화를 하지 않고 사용한 변수는 사용 불가함.
 
 따라서 auto 키워드는 함수의 매개변수에 사용할 수 없음.
--> 컴파일 시 컴파일러가 추론할 수 없기 때문임.
+: 컴파일 시 컴파일러가 추론할 수 없기 때문임.
+
+<br>
 
 하지만, 함수의 리턴형에 auto를 사용하는 것은 가능함.
-좋아 보일 수 있지만 잘못 해석할 가능성도 있어서 추천x. (C++14부터)
-```
-참고 : <a href="https://boycoding.tistory.com/184?category=1008283" target="_blank">boycoding.tistory.com/184?category=1008283</a>  
+: 좋아 보일 수 있지만 잘못 해석할 가능성도 있어서 추천x. (C++14부터)
+
+<br>
+
+참고 
+: <a href="https://boycoding.tistory.com/184?category=1008283" target="_blank">boycoding.tistory.com/184?category=1008283</a>  
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 ## 동적 메모리 할당
+<hr style="border-top: 1px solid;"><br>
+
 ```cpp
 int *ptr1 = new int (5);  
 int *ptr2 = new int { 6 };
@@ -255,60 +265,93 @@ ptr1=0;
 ptr2=0;
 ptr3=0;
 ```
-```
-메모리 누수를 방지하기 위해 
-메모리가 할당된 포인터에 다른 주소값을 넣기 전에는
-반드시 delete로 해제한 뒤에 사용해야 함.
-```
+
+<br>
+
+메모리 누수를 방지하기 위해 메모리가 할당된 포인터에 다른 주소값을 넣기 전에는 반드시 delete로 해제한 뒤에 사용해야 함.
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 ## 범위 기반 for 문
-```
-python의 for i in 과 비슷함
+<hr style="border-top: 1px solid;"><br>
 
+python의 ```for i in``` 과 비슷함.
+
+```cpp
 for(DataType var : array) {
     statement;
 }
-
-DataType은 배열의 데이터타입과 동일해야 함.
-따라서 auto 키워드를 이용하는 방법이 이상적임.
-
-또한 배열의 요소를 복사하는 것으로, 비용이 많이 든다면
-참조 연산자를 이용할 수 있음.
 ```
+
+<br>
+
+```DataType```은 배열의 데이터타입과 동일해야 함. 
+
+**따라서 auto 키워드를 이용하는 방법이 이상적임.**
+
+또한 배열의 요소를 복사하는 것으로, 비용이 많이 든다면 **참조 연산자**를 이용할 수 있음.
+
+<br>
+
 ```cpp
 // example
+
 #include <iostream> 
 using namespace std;
-int main() { 
-    int fibonacci[] = { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 }; 
-    for (int number : fibonacci) {
-      cout << number << ' '; 
+int main() 
+{ 
+    int fibonacci[] = { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 };
+    
+    for (int number : fibonacci) 
+    {
+        cout << number << ' '; 
     }
+    
     /*
-    for (auto &number : fibonacci) {
-      cout << number << ' '; 
+    for (auto &number : fibonacci) 
+    {
+        cout << number << ' '; 
     }
     */
+    
     return 0; 
 }
 ```
-```
+
+<br>
+
 단, 포인터로 변환된 배열에서 범위 기반 for 루프를 사용할 수 없음.
--> 배열의 크기를 알지 못하기 때문임.
+: 배열의 크기를 알지 못하기 때문임.
 
 마찬가지로 동적배열 또한 사용 불가능함.
-```
+
+<br>
+
 ```cpp
-int sumArray(int array[]) { 
+int sumArray(int array[]) 
+{ 
     int sum = 0; 
     for (const auto& number : array) // -> ERROR
         sum += number; 
-    return sum; } 
+    return sum; 
+} 
 ```
-참고 : <a href="https://boycoding.tistory.com/184?category=1008283" target="_blank">boycoding.tistory.com/184?category=1008283</a>
+
+<br>
+
+참고 
+: <a href="https://boycoding.tistory.com/184?category=1008283" target="_blank">boycoding.tistory.com/184?category=1008283</a>
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 ## Class
-### Class 생성자 
+### Class 생성자
+<hr style="border-top: 1px solid;"><br>
+
 ```cpp
 // example
 #include <iostream>
