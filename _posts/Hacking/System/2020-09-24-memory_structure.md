@@ -155,6 +155,15 @@ Stack 영역은 다른 영역과 달리 위에서 아래로 쌓이는 구조로 
 
 호출된 함수에서 또 다른 함수가 호출되면 추가적인 스택 프레임이 생성되는 과정이 반복됨.
 
+함수를 호출할 땐 ```call 프로시저``` 명령어로 호출이 되는데 구조적으로 아래와 같음.
+: 출처는 <a href="https://learn.dreamhack.io/63#5" target="_blank">x86 Assembly🤖: Essential Part(2)</a>
+
+<br>
+
+![image](https://user-images.githubusercontent.com/52172169/177022632-7740c136-b5e2-4b31-b7e6-5a7e4bfbe964.png)
+
+<br>
+
 참고로 인자가 있는 함수가 호출되면 스택에는 아래와 같이 쌓이게 됨.
 
 ![image](https://user-images.githubusercontent.com/52172169/151170949-454dba57-f798-4790-ae5a-3c2dc1d72eb3.png)
