@@ -153,25 +153,34 @@ ref = 7; ->  value = 7
 
 <br>
 
-```
-참조형은 반드시 선언과 동시에 초기화 해줘야 함.
+참조형은 **반드시 선언과 동시에 초기화** 해줘야 함.
+
 포인터는 null 값으로 초기화 할 수 있지만, 참조형은 불가능.
 
 또한, non-const 변수를 참조하고자 하면, non-const 변수로 초기화해야 함.
+
 const 값이나 r-value 값으로 초기화 할 수 없음.
-```
+
+<br>
+
 ```cpp
 const int y = 7; 
 int& ref2 = y;  -> ERROR, y는 const value임.
 
 int& ref3 = 6; -> ERROR, r-value로 초기화 불가능.
 ```
-```
+
+<br>
+
 const 참조의 경우는 non-const 참조와 다름.
 
-const 참조는 non-const 값, const 값 및 r-value로 초기화할 수 있음.
-단, const 이므로 값을 변경하는 것은 불가능함. -> 따라서 상수 참조라고 부름.
-```
+**const 참조는 non-const 값, const 값 및 r-value로 초기화할 수 있음.**
+
+단, const 이므로 값을 변경하는 것은 불가능함.
+: 따라서 상수 참조라고 부름.
+
+<br>
+
 ```cpp
 int value = 5; 
 const int& ref = value;
@@ -181,7 +190,13 @@ const int& ref2 = y;
 
 const int& ref3 = 6;
 ```
+
+<br>
+
 **참조형 변수는 한 번 초기화하면 다른 변수를 참조하도록 변경할 수 없음.**
+
+<br>
+
 ```cpp
 int v1=5
 int v2=6
@@ -189,10 +204,20 @@ int v2=6
 int& r=v1 -> r = 5
 int& r=v2 -> ERROR
 ```
-참고 : <a href="https://boycoding.tistory.com/207?category=1009770" target="_blank">boycoding.tistory.com/207?category=1009770</a>  
-참고 : <a href="https://boycoding.tistory.com/208?category=1009770" target="_blank">boycoding.tistory.com/208?category=1009770</a>  
+
+<br>
+
+참고 
+: <a href="https://boycoding.tistory.com/207?category=1009770" target="_blank">boycoding.tistory.com/207?category=1009770</a>  
+: <a href="https://boycoding.tistory.com/208?category=1009770" target="_blank">boycoding.tistory.com/208?category=1009770</a>  
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
 ## auto
+<hr style="border-top: 1px solid;"><br>
+
 ```
 auto 키워드는 선언된 변수의 초기화 식을 사용하여 
 해당 형식을 추론하도록 컴파일러에 지시함.
