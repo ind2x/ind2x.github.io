@@ -130,9 +130,9 @@ int x{4.5} -> compile error
 <hr style="border-top: 1px solid;"><br>
 
 C++은 3가지의 참조형 변수를 지원한다고 함.
-: 1. non-const 값 참조형
-: 2. const 값 참조형
-: 3. r-value 참조형
+: non-const 값 참조형
+: const 값 참조형
+: r-value 참조형
 
 <br>
 
