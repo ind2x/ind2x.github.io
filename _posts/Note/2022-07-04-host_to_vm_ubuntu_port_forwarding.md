@@ -1,7 +1,7 @@
 ---
 title: Windows에서 hyper-v ubuntu로 포트포워딩 (netsh)
 date: 2022-07-04-13:54  +0900
-categories: [Note,settings]
+categories: [Note,hyper-v]
 tags: [netsh, port forwarding]
 ---
 
