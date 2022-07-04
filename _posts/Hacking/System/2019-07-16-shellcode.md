@@ -117,6 +117,7 @@ ssize_t write(int fd, const void *buf, size_t count)
 + ```mov <dst> <src>``` : src의 값을 dst로 복사한다.
 
 + ```int <signal>``` : 커널로 인터럽트 시그널을 보낸다. **```int 0x80```은 커널에게 시스템 콜을 하는 데 사용된다.**
+  + x86-64에서는 ```int 0x80``` 대신에 ```syscall```을 사용한다.
 
 <br>
 
