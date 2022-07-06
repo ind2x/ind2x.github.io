@@ -1,7 +1,7 @@
 ---
 title : "Application Layer"
 categories : [Study, Computer Network]
-tags : [Computer Network, Application Layer, Incomplete]
+tags : [Computer Network, Application Layer]
 ---
 
 ## 네트워크 애플리케이션 원리
@@ -103,6 +103,8 @@ tags : [Computer Network, Application Layer, Incomplete]
 **소켓은 호스트의 애플리케이션 계층과 트랜스포트 계층 간의 인터페이스임.**
 
 또한 소켓은 네트워크 애플리케이션이 인터넷에 만든 프로그래밍 인터페이스이므로, 애플리케이션과 네트워크 사이의 **API(Application Programming Interface)**라고도 함.
+
+![image](https://user-images.githubusercontent.com/52172169/177492408-ac080859-6ccf-4f9b-8493-dbb84ff461dd.png)
 
 <br>
 <br>
@@ -206,20 +208,25 @@ TCP 서비스 모델은 **연결지향형(connection-oriented) 서비스**와 **
   
     + 이를 **핸드셰이킹 과정**이라 하며 이 과정에서 클라이언트와 서버에게 패킷이 곧 도달할 것이니 준비하라고 알려줌.
   
-  + 핸드셰이킹 단계 후 TCP 연결이 두 프로세스 간에 형성되는데, 이 연결은 두 프로세스가 서로에게 동시에 메시지를 보낼 수 있기에 ```전지웅(full-deplex) 연결```이라 함.
+  + 핸드셰이킹 단계 후 TCP 연결이 두 프로세스 간에 형성되는데, 이 연결은 두 프로세스가 서로에게 동시에 메시지를 보낼 수 있기에 ```전이중(full-deplex) 연결```이라 함.
   
 <br>
 
 + **신뢰적인 데이터 전송 서비스**
 
+  + 통신 프로세스는 모든 데이터를 오류 없이 올바른 순서로 전달하기 위해 TCP에 의존함.
+
   + 애플리케이션의 한쪽이 바이트 스트림을 소켓으로 전달하면 그 바이트 스트림을 손실하거나 중복되지 않게 수신 소켓으로 전달함.
 
 <br>
 
-이외에도 TCP는 혼잡제어 서비스가 있음.
+이외에도 TCP는 혼잡제어 방식, 즉 통신하는 포르세스의 직접 이득보다는 인터넷의 전체 성능 향상을 위한 서비스를 포함함.
 
-<br>
-<br>
+TCP 혼잡제어 방식은 네트워크가 혼잡상태에 이르면 프로세스(클라이언트 또는 서버) 속도를 낮춤. 
+
+특히 각 TCP 연결이 네트워크 대역폭을 공평하게 공유할 수 있게끔 제한하려고 시도함.
+
+<br><br>
 
 #### UDP 서비스
 <hr style="border-top: 1px solid;"><br>
@@ -236,8 +243,7 @@ UDP는 비신뢰적인 데이터 전송 서비스를 제공함.
 
 반면에 **UDP는 혼잡제어 방식을 포함하지 않으므로 UDP의 송신 측은 데이터를 원하는 속도로 하위 계층(네트워크 계층)에 보낼 수 있음.**
 
-<br>
-<br>
+<br><br>
 
 ### 애플리케이션 계층 프로토콜
 <hr style="border-top: 1px solid;"><br>
