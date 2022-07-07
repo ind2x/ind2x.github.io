@@ -739,9 +739,9 @@ DNS의 다른 중요한 형태는 **로컬 DNS 서버임.**
 
 위의 그림에서 호스트가 로컬 DNS 서버로 보내는 질의는 자신을 대신하여 필요한 매핑을 얻도록 로컬 DNS에게 요구하므로 재귀적 질의임. 그 외의 다른 질의는 반복적 질의임.
 
-이론상, DNS 질의는 반복적임으로 재귀적일 수 있음.
+이론상, DNS 질의는 반복적이고 재귀적일 수 있음.
 
-recursive query를 계속 처리하는 서버를 ```recursive DNS server```라 하는데, 여기서 로컬 DNS 서버가 ```recursive DNS server```가 됨.
+recursive query를 계속 처리하는 서버를 ```recursive DNS server```라 하는데, 위의 예에서 로컬 DNS 서버가 ```recursive DNS server```가 됨.
 
 <br>
 <br>
