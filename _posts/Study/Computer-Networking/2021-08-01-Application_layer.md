@@ -115,7 +115,7 @@ tags : [Computer Network, Application Layer]
 
 수신 프로세스를 식별하기 위해 두 가지의 정보가 명시되어야 함.
 
-+ 첫 번째는 호스트 주소
++ 첫 번째는 목적지 호스트 주소
 + 두 번째는 목적지 호스트 내의 수신 프로세스를 명시하는 식별자
 
 <br>
@@ -124,7 +124,7 @@ tags : [Computer Network, Application Layer]
 
 송신 호스트는 **메시지가 전달되어야 하는 수신 호스트의 주소**와 **수신 호스트에서 수행되고 있는 수신 프로세스도 식별**해야 함. 
 
-따라서 목적지 포트 번호가 수신 프로세스 식별을 위해 사용됨.
+여기서 목적지 포트 번호가 수신 프로세스 식별을 위해 사용됨.
 
 <br>
 <br>
@@ -185,7 +185,7 @@ tags : [Computer Network, Application Layer]
 ## 인터넷 전송 프로토콜이 제공하는 서비스
 <hr style="border-top: 1px solid;"><br>
 
-인터넷(그릐고 일반적인 TCP/IP 네트워크)은 애플리케이션에게 2개의 전송 프로토콜을 제공함.
+인터넷(그리고 일반적인 TCP/IP 네트워크)은 애플리케이션에게 2개의 전송 프로토콜을 제공함.
 
 ```UDP(User Datagram Protocol)```과 ```TCP(Transmission Control Protocol)```가 있음.
 
