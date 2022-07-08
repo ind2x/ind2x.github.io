@@ -414,7 +414,7 @@ UDP 체크섬은 오류 검출을 제공함.
 
 <br>
 
-![신뢰적인 데이터 전송 프레임워크](https://user-images.githubusercontent.com/52172169/177926447-75e08744-e97f-449d-914e-c62b33ade9a5.png)
+![신뢰적인 데이터 전송 프레임워크](https://user-images.githubusercontent.com/52172169/177939752-9973abd0-37a2-479c-a07c-14d220d1d220.png)
 
 <br>
 
