@@ -564,24 +564,39 @@ rdt 2.2 수신자
 
 ![rdt 2.2 receiver](https://user-images.githubusercontent.com/52172169/177941990-73d82955-d1b9-4f77-814d-bf592b7f62df.png)
 
-<br>
-
-
-
 <br><br>
 
 ### rdt 3.0
 <hr style="border-top: 1px solid;"><br>
 
+rdt 3.0은 **비트 오류와 손실 있는 채널 상에서의 신뢰적 데이터 전송**의 경우이다.
+
+
 
 <br><br>
 
+## 파이프라인된 신뢰적 데이터 전송 프로토콜
+<hr style="border-top: 1px solid;"><br>
 
 
+<br><br>
+
+## N부터 반복(GBN)
+<hr style="border-top: 1px solid;"><br>
 
 
+<br><br>
+
+## 선택적 반복(SR)
+<hr style="border-top: 1px solid;"><br>
 
 
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
+# 연결지향형 트랜스포트: TCP
+<hr style="border-top: 1px solid;"><br>
 
 
 <br><br>
