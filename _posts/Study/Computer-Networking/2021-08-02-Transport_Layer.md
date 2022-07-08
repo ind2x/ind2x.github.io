@@ -483,6 +483,7 @@ rdt 2.0은 **비트 오류가 있는 채널 상에서의 신뢰적 데이터 전
 
 + 오류 검출
   + 송신자에게 추가적인 비트를 요구
+  + 데이터 패킷의 패킷 체크섬 필드로 확인
 
 + 수신자 피드백
   + 긍정 응답(ACK)와 부정 응답(NAK) 패킷들을 수신자가 송신자에게 전송
@@ -497,7 +498,47 @@ rdt 2.0은 **비트 오류가 있는 채널 상에서의 신뢰적 데이터 전
 
 <br>
 
-위에서 설명했듯이 ARQ 프로토콜 기능이 추가되어 송신자는 
+위에서 설명했듯이 ARQ 프로토콜 기능이 추가되어 송신자는 2개의 FSM을 가지고 있다.
+
+먼저 상위 계층으로부터 데이터를 받는 event가 발생하면, action으로 패킷 체크섬과 함께 전송될 데이터를 포함하는 패킷을 생성 ```(sndpkt)```하고, 그 패킷을 전송한다. ```udt_send(pkt)```
+
+그 다음 피드백을 기다리며 만약 NAK이 전송되면 다시 재전송한다.
+
+ACK가 수신되었다면 액션으로 아무런 행동을 취하지 않고 다시 상위 계층으로부터 데이터를 기다린다.
+
+유의할 점은 ACK, NAK 패킷을 기다리는 동안엔 상위 계층으로부터 데이터를 받을 수 없다는 점이다.
+
+이러한 이유로 rdt 2.0은 전송-후-대기(stop-and-wait) 프로토콜이라고 불린다.
+
+<br>
+
+수신 측은 패킷을 받고 손상되었다면 액션으로 NAK 패킷을 만들고 전송한다.
+
+손상되지 않았다면 패킷에서 데이터를 추출하고 데이터를 상위 계층으로 전달한 뒤 ACK 패킷을 만들어 송신자에게 보낸다. 
+
+<br>
+
+이렇게 보면 정상적이나 치명적인 결함이 있다. 
+
+특별히 위에서는 ACK, NAK 패킷이 손상될 가능성을 고려하지 않았다는 점이다. 
+
+간단한 해결책은 데이터 패킷에 새로운 필드를 추가하고 이 필드 안에 **순서번호(sequence number)**를 삽입하는 방식으로 데이터 패킷에 송신자가 번호를 붙이는 것이다.
+
+수신자는 수신된 패킷이 재전송 인지를 결정할 때는 이 순서번호만 확인하면 된다.
+
+<br><br>
+
+### rdt 2.1
+<hr style="border-top: 1px solid;"><br>
+
+![rdt 2.1](https://user-images.githubusercontent.com/52172169/177939498-f282c802-9402-4929-8ac7-f31cad628fe0.png)
+
+
+<br><br>
+
+### rdt 2.2
+<hr style="border-top: 1px solid;"><br>
+
 
 <br><br>
 
@@ -515,11 +556,17 @@ rdt 2.0은 **비트 오류가 있는 채널 상에서의 신뢰적 데이터 전
 
 
 
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
 
+# 참고
+<hr style="border-top: 1px solid;"><br>
 
-
-
-
+Link
+: <a href="https://justlog.tistory.com/m/8" target="_blank">justlog.tistory.com/m/8 - RDT Protocol</a>
+: <a href="https://justlog.tistory.com/m/11" target="_blank">justlog.tistory.com/m/11 - GBN & Selective repeat</a>
+: <a href="https://justlog.tistory.com/m/15" target="_blank">justlog.tistory.com/m/15 - TCP</a>
 
 <br><br>
 <hr style="border: 2px solid;">
