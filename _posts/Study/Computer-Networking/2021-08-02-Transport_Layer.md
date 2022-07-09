@@ -1,7 +1,7 @@
 ---
-title : "Transport Layer (Incomplete)"
+title : "Transport Layer"
 categories : [Study, Computer Network]
-tags : [Transport Layer, Incomplete]
+tags : [Transport Layer]
 ---
 
 # 트랜스포트 계층 서비스 및 개요
@@ -637,6 +637,29 @@ rdt 3.0은 **비트 오류와 손실 있는 채널 상에서의 신뢰적 데이
 
 ## 파이프라인된 신뢰적 데이터 전송 프로토콜
 <hr style="border-top: 1px solid;"><br>
+
+rdt 3.0은 기능적으로는 정확하나 오늘날의 고속 네트워크에서 보면 성능에 만족할 순 없다. 
+
+왜냐하면 rdt 3.0은 전송-후-대기(stop-and-wait) 프로토콜이기 때문이다.
+
+아래는 전송 후 대기 프로토콜 동작이다.
+
+<br>
+
+![전송-후-대기와 파이프라인 프로토콜 비교](https://user-images.githubusercontent.com/52172169/178091692-104514d8-060a-48df-a0aa-23a62e48789e.png)
+
+<br>
+
+미국의 서부와 동부에 end system이 있을 때, 두 종단 시스템 사이의 광속 왕복 전파 지연(RTT)은 대략 30 msec이다.
+
+이것들이 1 Gbps(초당 10^9 비트) 전송률(R)을 가진 채널에 의해서 연결되어 있다고 할 때, 패킷 당 1000바이트(8000비트)의 패킷 크기(L)을 가지고 1 Gbps 링크로 패킷을 실제로 전송하는데 필요한 시간은 아래와 같다.
+
+<br>
+
+![image](https://user-images.githubusercontent.com/52172169/178091798-79e8ceb4-55fa-4d83-8c2c-a89f55719afa.png)
+
+<br>
+
 
 
 <br><br>
