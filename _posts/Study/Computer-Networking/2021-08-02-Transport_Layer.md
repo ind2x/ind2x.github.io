@@ -670,6 +670,7 @@ Link
 : <a href="https://justlog.tistory.com/m/8" target="_blank">justlog.tistory.com/m/8 - RDT Protocol</a>
 : <a href="https://justlog.tistory.com/m/11" target="_blank">justlog.tistory.com/m/11 - GBN & Selective repeat</a>
 : <a href="https://justlog.tistory.com/m/15" target="_blank">justlog.tistory.com/m/15 - TCP</a>
+: <a href="https://velog.io/@tonyhan18/기초컴퓨터네트워크-10-0cd92k51" target="_blank">velog.io/@tonyhan18/기초컴퓨터네트워크-10-0cd92k51</a>
 
 <br><br>
 <hr style="border: 2px solid;">
