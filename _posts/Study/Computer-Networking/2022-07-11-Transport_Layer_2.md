@@ -7,7 +7,8 @@ tags : [Transport Layer]
 # Transport Layer 1
 <hr style="border-top: 1px solid;"><br>
 
-Link : <a href="https://ind2x.github.io/posts/Transport_Layer/" target="_blank">ind2x.github.io/posts/Transport_Layer/</a>
+Link 
+: <a href="https://ind2x.github.io/posts/Transport_Layer/" target="_blank">ind2x.github.io/posts/Transport_Layer/</a>
 
 <br><br>
 <hr style="border: 2px solid;">
@@ -139,7 +140,6 @@ Link
 : <a href="https://justlog.tistory.com/m/15" target="_blank">justlog.tistory.com/m/15 - TCP</a>
 : <a href="https://velog.io/@tonyhan18/series/21-기초컴퓨터네트워크" target="_blank">velog.io/@tonyhan18/series/21-기초컴퓨터네트워크</a>
 : <a href="https://www.cnsr.dev/index_files/Classes/Networking/Content/03-Transport.html" target="_blank">cnsr.dev/index_files/Classes/Networking/Content/03-Transport.html</a>
-
 
 <br><br>
 <hr style="border: 2px solid;">
