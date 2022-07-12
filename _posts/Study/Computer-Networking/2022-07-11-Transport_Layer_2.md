@@ -459,16 +459,7 @@ ECE 비트는 수신자에서 송신자로 가는 TCP ACK 세그먼트에서 정
 <hr style="border: 2px solid;">
 <br><br>
 
-# 요약
-<hr style="border-top: 1px solid;"><br>
-
-
-
-<br><br>
-<hr style="border: 2px solid;">
-<br><br>
-
-# 참고
+# 사진 인용
 <hr style="border-top: 1px solid;"><br>
 
 Link
