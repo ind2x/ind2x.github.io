@@ -339,14 +339,42 @@ TCP 혼잡 회피 알고리즘은 타임아웃이 발생했을 때와 같이 동
 
 **새로운 TCP 버전인 TCP Reno는 빠른 회복을 채택하였다.**
 
+<br>
 
+![TCP Tahoe vs Reno](https://user-images.githubusercontent.com/52172169/178427887-8ddf3a33-b8b0-4639-8195-902058b7360f.png)
+
+<br>
+
+위의 그림으로 보면 임계치는 초기에는 두 가지 모두 8 MSS이다.
+
+처음 8번의 전송 동안은 Tahoe와 Reno는 동일한 행동을 취한다.
+
+cwnd는 슬로 스타트 동안 지수적인 증가를 하고, cwnd 값이 ssthresh에 도달했을 때 혼잡 회피로 전환되고 매 RTT당 1 MSS 씩 선형적으로 증가를 한다.
+
+그러다가 8번째 송신 후에 3개의 중복 ACK가 발생하게 되는데, 우선 임계치 값은 손실 발생 시점 cwnd 값이 12 MSS이므로 절반의 값인 6 MSS로 ssthresh 값이 설정된다.
+
+이 시점에서 Tahoe는 무조건 cwnd를 1 MSS로 줄이고, 슬로 스타트 단계에 들어가므로 ssthresh 값까지 지수적인 증가를 한 뒤 ```cwnd >= ssthresh``` 부터는 선형적인 증가를 하는 걸 볼 수 있다. 
+
+TCP Reno는 빠른회복 상태로 들어가므로 혼잡 회피에서 3개의 중복 ACK에 의해 빠른 회복 상태로 들어갈 때, cwnd의 값과 ssthresh 값은 절반이 되므로 cwnd 값은 6 MSS가 된다.
+
+따라서 표에서와 같이 TCP Reno는 손실 이벤트 이후 6 MSS에서 시작하는 걸 볼 수 있으며 선형적으로 증가하는 걸 볼 수 있다.
 
 <br><br>
 
 ## TCP 혼잡제어: 복습
 <hr style="border-top: 1px solid;"><br>
 
+TCP 혼잡제어는 손실 발생 전까지 RTT마다 1 MSS씩 증가하나 손실 발생 시 절반으로 줄어든다.
 
+이러한 이유로 TCP 혼잡제어는 ```AIMD(Addictive Increase, Multiplicative Decrease)```라고 불린다.
+
+<br>
+
+![AIMD 혼잡제어](https://user-images.githubusercontent.com/52172169/178431421-c6eb4f1e-ff83-4dd5-b74f-ca2ca5f98e4c.png)
+
+<br>
+
+TCP는 3개의 중복 ACK 이벤트 전까지 선형으로 cwnd가 증가하고, 이벤트가 발생하면 절반으로 감소시키지만, 다시 추가적인 가용한 밴드폭이 있는지를 탐색하기 위해 선형으로 증가하기 시작한다.
 
 <br><br>
 
