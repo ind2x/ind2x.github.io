@@ -193,7 +193,7 @@ TCP 송신자가 혼잡을 감지하면 송신률을 줄이고, 없음을 감지
 
 앞에서 TCP 연결의 양 끝 각 호스트들은 수신 버퍼, 송신 버퍼 그리고 몇 가지 변수를 설정하는 것을 보았다.
 
-송신 측에서 동작하는 TCP 혼잡제어 메커니즘은 추가적인 변수인 혼잡 윈도우(congestion window, cwnd)를 기록한다.
+**송신 측**에서 동작하는 TCP 혼잡제어 메커니즘은 추가적인 **변수**인 **혼잡 윈도우(congestion window, cwnd)**를 기록한다.
 
 cwnd는 TCP 송신자가 네트워크로 트래픽을 전송할 수 있는 비율을 제한하도록 한다. 
 
@@ -253,7 +253,43 @@ TCP는 아래의 원칙에 따른다.
 ## 슬로 스타트
 <hr style="border-top: 1px solid;"><br>
 
+![TCP slow start](https://user-images.githubusercontent.com/52172169/178416429-a616df54-1d23-4a81-9742-9e527ff5f28d.png)
 
+<br>
+
+TCP 연결이 시작될 때, cwnd의 값은 일반적으로 1MSS로 초기화되고, 그 결과 초기 전송률은 대략 MSS/RTT가 된다.
+
+cwnd 값을 1MSS에서 시작하여 한 전송 세그먼트가 첫 번째로 확인응답을 받을 때마다 1 MSS씩 증가한다.
+
+즉, 초기 cwnd = 1 MSS, 매 RTT마다 cwnd 값이 두 배로 증가하는 것이다.
+
+그래서 TCP 전송률은 작은 값으로 시작하지만 슬로 스타트 단계 동안에 지수적으로 증가하게 된다.
+
+<br>
+
+이 지수적 증가는 언제 끝나는가? 슬로 스타트의 종료에 대한 3가지 답이 있다.
+
+<br>
+
++ 만약에 타임아웃(TCP Tahoe)에 의한 손실 이벤트(즉, 혼잡)가 있을 경우, TCP 송신자는 cwnd 값을 1로 하고, 새로운 슬로 스타트를 시작한다. 
+  + TCP 송신자는 두 번째 상태 변수인 ```ssthresh(slow start threshold, 슬로 스타트 임계치의 약자)``` 값을 ```cwnd/2```(혼잡이 검출 되었을 시점에서의 혼잡 윈도우 값의 반)으로 정한다.
+
+<br>
+
++ ssthresh 값은 혼잡이 마지막 검출된 시점에서의 cwnd 값의 반으로, cwnd 값이 ssthresh과 같으면, 슬로 스타트는 종료되고 TCP는 혼잡 회피 모드로 전환한다.
+  + TCP는 혼잡 회피 모드에서 cwnd를 좀 더 조심스럽게 증가시킨다.
+
+<br>
+
++ 3개의 중복 ACK(TCP Reno)들이 검출되면, TCP는 빠른 재전송을 수행하여 빠른 회복 상태로 들어간다.
+
+<br>
+
+아래는 TCP 혼잡제어의 FSM이다.
+
+<br>
+
+![TCP 혼잡제어 FSM](https://user-images.githubusercontent.com/52172169/178419918-68075985-71fb-4c6c-a070-a0237eea2adb.png)
 
 <br><br>
 
