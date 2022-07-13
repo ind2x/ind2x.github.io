@@ -283,6 +283,62 @@ tags: [Network Layer]
 ## 변환기
 <hr style="border-top: 1px solid;"><br>
 
+스위칭 구조를 통해 패킷이 입력 포트에서 출력 포트로 실제로 스위칭(즉, 전달)되므로 스위칭 구조는 라우터의 핵심이다.
+
+세 가지 방법(메모리, 버스, 크로스바)으로 스위칭을 수행할 수 있다.
+
+<br><br>
+
+### 메모리 스위칭
+<hr style="border-top: 1px solid;"><br>
+
+![key](https://user-images.githubusercontent.com/52172169/178708629-f14a1fad-47b3-4247-82c5-6044873fcb29.png)
+
+![memory switching](https://user-images.githubusercontent.com/52172169/178699436-6daf1f90-1b97-47dd-8ae4-24bae9ae826c.png)
+
+<br>
+
+메모리를 통한 교환은 가장 단순하고 초기의 라우터는 CPU(라우팅 프로세서)를 직접 제어해서 입력 포트와 출력 포트 사이에서 패킷을 스위칭하는 전통적인 컴퓨터이다.
+
+입력 포트와 출력 포트는 전통적인 운영체제에서 전통적인 I/O 장치처럼 작동한다.
+
+<br>
+
+패킷이 도착하면 입력 포트는 라우팅 프로세서에게 인터럽트를 보내 패킷을 프로세서 메모리에 복사한다.
+
+그 다음 라우팅 프로세서는 헤더에서 대상 주소를 추출하고 포워딩 테이블에서 적절한 출력 포트를 찾은 다음 패킷을 출력 포트의 버퍼에 복사한다.
+
+<br>
+
+이 시나리오에서 **메모리 대역폭이 초당 최대 B인 패킷을 메모리에 쓰거나 메모리에서 읽을 수 있는 경우, 전체 전달 처리량(패킷이 입력 포트에서 출력 포트로 전송되는 총 속도)은 B/2보다 작아야 한다.**
+
+또한 목적지 포트가 다른 경우라도 공유 시스템 버스를 통해 한 번에 하나의 메모리 I/O 작업을 수행할 수 있기 때문에 두 패킷을 동시에 전달할 수 없다.
+
+<br><br>
+
+### 버스 스위칭
+<hr style="border-top: 1px solid;"><br>
+
+![key](https://user-images.githubusercontent.com/52172169/178708635-f8255817-2aef-461c-991b-db7863062178.png)
+
+![bus switching](https://user-images.githubusercontent.com/52172169/178708591-2ec6a8df-d6cc-4258-a858-895ce2f9753e.png)
+
+<br>
+
+
+
+<br><br>
+
+### 크로스바 스위칭
+<hr style="border-top: 1px solid;"><br>
+
+![key](https://user-images.githubusercontent.com/52172169/178708678-19d70070-8d88-4e09-acfb-32bb793f8172.png)
+
+![crossbar switching](https://user-images.githubusercontent.com/52172169/178708701-0825e0b7-4387-463a-9771-da5cef73bc30.png)
+
+<br>
+
+
 
 
 <br><br>
