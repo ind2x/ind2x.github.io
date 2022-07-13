@@ -234,13 +234,21 @@ tags: [Network Layer]
 
 <br>
 
-![image](https://user-images.githubusercontent.com/52172169/178683725-6247f699-1709-415f-837d-ad04ae3c5c6d.png)
+![image](https://user-images.githubusercontent.com/52172169/178684657-20064201-4d56-483f-af5a-a8014678e92d.png)
+
+<br>
+
+이 예에서 라우터의 포워딩 테이블에 40억 개의 엔트리까지는 필요하지 않다.
+
+이 경우에는 아래처럼 4개의 엔트리를 갖는 포워딩 테이블이면 된다.
 
 <br>
 
 ![image](https://user-images.githubusercontent.com/52172169/178683803-89d3c74b-6447-4a33-bf5f-b1ebb9e64362.png)
 
 <br>
+
+
 
 
 <br><br>
