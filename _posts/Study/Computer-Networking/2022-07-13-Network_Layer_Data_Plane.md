@@ -406,12 +406,36 @@ A에서 Y로, B에서 X로의 패킷들은 다른 입출력 버스를 사용해 
 ### 입력 큐잉
 <hr style="border-top: 1px solid;"><br>
 
++ 키워드
+  + 스위칭 구조
+  + 한번에 하나
+  + 지정된 출력포트
+  + HOL(Head Of Line) 차단
+  + 회선 앞쪽 다른 패킷
+  + 입력 큐 대기 패킷
+  + 스위칭 구조를 통한 전송
 
+<br>
+
+스위칭 구조는 패킷을 한번에 하나씩만 지정된 출력 포트로 전달해줄 수 있다.
+
+<br>
+
+![HOL 차단 및 입력 대기된 스위치](https://user-images.githubusercontent.com/52172169/178893346-ad8c15da-cd6b-4a6c-b460-3db117b55a9b.png)
+
+<br>
+
+HOL(Head Of The Line) 차단이란 회선 앞쪽 다른 패킷에 의해 입력 큐에서 대기 중인 패킷은 지정된 출력 포트가 사용 중이 아니더라도 스위칭 구조를 통해 전송되기를 기다려야 한다.
 
 <br><br>
 
 ### 출력 큐잉 
 <hr style="border-top: 1px solid;"><br>
+
++ 키워드
+  +  
+
+<br>
 
 
 
