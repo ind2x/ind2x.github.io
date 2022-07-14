@@ -462,21 +462,70 @@ AQM 알고리즘으로 알려진 패킷 폐기, 패킷 마킹 정책 중 RED(Ran
 ## 패킷 스케줄링
 <hr style="border-top: 1px solid;"><br>
 
++ 키워드
+  + 라우터 큐잉 처리 방법
+  + FCFS (First Come First Served)
+  + FCFS == FIFO
+  + 방법 2가지 
+  + FIFO, Round-Robin
 
+<br>
+
+라우터 큐잉 처리 방법은 FCFS 즉, FIFO이며 2가지 방법으로 FIFO와 라운드 로빈이 있다.
 
 <br><br>
 
 ### First-In-First-Out
 <hr style="border-top: 1px solid;"><br>
 
++ 키워드
+  + 도착한 순서
+  + 전송 패킷 선택 
 
+<br>
+
+![FIFO 큐잉 개념도](https://user-images.githubusercontent.com/52172169/178901180-65675068-3f21-4ca8-8aa9-5c490ca795fb.png)
+
+<br>
+
+FIFO는 말 그대로 출력 링크 큐에 도착한 순서대로 출력 링크에서 전송할 패킷을 선택하는 것이다.
+
+아래 그림은 FIFO 큐의 동작을 보여준다.
+
+<br>
+
+![FIFO 큐의 동작](https://user-images.githubusercontent.com/52172169/178902016-ede7420b-b261-4834-93cc-de3120831d7d.png)
 
 <br><br>
 
 ### 우선순위 큐잉
 <hr style="border-top: 1px solid;"><br>
 
++ 키워드
+  + 우선 순위 클래스
+  + 고유한 큐
+  + 가장 높은 우선순위 클래스 패킷 전송
+  + 동일 우선순위는 FIFO로 처리
+  + 패킷 전송 시작 시 중단 없음 
+  + 비 선점 우선순위 큐잉
 
+<br>
+
+![우선순위 큐잉 모델](https://user-images.githubusercontent.com/52172169/178903331-e34f6a3a-4110-48b2-8349-afcfff564388.png)
+
+<br>
+
+우선순위 큐잉은 우선 순위 클래스를 가지고 있고 각각의 고유한 큐가 있다.
+
+가장 높은 우선순위 클래스에서 패킷을 전송하고 동일 우선순위 패킷은 FIFO 방식으로 처리한다.
+
+패킷을 전송하기 시작하면 중간에 중단을 하지 않는데 이를 ```비 선점 우선순위 큐잉```라고 하며, 전송 중간에 우선 순위가 더 높은 패킷이 들어와도 중단하지 않는다는 것이다.
+
+아래는 우선순위 큐의 동작이다.
+
+<br>
+
+![우선순위 큐의 동작](https://user-images.githubusercontent.com/52172169/178903253-81c73ce7-03ab-44a4-923d-ef0d4fab2c0e.png)
 
 <br><br>
 
