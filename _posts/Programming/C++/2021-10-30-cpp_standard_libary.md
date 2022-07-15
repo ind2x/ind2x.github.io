@@ -444,6 +444,7 @@ var.erase(key) -> iterator key에 위치한 값 제거
 var.erase(first, last) -> iterator first ~ iterator last-1에 위치한 값 삭제
 
 var.contains(key) -> 지정된 key의 값이 있는지 확인 -> 있으면 true, 없으면 false
+                  /* -> C++20에서 새롭게 추가된 내용 */
 
 var.empty()
 
