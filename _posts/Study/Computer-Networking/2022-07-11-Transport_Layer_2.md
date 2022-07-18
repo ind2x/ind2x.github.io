@@ -9,7 +9,7 @@ tags : [Transport Layer]
 <hr style="border-top: 1px solid;"><br>
 
 Link 
-: <a href="https://ind2x.github.io/posts/Transport_Layer/" target="_blank">ind2x.github.io/posts/Transport_Layer/</a>
+: <a href="https://ind2x.github.io/posts/Transport_Layer/">ind2x.github.io/posts/Transport_Layer/</a>
 
 <br><br>
 <hr style="border: 2px solid;">
