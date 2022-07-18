@@ -1640,7 +1640,7 @@ SYN Flooding Attack
 <hr style="border-top: 1px solid;"><br>
 
 Link 
-: <a href="https://ind2x.github.io/posts/Transport_Layer_2/" target="_blank">ind2x.github.io/posts/Transport_Layer_2/</a>
+: <a href="https://ind2x.github.io/posts/Transport_Layer_2/">ind2x.github.io/posts/Transport_Layer_2/</a>
 
 <br><br>
 <hr style="border: 2px solid;">
