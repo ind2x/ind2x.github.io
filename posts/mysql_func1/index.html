@@ -1,0 +1,309 @@
+<!DOCTYPE html><html lang="en-US" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="day-prompt" content="days ago"><meta name="hour-prompt" content="hours ago"><meta name="minute-prompt" content="minutes ago"><meta name="justnow-prompt" content="just now"><meta name="generator" content="Jekyll v4.2.2" /><meta property="og:title" content="MySQL Functions 1" /><meta property="og:locale" content="en_US" /><meta name="description" content="Cheat Sheet" /><meta property="og:description" content="Cheat Sheet" /><link rel="canonical" href="https://ind2x.github.io/posts/mysql_func1/" /><meta property="og:url" content="https://ind2x.github.io/posts/mysql_func1/" /><meta property="og:site_name" content="IND2X" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2019-09-14T00:00:00+09:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="MySQL Functions 1" /><meta name="twitter:site" content="@twitter_username" /><meta name="google-site-verification" content="googleea1ce460742724c3.html" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-06-28T16:11:19+09:00","datePublished":"2019-09-14T00:00:00+09:00","description":"Cheat Sheet","headline":"MySQL Functions 1","mainEntityOfPage":{"@type":"WebPage","@id":"https://ind2x.github.io/posts/mysql_func1/"},"url":"https://ind2x.github.io/posts/mysql_func1/"}</script><title>MySQL Functions 1 | IND2X</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="IND2X"><meta name="application-name" content="IND2X"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4001883796705985" crossorigin="anonymous"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_KEY); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end" lang="en"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src="/assets/img/avatar.jpg" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">IND2X</a></div><div class="site-subtitle font-italic">가보자 가보자 ~</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/ind2x" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['nsxz1359','naver.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Home </a> </span> <span>MySQL Functions 1</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>MySQL Functions 1</h1><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/programming/'>Programming</a>, <a href='/categories/mysql/'>MySQL</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/mysql/" class="post-tag no-text-decoration" >MySQL</a> <a href="/tags/%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%A0%95%EC%9D%98-%EB%B3%80%EC%88%98/" class="post-tag no-text-decoration" >사용자 정의 변수</a> <a href="/tags/union/" class="post-tag no-text-decoration" >union</a> <a href="/tags/subquery/" class="post-tag no-text-decoration" >subquery</a> <a href="/tags/union/" class="post-tag no-text-decoration" >union</a> <a href="/tags/limit/" class="post-tag no-text-decoration" >limit</a> <a href="/tags/join/" class="post-tag no-text-decoration" >join</a> <a href="/tags/like/" class="post-tag no-text-decoration" >like</a> <a href="/tags/ord/" class="post-tag no-text-decoration" >ord</a> <a href="/tags/ascii/" class="post-tag no-text-decoration" >ascii</a></div></div><div class="post-meta text-muted" style="margin-top : 20px;"><div class="d-flex"><div> <span> IND2X </span> <span> Posted <em class="timeago" date="2019-09-14 00:00:00 +0900" data-toggle="tooltip" data-placement="bottom" title="Sat, Sep 14, 2019, 12:00 AM +0900" >Sep 14, 2019</em> </span> <span> Updated <em class="timeago" date="2022-06-28 16:11:19 +0900 " data-toggle="tooltip" data-placement="bottom" title="Tue, Jun 28, 2022, 4:11 PM +0900" >Jun 28</em> </span></div></div></div><div class="post-content"><h2 id="cheat-sheet">Cheat Sheet<a href="#cheat-sheet"><i class="fas fa-hashtag"></i></a></h2></h2><hr style="border-top: 1px solid;" /><p><br /></p><dl><dt>Link<dd><a href="https://overapi.com/" target="_blank">overapi.com/</a><dd><a href="https://dev.mysql.com/doc/refman/8.0/en/functions.html" target="_blank">dev.mysql.com/doc/refman/8.0/en/functions.html</a></dl><p>mysql에 5.6, 5.7, 8.0 3가지 매뉴얼이 있음.</p><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h2 id="써-본-것-정리">써 본 것 정리<a href="#써-본-것-정리"><i class="fas fa-hashtag"></i></a></h2></h2><h3 id="사용자-정의-변수">사용자 정의 변수<a href="#사용자-정의-변수"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><p>MySQL에서 하나의 명령문에 있는 값을 다른 명령문으로 전달하는 것이 가능.</p><p>사용자 정의 변수에 값을 저장한 후에 나중에 그 값을 참조 가능.</p><p>한 클라이언트에서 정의된 사용자 변수는 다른 클라이언트에서는 보이지 않으며 사용 불가.</p><p>해당 커넥션에서 정의된 모든 변수는 클라이언트가 종료되면 자동으로 해제된다.</p><p>사용자 변수는 <code class="language-plaintext highlighter-rouge">@var_name</code> 이라고 쓰며, 항상 <code class="language-plaintext highlighter-rouge">@</code> 하나가 따라와야 한다.</p><p>사용자 변수 이름은 <code class="language-plaintext highlighter-rouge">알파벳, 숫자, ‘.’, ‘_’, 그리고 ‘$’</code>을 사용할 수 있다.</p><p><br /></p><dl><dt>사용자 변수 값 할당 방법<dd><code class="language-plaintext highlighter-rouge">SET @var_name = expr (정수, 실수, 문자열, NULL)</code><dd><code class="language-plaintext highlighter-rouge">SET 변수할당은 = 또는 := 둘다 사용 가능.</code><dd><code class="language-plaintext highlighter-rouge">비 SET 문에서는 := 로 할당. = 는 비교 연산자로 취급되기 때문이다.</code><dd><code class="language-plaintext highlighter-rouge">여러개의 변수를 선언할때는 DECLARE @ 변수명 자료형, @변수명 자료형</code></dl><p><br /></p><dl><dt>출처<dd><a href="https://link2me.tistory.com/536" target="_blank">[소소한 일상 및 업무TIP 다루기]</a></dl><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h3 id="union">UNION<a href="#union"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><ul><li>UNION은 여러 테이블의 컬럼 값을 하나의 테이블로 출력하고자 할 때 사용한다.</ul><p><br /></p><ul><li><p>유니온의 규칙</p><ul><li><p>하나의 ORDER BY만 사용할 수 있다.</p><li><p>각 SELECT의 열수, 표현식이 같아야 한다.</p><li><p>SELECT 문들 끼리 순서는 상관없다.</p><li><p>유니온을 한 결과가 중복되면 하나만 나온다. (DEFAULT)</p><li><p>열의 타입은 같거나 반환 가능한 형태여야 한다.</p><li><p>중복값을 나타내고 싶다면 UNION ALL</p><li><p>결과 테이블의 컬럼 명은 앞 쪽 명령문에 있는 컬럼 명을 따름.</p></ul></ul><p><br /></p><ul><li><p>알아둘 점</p><ul><li><p>union으로 가져온 쿼리 결과는 union 앞에 있는 쿼리 결과 값 밑에 출력된다.</p><li><p>select 1,2,3와 같이 단순히 값을 가져오는 쿼리는 컬럼명과 값이 동일하다.</p><ul><li><code class="language-plaintext highlighter-rouge">select 1,2,3</code>은 컬럼도 1,2,3이고 값도 1,2,3이다.</ul></ul></ul><p><br /></p><dl><dt>출처<dd><a href="https://futurists.tistory.com/18" target="_blank">[미래학자]</a></dl><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h3 id="서브쿼리">서브쿼리<a href="#서브쿼리"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><ul><li><p>Subquery</p><ul><li><p>한 쿼리 내에 또 다른 쿼리를 사용하는 것으로 사용 시 쿼리 내에서 괄호를 사용하여 괄호 안에 구문을 삽입해야하며 SELECT 문만 사용가능하다.</p><li>SELECT 구문의 컬럼 절에서 서브 쿼리를 사용할 때에는 단일 행 (Single Row)과 단일 컬럼(Single Column)이 반환되야 한다.<ul><li><code class="language-plaintext highlighter-rouge">ERROR 1242 (21000): Subquery returns more than 1 row</code><li><code class="language-plaintext highlighter-rouge">ERROR 1241 (21000): Operand should contain 1 column(s)</code></ul><li><p>FROM 절에서는 다중 행 (Multiple Row)과 다중 컬럼 (Multiple Column) 결과를 반환할 수 있다.</p><li>WHERE 절에서 서브 쿼리를 사용하면 다중 행 결과를 반환하는 쿼리문을 실행할 수 있다.</ul></ul><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h3 id="ascii-ord">ASCII, ORD<a href="#ascii-ord"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><ul><li><p>문자의 아스키 값을 반환</p><li><p>ASCII 함수는 8bit에 한해서 문자의 정수 값을 반환</p><li><p>ORD 함수는 멀티바이트 문자에 대해서 특정 공식을 이용해 정수 값을 반환</p></ul><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h3 id="length-char_length">LENGTH, CHAR_LENGTH<a href="#length-char_length"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><ul><li><p>문자열의 길이를 가져오는 함수</p><li><p><code class="language-plaintext highlighter-rouge">LENGTH(문자열)</code></p><li><p><code class="language-plaintext highlighter-rouge">CHAR_LENGTH(문자열);</code> or <code class="language-plaintext highlighter-rouge">CHARACTER_LENGTH(문자열)</code></p></ul><p><br /></p><ul><li><p>LENGTH 함수는 문자의 Byte길이를 가져오기 때문에 한글은 정확한 길이를 알 수 없다.</p><li><p>CHAR_LENGTH 함수는 문자의 Byte 수를 계산하지 않고 단순히 몇 개의 문자가 있는지를 가져오는 함수</p></ul><p><br /></p><dl><dt>출처<dd><a href="https://extbrain.tistory.com/65" taget="_blank">extbrain.tistory.com/65</a></dl><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h3 id="join">JOIN<a href="#join"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><p><img data-proofer-ignore data-src="https://t1.daumcdn.net/cfile/tistory/99219C345BE91A7E32" alt="" class="align-center" /></p><p><br /></p><p>위 사진과 아래 블로그로 보는게 더 나음.</p><dl><dt>출처<dd><a href="https://yoo-hyeok.tistory.com/98" target="_blank">https://yoo-hyeok.tistory.com/98</a></dl><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h3 id="limit">LIMIT<a href="#limit"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>LIMIT [num] : 처음부터 num개의 행을 가져옴.
+
+LIMIT 시작점, 갯수 (첫번째 파라미터는 0 부터 시작)
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre>limit 함수에는 아래와 같이 두 개의 옵션(procedure, into)을 사용 가능함.
+
+ [LIMIT {[offset,] row_count | row_count OFFSET offset}]
+    [PROCEDURE procedure_name(argument_list)]
+    [INTO OUTFILE 'file_name'
+        [CHARACTER SET charset_name]
+        export_options
+      | INTO DUMPFILE 'file_name'
+      | INTO var_name [, var_name]]
+    [FOR UPDATE | LOCK IN SHARE MODE]]
+
+출처: https://tempuss.tistory.com/entry/Limit-절에서의-SQL-Injection [Tempus]
+</pre></table></code></div></div><p><br /></p><p>LIMIT 뒤에 PROCEDURE ANALYSE 사용한 예제</p><div class="language-php highlighter-rouge"><div class="code-header"> <span label-text="PHP"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">select</span> <span class="o">*</span> <span class="n">from</span> <span class="n">user</span> <span class="n">where</span> <span class="n">id</span><span class="o">=</span><span class="s1">'admin'</span> <span class="n">limit</span> <span class="mi">1</span> <span class="n">procedure</span> <span class="nf">analyse</span><span class="p">();</span>
+
+<span class="o">|</span> <span class="n">Field_name</span><span class="o">|</span> <span class="n">Min_value</span> <span class="o">|</span> <span class="n">Max_value</span> <span class="o">|</span> <span class="n">Min_length</span> <span class="o">|</span> <span class="n">Max_length</span> <span class="o">|</span> <span class="n">Empties_or_zeros</span> <span class="o">|</span> <span class="nc">Nulls</span> <span class="o">|</span> <span class="n">Avg_value_or_avg_length</span> <span class="o">|</span> <span class="nc">Std</span> <span class="o">|</span> <span class="n">Optimal_fieldtype</span><span class="o">|</span>
+
+<span class="o">|</span> <span class="n">user</span><span class="mf">.</span><span class="n">user</span><span class="mf">.</span><span class="n">id</span><span class="o">|</span> <span class="n">admin</span><span class="o">|</span> <span class="n">admin</span> <span class="o">|</span> <span class="mi">5</span> <span class="o">|</span> <span class="mi">5</span> <span class="o">|</span><span class="mi">0</span> <span class="o">|</span> <span class="mi">0</span> <span class="o">|</span> <span class="mf">5.0000</span> <span class="o">|</span> <span class="kc">NULL</span> <span class="o">|</span> <span class="nf">ENUM</span><span class="p">(</span><span class="s1">'admin'</span><span class="p">)</span> <span class="no">NOT</span> <span class="kc">NULL</span> <span class="o">|</span>
+
+<span class="n">출처</span><span class="o">:</span> <span class="n">https</span><span class="o">://</span><span class="n">tempuss</span><span class="mf">.</span><span class="n">tistory</span><span class="mf">.</span><span class="n">com</span><span class="o">/</span><span class="n">entry</span><span class="o">/</span><span class="nc">Limit</span><span class="o">-</span><span class="n">절에서의</span><span class="o">-</span><span class="no">SQL</span><span class="o">-</span><span class="nc">Injection</span> <span class="p">[</span><span class="nc">Tempus</span><span class="p">]</span>
+</pre></table></code></div></div><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h3 id="substr-mid">SUBSTR, MID<a href="#substr-mid"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre>SUBSTR(str,시작점), SUBSTR(str FROM 시작점), SUBSTR(str,시작점,len)
+SUBSTR(str FROM 시작점 FOR len)
+
+시작점와 len은 1부터 시작, 0이면 empty string 출력. 
+
+SUBSTR은 SUBSTRING와 동의어.
+SUBSTR 대신 SUBSTRING으로 해도 됨.
+
+MID(str,시작점,len), mid 또한 동의어.
+</pre></table></code></div></div><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h3 id="as">AS<a href="#as"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre>쿼리안에 테이블 혹은 서브쿼리 에 AS로 별명 짓기 가능.
+정해준 이름으로 쿼리 안에서 사용 가능.
+
+별칭에 공백이 있으면 따옴표 사용. '별칭'
+
+select 컬럼명 as 별칭
+
+select 함수 as 별칭
+
+select (서브쿼리) as 별칭
+
+as 생략 가능
+
+select col1 as name from table
+</pre></table></code></div></div><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h3 id="like">LIKE<a href="#like"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre>expr LIKE pat [ESCAPE 'escape_char']
+expr NOT LIKE pat [ESCAPE 'escape_char']
+
+두 개의 와일드카드 %, _가 있음.
+% : 모든 문자열
+_ : 한 글자
+
+LIKE 연산으로 '%'나 '_'가 들어간 문자를 검색하기 위해서는 ESCAPE를 사용해야 한다. 
+'_'나 '%'앞에 ESCAPE로 특수 문자를 지정하면 검색 가능.
+ESCAPE는 escape 문자 \ 대신에 사용하 문자를 지정하는 것.
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>select 'abc' like 'a%' -&gt; 1
+select 'abc' like '%c' -&gt; 1
+select 'abc' like '%b' -&gt; 0
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>select 'abc' like 'ab_' -&gt; 1
+select 'abc' like 'a__' -&gt; 1
+select 'abc' like '_a_' -&gt; 0
+</pre></table></code></div></div><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h3 id="in">IN<a href="#in"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><dl><dt>보통 아래와 같이 한개 필드에 여러 값을 검색할 경우 IN() 함수를 이용하여 검색.<dd><code class="language-plaintext highlighter-rouge">select * from table where (col1, col2, ..., col@) IN(val1, val2, ..., val@)</code></dl><p><br /></p><p>IN 구문에 서브쿼리 사용 가능하지만 추천 x -&gt; 사용시간이 오래 걸림.</p><p>자세한 설명은 https://jojoldu.tistory.com/520</p><p><br /></p><dl><dt>결론<dd>버전/조건 관계 없이 좋은 성능을 내려면 최대한 Join을 이용하자</dl><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h3 id="concat">CONCAT<a href="#concat"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre>CONCAT(str1,str2,...)
+-&gt; 둘 이상의 문자열을 입력한 순서대로 합쳐서 반환해주는 함수
+-&gt; NULL이 포함되면 NULL 리턴
+
+mysql&gt; SELECT CONCAT('My', 'S', 'QL');
+        -&gt; 'MySQL'
+mysql&gt; SELECT CONCAT('My', NULL, 'QL');
+        -&gt; NULL
+mysql&gt; SELECT CONCAT(14.3);
+        -&gt; '14.3'
+mysql&gt; SELECT 'My' 'S' 'QL';
+        -&gt; 'MySQL'        
+</pre></table></code></div></div><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h3 id="group_concat">GROUP_CONCAT<a href="#group_concat"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre>GROUP_CONCAT([DISTINCT] expr [,expr ...]
+             [ORDER BY {unsigned_integer | col_name | expr}
+                 [ASC | DESC] [,col_name ...]]
+             [SEPARATOR str_val])
+
+SEPERATOR default ','
+합쳐지는 문자열에 중복되는 문자열을 제거 할때는 distinct 를 사용
+문자열을 정렬하여 나타내고 싶으면 order by 를 이용
+
+-&gt; 그룹화된 컬럼의 행들을 하나의 행으로 보여줌
+</pre></table></code></div></div><p><br /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre>mysql&gt; select * from test 
+
+|  type 	|    name    	|
+| fruit 	|    banana   	|
+| fruit 	|    apple   	|
+| fruit 	| watermelon 	|
+| fruit 	|    apple   	|
+</pre></table></code></div></div><p><br /></p><p>기본적인 group_concat() 사용.</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>mysql&gt; select type, group_concat(name) from test group by type 
+
+
+|  type 	|               name               	|
+| fruit 	| banana, apple, watermelon, apple 	|
+</pre></table></code></div></div><p><br /></p><p>구분자를 변경하고 싶으면 <strong>separator</strong> 사용.</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>mysql&gt; select type, group_concat(name separator '|') from test group by type
+
+
+|  type 	|               name               	|
+| fruit 	| banana| apple| watermelon| apple 	|
+</pre></table></code></div></div><p><br /></p><p>중복되는 문자열을 제거할 때 <strong>distinct</strong> 사용.</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>mysql&gt; select type, group_concat(distinct name) from test group by type
+
+|  type 	|               name            |
+| fruit 	| banana, apple, watermelon 	|
+</pre></table></code></div></div><p><br /></p><p>문자열을 정렬하고 싶으면 <strong>order by</strong> 사용.</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>mysql&gt; select type, group_concat(distinct name order by name) from test group by type
+
+|  type 	|               name               	|
+| fruit 	| apple, banana, watermelon 	    |
+</pre></table></code></div></div><p><br /></p><dl><dt>자세히<dd><a href="https://fruitdev.tistory.com/16" target="_blank">fruitdev.tistory.com/16</a></dl><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h3 id="group-by--having-">GROUP BY … HAVING …<a href="#group-by--having-"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>GROUP BY column1 [, column2 ...] [HAVING condition]
+-&gt; 컬럼을 그룹화하여 검색
+-&gt; 보통 집합 함수와 사용됨. ex) AVG, SUM, COUNT
+</pre></table></code></div></div><p><br /></p><dl><dt>자세한 건<dd><a href="https://extbrain.tistory.com/56" target="_blank">extbrain.tistory.com/56</a></dl><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h3 id="order-by--ascdesc">ORDER BY … ASC/DESC<a href="#order-by--ascdesc"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre>ORDER BY column [ASC/DESC]
+-&gt; 테이블 조회 정렬, 기본 값은 오름차순
+
+ORDER BY column1 [, column2, ..] 
+-&gt; 여러 컬럼 정렬
+
+ORDER BY 컬럼 번호1 [, 컬럼 번호2, 컬럼 번호3 ...];
+-&gt; 컬럼 번호로 정렬
+
+ORDER BY 컬럼 = '값'
+=, != 를 통해서 값을 비교할 경우 
+1. 해당 값은 오름차순일 경우 가장 마지막에 출력. 
+2. 내림차순일 경우 가장 처음에 출력이 된다.
+</pre></table></code></div></div><p><br /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>SELECT name, age FROM table_name ORDER BY age DESC, name
+-&gt; age 내림차순, name 오름차순 정렬
+
+SELECT name, age FROM table_name ORDER BY 1 DESC, 2
+-&gt; name 오름차순, age 내림차순 정렬
+</pre></table></code></div></div><p><br /></p><dl><dt>출처<dd><a href="https://extbrain.tistory.com/56" target="_blank">extbrain.tistory.com/51</a><dd><a href="https://blog.do9.kr/132" target="_blank">blog.do9.kr/132</a></dl><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h3 id="if">IF<a href="#if"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre>IF(expr1,expr2,expr3)
+-&gt; expr1이 true면 expr2 리턴, false면 expr3 리턴
+
+mysql&gt; SELECT IF(1&gt;2,2,3);
+        -&gt; 3
+mysql&gt; SELECT IF(1&lt;2,'yes','no');
+        -&gt; 'yes'
+mysql&gt; SELECT IF(STRCMP('test','test1'),'no','yes');
+        -&gt; 'no'
+</pre></table></code></div></div><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p><h3 id="case">CASE<a href="#case"><i class="fas fa-hashtag"></i></a></h3></h3><hr style="border-top: 1px solid;" /><p><br /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>CASE value WHEN compare_value THEN result1 [WHEN compare_value THEN result ...] [ELSE result2] END
+
+  -&gt; value를 compare_value와 비교하여 true면 result1 리턴, 그 외엔 result2 리턴
+</pre></table></code></div></div><p><br /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>CASE WHEN condition THEN result1 [WHEN condition THEN result ...] [ELSE result2] END
+
+  -&gt; condition이 참일 때, result1 리턴
+  -&gt; 비교 또는 조건이 참이 아닌 경우, result2를 리턴
+  -&gt; else 문이 없다면 NULL 리턴
+</pre></table></code></div></div><p><br /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre>mysql&gt; SELECT CASE 1 WHEN 1 THEN 'one' WHEN 2 THEN 'two' ELSE 'more' END;
+        -&gt; 'one'
+
+mysql&gt; SELECT CASE WHEN 1&gt;0 THEN 'true' ELSE 'false' END;
+        -&gt; 'true'
+
+mysql&gt; SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
+        -&gt; NULL
+</pre></table></code></div></div><p><br /><br /></p><hr style="border: 2px solid;" /><p><br /><br /></p></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/programming/'>Programming</a>, <a href='/categories/mysql/'>MySQL</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/mysql/" class="post-tag no-text-decoration" >MySQL</a> <a href="/tags/%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%A0%95%EC%9D%98-%EB%B3%80%EC%88%98/" class="post-tag no-text-decoration" >사용자 정의 변수</a> <a href="/tags/union/" class="post-tag no-text-decoration" >union</a> <a href="/tags/subquery/" class="post-tag no-text-decoration" >subquery</a> <a href="/tags/union/" class="post-tag no-text-decoration" >union</a> <a href="/tags/limit/" class="post-tag no-text-decoration" >limit</a> <a href="/tags/join/" class="post-tag no-text-decoration" >join</a> <a href="/tags/like/" class="post-tag no-text-decoration" >like</a> <a href="/tags/ord/" class="post-tag no-text-decoration" >ord</a> <a href="/tags/ascii/" class="post-tag no-text-decoration" >ascii</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=MySQL Functions 1 - IND2X&url=https://ind2x.github.io/posts/mysql_func1/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=MySQL Functions 1 - IND2X&u=https://ind2x.github.io/posts/mysql_func1/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=MySQL Functions 1 - IND2X&url=https://ind2x.github.io/posts/mysql_func1/" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">Recent Update</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/Link_Layer/">Link Layer</a><li><a href="/posts/Network_Layer_Data_Plane/">Network Layer Data Plane</a><li><a href="/posts/Transport_Layer_2/">Transport Layer 2</a><li><a href="/posts/Transport_Layer/">Transport Layer</a><li><a href="/posts/cpp_standard_libary/">C++ Standard Library</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/incomplete/">Incomplete</a> <a class="post-tag" href="/tags/stack-buffer-overflow/">stack buffer overflow</a> <a class="post-tag" href="/tags/crypto/">Crypto</a> <a class="post-tag" href="/tags/dynamic-programming/">Dynamic Programming</a> <a class="post-tag" href="/tags/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">다이나믹 프로그래밍</a> <a class="post-tag" href="/tags/htaccess/">.htaccess</a> <a class="post-tag" href="/tags/lfi/">LFI</a> <a class="post-tag" href="/tags/linux-commands/">Linux Commands</a> <a class="post-tag" href="/tags/mysql/">MySQL</a> <a class="post-tag" href="/tags/sqli/">SQLi</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="tail-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/information_schema/"><div class="card-body"> <em class="timeago small" date="2019-09-14 00:00:00 +0900" >Sep 14, 2019</em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>MySQL information_schema</h3><div class="text-muted small"><p> Information_schema 데이터의 집합 즉, 메타데이터(데이터에 대한 데이터)들을 종류별로 묶어 테이블을 만들었고, 이 테이블을 모아 db를 만들었는데 이것이 information_schema라고 함. 여기에는 MySQL 서버가 운영하는 모든 다른 db에 대한 정보를 저장하는 장소라고 함. 테이블 역할 정리 CHAR...</p></div></div></a></div><div class="card"> <a href="/posts/mysql_func2/"><div class="card-body"> <em class="timeago small" date="2019-09-15 00:00:00 +0900" >Sep 15, 2019</em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>MySQL Functions 2</h3><div class="text-muted small"><p> Cheat Sheet Link overapi.com/ dev.mysql.com/doc/refman/8.0/en/functions.html mysql에 5.6, 5.7, 8.0 3가지 매뉴얼이 있음. 써 본 것 정리 BETWEEN … AND … 1 2 3 4 5 6 7 8 9 10 11 12 13 14 expr BE...</p></div></div></a></div><div class="card"> <a href="/posts/mysql-usage/"><div class="card-body"> <em class="timeago small" date="2021-01-12 00:00:00 +0900" >Jan 12, 2021</em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>MySQL 사용법 in Linux (Incomplete)</h3><div class="text-muted small"><p> root 계정 생성 mysqladmin -u {root} password {password} 로그인 1 2 3 4 5 6 7 mysql [OPTIONS] [database] -p, --password[=name] Password to use when connecting to server. ...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/information_schema/" class="btn btn-outline-primary" prompt="Older"><p>MySQL information_schema</p></a> <a href="/posts/orge/" class="btn btn-outline-primary" prompt="Newer"><p>LOS Lv.7 orge</p></a></div><div id="disqus_thread" class="pt-2 pb-2"><p class="text-center text-muted small"> Comments powered by <a href="https://disqus.com/">Disqus</a>.</p></div><script type="text/javascript"> var disqus_config = function () { this.page.url = 'https://ind2x.github.io/posts/mysql_func1/'; this.page.identifier = '/posts/mysql_func1/'; }; /* Lazy loading */ var disqus_observer = new IntersectionObserver(function (entries) { if(entries[0].isIntersecting) { (function () { var d = document, s = d.createElement('script'); s.src = 'https://ind2x-github-io.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })(); disqus_observer.disconnect(); } }, { threshold: [0] }); disqus_observer.observe(document.querySelector('#disqus_thread')); /* Auto switch theme */ function reloadDisqus() { /* Disqus hasn't been loaded */ if (typeof DISQUS === "undefined") { return; } if (document.readyState == 'complete') { DISQUS.reset({ reload: true, config: disqus_config }); } } const modeToggle = document.querySelector(".mode-toggle"); if (typeof modeToggle !== "undefined") { /* modeToggle.addEventListener('click', reloadDisqus); // not pretty for 'color-scheme' */ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', reloadDisqus); } </script></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center text-muted"><div class="footer-left"><p class="mb-0"> © 2022 <a href="https://github.com/ind2x">IND2X</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/incomplete/">Incomplete</a> <a class="post-tag" href="/tags/stack-buffer-overflow/">stack buffer overflow</a> <a class="post-tag" href="/tags/crypto/">Crypto</a> <a class="post-tag" href="/tags/dynamic-programming/">Dynamic Programming</a> <a class="post-tag" href="/tags/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">다이나믹 프로그래밍</a> <a class="post-tag" href="/tags/htaccess/">.htaccess</a> <a class="post-tag" href="/tags/lfi/">LFI</a> <a class="post-tag" href="/tags/linux-commands/">Linux Commands</a> <a class="post-tag" href="/tags/mysql/">MySQL</a> <a class="post-tag" href="/tags/sqli/">SQLi</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-158946023-1"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-158946023-1'); }); </script>
