@@ -379,42 +379,25 @@ VLAN에 속한 호스트들은 마치 스위치에 자신들만 연결된 것처
 
 스위치에는 VLAN 스위치와 라우터를 모두 포함시킴으로써(별도의 외부 라우터가 필요 없도록) 네트워크 관리자가 이러한 구성을 쉽게 할 수 있게 해준다.
 
-<br><br>
-<hr style="border: 2px solid;">
-<br><br>
+<br>
 
-# 총정리: 웹페이지 요청에 대한 처리
-<hr style="border-top: 1px solid;"><br>
+2개의 VLAN이 있는 두 VLAN 스위치의 연결하는 방법은 아래와 같다.
 
+![image](https://user-images.githubusercontent.com/52172169/180429999-d57bc4b2-4082-4df2-9d54-111ac581358c.png)
 
+<br>
 
-<br><br>
+a 방법은 단순히 각 스위치의 포트 하나를 왼쪽 VLAN 스위치의 VLAN 그룹 중 하나에 속하게 하고 이들 포트를 연결한 것으로, 이 방법은 두 스위치를 연결하기 위해서 N개의 VLAN이 있는 경우 스위치마다 N개의 포트들이 필요하기 때문에 확장 문제가 발생한다.
 
-## DHCP, UDP, IP 그리고 이더넷
-<hr style="border-top: 1px solid;"><br>
+좀 더 확장 가능한 방법으로 b처럼 VLAN 트렁킹이 있다.
 
+b의 VLAN 트렁킹 방법에서는 스위치마다 하나의 특수 포트가 2개의 VLAN 스위치를 연결하는 **트렁크 포트**로 구성되어 있다.
 
+**트렁크 포트**는 모든 VLAN에 속하며, 한 VLAN에서 전송한 프레임들을 트렁크 링크를 통해 다른 스위치로 전달해 준다.
 
-<br><br>
+<br>
 
-## DNS와 ARP
-<hr style="border-top: 1px solid;"><br>
-
-
-
-<br><br>
-
-## DNS 서버로의 인트라-도메인 라우팅
-<hr style="border-top: 1px solid;"><br>
-
-
-
-<br><br>
-
-## TCP와 HTTP
-<hr style="border-top: 1px solid;"><br>
-
-
+위에서는 포트 기반 VLAN을 설명한 것이며, VLAN은 몇 가지 다른 방식으로 정의될 수 있다. 
 
 <br><br>
 <hr style="border: 2px solid;">
