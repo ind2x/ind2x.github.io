@@ -86,19 +86,17 @@ gdb에서는 내가 작성한 payload가 잘 작동해서 쉘이 흭득되는데
 ## setuid와 setreuid 쉘코드 차이점
 <hr style="border-top: 1px solid;">
 
-setuid
+쉘코드 만드는 과정
 : <a href="https://hdacker.tistory.com/20" target="_blank">hdacker.tistory.com/20</a>
 
 <br>
 
-setreuid
+setreuid 부분 내용
 : <a href="https://hdacker.tistory.com/21" target="_blank">hdacker.tistory.com/21</a>
 
 <br>
 
-정리하면 다음과 같음.
-
-setuid는 
+정리하면, setuid는 
 
 <br><br>
 <hr style="border: 2px solid;">
