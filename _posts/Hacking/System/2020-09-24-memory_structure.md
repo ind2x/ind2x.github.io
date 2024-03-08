@@ -189,7 +189,7 @@ int main()
 <hr style="border: 2px solid;">
 <br><br>
 
-## x86, x86 메모리 주소 체계
+## x86, x86 메모리 주소 체계 (BOF)
 <hr style="border-top: 1px solid;"><br>
 
 32/64비트 메모리 주소 체계
@@ -205,6 +205,11 @@ int main()
 
 BOF할 때, 64비트 프로그램에 대해서는 주의해야 함.
 : <a href="https://hackstoryadmin.tistory.com/entry/x64-BOFBuffer-Overflow" target="_blank">hackstoryadmin.tistory.com/entry/x64-BOFBuffer-Overflow</a>
+
+<br>
+
+그리고 쉘코드를 삽입을 했는데 hex 값이 변하는 경우가 있음. 이 경우는 python3의 변환방식 때문에 발생하는 문제임.
+: <a href="https://security.stackexchange.com/questions/270884/bufferoverflow-chars-gets-replaced-on-stack" target="_blank">security.stackexchange.com/questions/270884/bufferoverflow-chars-gets-replaced-on-stack</a>
 
 <br><br>
 <hr style="border: 2px solid;">
