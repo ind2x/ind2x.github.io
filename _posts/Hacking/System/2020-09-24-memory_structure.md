@@ -204,7 +204,7 @@ int main()
 즉, 실질적으로 6바이트만 사용하고 앞의 2바이트는 0x0000이 되는 것.
 
 BOF할 때, 64비트 프로그램에 대해서는 주의해야 함.
-: : <a href="https://hackstoryadmin.tistory.com/entry/x64-BOFBuffer-Overflow" target="_blank">hackstoryadmin.tistory.com/entry/x64-BOFBuffer-Overflow</a>
+: <a href="https://hackstoryadmin.tistory.com/entry/x64-BOFBuffer-Overflow" target="_blank">hackstoryadmin.tistory.com/entry/x64-BOFBuffer-Overflow</a>
 
 <br><br>
 <hr style="border: 2px solid;">
