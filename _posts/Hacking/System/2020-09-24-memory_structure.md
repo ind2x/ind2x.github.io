@@ -189,6 +189,27 @@ int main()
 <hr style="border: 2px solid;">
 <br><br>
 
+## x86, x86 메모리 주소 체계
+<hr style="border-top: 1px solid;"><br>
+
+32/64비트 메모리 주소 체계
+: <a href="https://hackstoryadmin.tistory.com/78?category=276534" target="_blank">hackstoryadmin.tistory.com/78?category=276534</a>
+
+<br>
+
+스택과 레지스터를 32비트는 4바이트씩 구분하고, 64비트는 8바이트씩 구분을 한다.
+
+여기서 중요한점은 64비트에서는 8바이트로 구분은 하지만 앞의 2바이트는 사용하지 않는다고 함.
+
+즉, 실질적으로 6바이트만 사용하고 앞의 2바이트는 0x0000이 되는 것.
+
+BOF할 때, 64비트 프로그램에 대해서는 주의해야 함.
+: : <a href="https://hackstoryadmin.tistory.com/entry/x64-BOFBuffer-Overflow" target="_blank">hackstoryadmin.tistory.com/entry/x64-BOFBuffer-Overflow</a>
+
+<br><br>
+<hr style="border: 2px solid;">
+<br><br>
+
 ## Calling Convention
 <hr style="border-top: 1px solid;"><br>
 
