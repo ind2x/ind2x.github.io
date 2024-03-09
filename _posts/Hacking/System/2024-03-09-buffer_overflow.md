@@ -83,33 +83,6 @@ gdb에서는 내가 작성한 payload가 잘 작동해서 쉘이 흭득되는데
 <hr style="border: 2px solid;">
 <br><br>
 
-## setuid와 setreuid 쉘코드 차이점
-<hr style="border-top: 1px solid;">
-
-쉘코드 만드는 과정
-: <a href="https://hdacker.tistory.com/20" target="_blank">hdacker.tistory.com/20</a>
-
-<br>
-
-setreuid 부분 내용
-: <a href="https://hdacker.tistory.com/21" target="_blank">hdacker.tistory.com/21</a>
-
-<br>
-
-정리하면, setuid는 ruid를 변경하는 것인데 이미 root 소유의 프로그램에 대해서는 사실상 의미가 없다는 것.
-
-일반 유저 권한에서 실행된 프로세스가 root 권한으로 변경되려면 euid가 변경이 되어야 하므로 setreuid가 들어간 shellcode를 사용해야 권한흭득이 가능한 것.
-
-<br>
-
-그래서 ```-rwxr-xr-x 1 root root 16720 Jun 29  2020 /readfiles``` 는 ```setuid(0) + execve('/bin/sh')``` shellcode로는 권한 상승이 일어나지 않음.
-
-하지만 ```-rwsr-sr-x 1 root julian 16824 Jun 30  2020 /usr/sbin/readfile```는 코드 내부적으로 ```setreuid(0,0)```이 있는 프로그램이라 execve만으로도 쉘이 흭득 가능함.
-
-<br><br>
-<hr style="border: 2px solid;">
-<br><br>
-
 ## 쉘코드 모음
 <hr style="border-top: 1px solid;">
 
